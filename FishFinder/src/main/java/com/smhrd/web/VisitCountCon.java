@@ -1,11 +1,10 @@
 package com.smhrd.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 
+import com.smhrd.domain.Visit;
 import com.smhrd.mapper.userCountMapper;
 
-@Controller
 public class VisitCountCon {
 	
 	@Autowired
@@ -22,15 +21,22 @@ public class VisitCountCon {
 		return instance;
 	}
 	
+	// 날짜값 추가 
+	public void setTotalCount(Visit vo) {
+		mapper.setTotalCount(vo);
+	}
+	
 	// 총 방문자수 증가
-	public int getTotalCount(int totalCount) {
-		mapper.getTotalCount(totalCount);
+	public int getTotalCount() {
+		int totalCount = 0;
+		totalCount = mapper.getTotalCount();
 		return totalCount;
 		}
 	
 	// 오늘 방문자 수
-	public int getTodayCount(int todayCount) {
-		mapper.getTodayCount(todayCount);
+	public int getTodayCount() {
+		int todayCount = 0;
+		todayCount = mapper.getTodayCount();
 		return todayCount;
 		}
 	

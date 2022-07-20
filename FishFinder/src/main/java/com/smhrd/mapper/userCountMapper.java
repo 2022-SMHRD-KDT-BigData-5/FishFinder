@@ -1,14 +1,14 @@
 package com.smhrd.mapper;
 
-import com.smhrd.domain.VisitSessionListener;
+import com.smhrd.domain.Visit;
 
 public interface userCountMapper {
 	
-	public int setTotalCount(VisitSessionListener vo);
+	public int setTotalCount(Visit vo);
 	
-	public VisitSessionListener getTotalCount(int totalCount);
+	public int getTotalCount();
 	
-	public VisitSessionListener getTodayCount(int todayCount);
+	public int getTodayCount();
 	
 	
 }

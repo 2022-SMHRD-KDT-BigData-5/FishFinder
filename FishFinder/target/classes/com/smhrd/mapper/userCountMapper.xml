@@ -8,17 +8,17 @@
     
     
     <!-- 총방문자 수 증가를 위해 현재 날짜 추가 -->
-    <insert id="setTotalCount" parameterType="com.smhrd.domain.VisitSessionListener">
+    <insert id="setTotalCount" parameterType="com.smhrd.domain.Visit">
         insert into visit (v_date) values(sysdate)
     </insert>
     
     <!-- 총 방문자수 가져오기 -->
-    <select id='getTotalCount' resultType="com.smhrd.domain.VisitSessionListener">
+    <select id='getTotalCount' resultType="com.smhrd.domain.Visit">
         select count(*) as TotalCnt from visit
     </select>
 
     <!-- 오늘 방문자수 가져오기 -->
-    <select id="getTodayCount" resultType="com.smhrd.domain.VisitSessionListener">
+    <select id="getTodayCount" resultType="com.smhrd.domain.Visit">
         select count(*) as todaycnt from visit
         where to_date(v_date, 'YYYY-MM-DD')=to_date(sysdate, 'YYYY-MM-DD')");
     </select>
