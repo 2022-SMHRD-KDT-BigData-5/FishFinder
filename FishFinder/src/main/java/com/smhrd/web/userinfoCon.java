@@ -70,7 +70,7 @@ public class userinfoCon {
 //	}
 	
 	
-	@RequestMapping(value="/login", method=RequestMethod.GET)
+	@RequestMapping(value="/login", method=RequestMethod.POST)
 	public String testloginsuc(@RequestParam(value = "code", required = false) String code,Model model) throws Exception {
 		
 		// 코드 확인
