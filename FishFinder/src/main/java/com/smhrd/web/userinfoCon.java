@@ -131,8 +131,8 @@ public class userinfoCon {
         try (
                 // 맥일 경우
                 // FileOutputStream fos = new FileOutputStream("/tmp/" +file.getOriginalFilename());
-                // 윈도우일 경우
-
+                
+        		// 윈도우일 경우
                 FileOutputStream fos = new FileOutputStream("c:/tmp/" + file.getOriginalFilename());
         		
                 // 파일 저장할 경로 + 파일명을 파라미터로 넣고 fileOutputStream 객체 생성하고
