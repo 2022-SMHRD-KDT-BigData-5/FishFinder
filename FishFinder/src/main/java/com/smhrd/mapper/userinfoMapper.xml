@@ -18,9 +18,14 @@
         select * from user_info where kakao_email=#{kakao_email}
     </select>
     
+       <!-- 카카오 회원정보 가져오기 -->
+    <select id="KakaoLogin" resultType="com.smhrd.domain.userinfo" parameterType="String">
+        select * from user_info where openID=#{openID}
+    </select>
+    
     <!-- 카카오 회원가입 -->
     <insert id="KakaoJoin" parameterType="com.smhrd.domain.userinfo">
-        insert into user_info(kakao_name,kakao_email,user_joindate) values(#{kakao_name},#{kakao_email},now())
+        insert into user_info(kakao_name,kakao_email,user_joindate,openID) values(#{kakao_name},#{kakao_email},now(),#{openID})
     </insert>
     
 
