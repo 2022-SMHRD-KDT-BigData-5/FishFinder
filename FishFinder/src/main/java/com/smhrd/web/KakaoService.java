@@ -91,6 +91,7 @@ public class KakaoService {
 		public userinfo getUserInfo(String access_Token) {
 
 			userinfo vo = new userinfo();
+			String id = null;
 			String reqURL = "https://kapi.kakao.com/v2/user/me";
 			try {
 				URL url = new URL(reqURL);
@@ -118,19 +119,25 @@ public class KakaoService {
 
 				JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
 				JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
-
+				id = element.getAsJsonObject().get("id").getAsString();
+				
 				String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 				String email = kakao_account.getAsJsonObject().get("email").getAsString();
-
+				
+				System.out.println("뽑아낸 닉네임 : " + nickname);
+				System.out.println("뽑아낸 이메일 : " + email);
+				System.out.println("뽑아낸 openID : " + id);
+				
 				vo.setKakao_name(nickname);
 				vo.setKakao_email(email);
+				vo.setOpenID(id);
 				
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			System.out.println("5");
+			System.out.println("DB시작");
 			// catch 아래 코드 추가.
-			userinfo result = um.KakaoUser(vo);
+			userinfo result = um.KakaoLogin(id);
 			// 위 코드는 먼저 정보가 저장되있는지 확인하는 코드.
 			System.out.println("S:" + result);
 			if(result==null) {

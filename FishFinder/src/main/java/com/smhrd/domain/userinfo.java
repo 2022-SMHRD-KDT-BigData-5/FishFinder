@@ -16,10 +16,18 @@ public class userinfo {
 	private String kakao_email;
 	private String user_joindate;
 	private String user_type;
+	private String openID;
 	
 	public userinfo(String kakao_email) {
 		super();
 		this.kakao_email = kakao_email;
+	}
+
+	public userinfo(String kakao_name, String kakao_email, String openID) {
+		super();
+		this.kakao_name = kakao_name;
+		this.kakao_email = kakao_email;
+		this.openID = openID;
 	}
 	
 
