@@ -28,10 +28,9 @@
 				<!-- Header -->
 				<header id="header">
 					<!-- <a href="kakaolink://launch">카카오톡앱</a> -->
-					<h1>암행漁사</h1>
-					<img src="/assets/css/images/logo.png" alt="">
+					<img src="resources/assets/css/images/logo2.png" alt="">
 					<div class="joinbox">
-						<button class="joinbtn" onclick="login()">Continue with kakao</button>
+						<a href="https://kauth.kakao.com/oauth/authorize?client_id=594ae1b3ed146deb6d74549625ebeb66&redirect_uri=http://localhost:8083/fish/login&response_type=code" class="kakaoLogin"><img src="resources/assets/css/images/kakaoLogin.png"></a>
 					</div>
 				</header>
 				<!-- Footer -->
@@ -45,9 +44,13 @@
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
+<<<<<<< HEAD
 		
 		function login() {
 	           window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=594ae1b3ed146deb6d74549625ebeb66&redirect_uri=http://localhost:8083/fish/login&response_type=code"
 	       }
+=======
+			
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 	</script>
 </html>

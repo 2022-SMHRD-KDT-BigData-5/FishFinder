@@ -19,6 +19,9 @@
 	border: none;
 	padding: 2%;
 }
+.cont{
+    border-bottom: 1px solid #fff;
+}
 @media screen and (max-width: 736px){
     .question_box{
         width: 320px;
