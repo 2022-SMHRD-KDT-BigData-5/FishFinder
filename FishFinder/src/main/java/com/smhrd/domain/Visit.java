@@ -14,4 +14,5 @@ public class Visit {
 		super();
 		this.v_date = v_date;
 	}
+	
 }

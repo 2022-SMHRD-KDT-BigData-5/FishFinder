@@ -57,9 +57,12 @@
 	</servlet-mapping>
 	
 	<!-- 방문자 카운트 -->
-	<listener>        
-	    <listener-class>com.smhrd.domain.visitSessionListener</listener-class>    
-	</listener>
+ 	 <listener>
+    	<listener-class>com.smhrd.web.SessionUserCounter</listener-class>
+  	</listener>
+	<!--<listener>        
+		<listener-class>com.smhrd.web.VisitSessionListener</listener-class>    
+	</listener>-->
 
 
 </web-app>

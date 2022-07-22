@@ -92,6 +92,7 @@ public class userinfoCon {
 		session.setAttribute("kakaoN", userInfo.getKakao_name());
 		session.setAttribute("kakaoE", userInfo.getKakao_email());
 		session.setAttribute("access_Token", access_Token);
+		
 		// jsp에서 ${sessionScope.kakaoN}
 		
 		return "index";

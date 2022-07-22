@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import ="com.smhrd.web.SessionUserCounter" trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
 	Aerial by HTML5 UP
@@ -29,6 +32,13 @@
 					<img src="/assets/css/images/logo.png" alt="">
 					<!-- &nbsp;&bull;&nbsp; : 중앙 점 하나 -->
 					<h1>암행漁사</h1>
+					<form>
+						전체 : ${sessionScope.userId }   
+						<br>    
+						오늘 : ${sessionScope.todayCount }      
+						<br>
+						현재 접속자 수 : <%=SessionUserCounter.getCount()%>
+					</form>					
 					<nav>
 						<ul>
 							<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
@@ -48,7 +58,7 @@
 						<ul>
 							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
 							<li><a href="history.html" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="board.html" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/fish/communityList.do?viewPage=1" class="icon solid fa-list"><span class="label">Board</span></a></li>
 							<li><a href="#" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
 					</nav>
