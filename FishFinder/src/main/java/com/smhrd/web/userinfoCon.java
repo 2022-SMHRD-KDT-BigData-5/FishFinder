@@ -89,6 +89,7 @@ public class userinfoCon {
 		// session객체에 담긴 정보를 초기화
 		session.invalidate();
 		// 닉네임과 이메일, 토큰 session객체
+		session.setAttribute("user_num", userInfo.getUser_num());
 		session.setAttribute("kakaoN", userInfo.getKakao_name());
 		session.setAttribute("kakaoE", userInfo.getKakao_email());
 		session.setAttribute("access_Token", access_Token);
