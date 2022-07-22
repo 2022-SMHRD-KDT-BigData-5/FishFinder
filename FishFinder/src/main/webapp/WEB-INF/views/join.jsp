@@ -29,9 +29,9 @@
 				<header id="header">
 					<!-- <a href="kakaolink://launch">카카오톡앱</a> -->
 					<h1>암행漁사</h1>
-					<img src="/assets/css/images/logo.png" alt="">
+					<img src="/assets/css/images/logo2.png" alt="">
 					<div class="joinbox">
-						<button class="joinbtn" onclick="login()">Continue with kakao</button>
+						<a href="#" class="kakaoLogin" onclick="login()"><img src="/assets/css/images/kakaoLogin.png"></a>
 					</div>
 				</header>
 				<!-- Footer -->

@@ -22,11 +22,11 @@
          <div id="overlay"></div>
          <div id="main">
             <!-- Header -->
+            <img src="resources/assets/css/images/smallLogo.png" class="smallLogo">
             <header id="header">
                <!-- <a href="kakaolink://launch">카카오톡앱</a> -->
-               <img src="resources/assets/css/images/logo.png" alt="">
-               <!-- &nbsp;&bull;&nbsp; : 중앙 점 하나 -->
-               <h1>암행漁사</h1>
+               <img src="resources/assets/css/images/logo2.png" alt="">
+               <!-- <h1 class="mainTitle"></h1> -->
                <div class="preview_container" id="imagePreview">
                   <img class="img_thumbnail" id="show-picture" src="">
                </div>
