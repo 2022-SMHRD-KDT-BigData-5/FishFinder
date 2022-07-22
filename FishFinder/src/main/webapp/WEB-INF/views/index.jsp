@@ -25,7 +25,7 @@
             <img src="resources/assets/css/images/smallLogo.png" class="smallLogo">
             <header id="header">
                <!-- <a href="kakaolink://launch">카카오톡앱</a> -->
-               <img src="resources/assets/css/images/logo2.png" alt="">
+               <img src="resources/assets/css/images/logo2.png" alt="" class="mainLogo">
                <!-- <h1 class="mainTitle"></h1> -->
                <div class="preview_container" id="imagePreview">
                   <img class="img_thumbnail" id="show-picture" src="">
