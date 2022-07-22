@@ -25,7 +25,7 @@
     
     <!-- 카카오 회원가입 -->
     <insert id="KakaoJoin" parameterType="com.smhrd.domain.userinfo">
-        insert into user_info(kakao_name,kakao_email,user_joindate,openID) values(#{kakao_name},#{kakao_email},now(),#{openID})
+        insert into user_info(kakao_name,user_joindate,openID) values(#{kakao_name},now(),#{openID})
     </insert>
     
 

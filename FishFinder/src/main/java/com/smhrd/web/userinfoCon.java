@@ -89,6 +89,7 @@ public class userinfoCon {
 		// session객체에 담긴 정보를 초기화
 		session.invalidate();
 		// 닉네임과 이메일, 토큰 session객체
+		session.setAttribute("user_num", userInfo.getUser_num());
 		session.setAttribute("kakaoN", userInfo.getKakao_name());
 		session.setAttribute("kakaoE", userInfo.getKakao_email());
 		session.setAttribute("access_Token", access_Token);
@@ -120,14 +121,8 @@ public class userinfoCon {
         // 이렇게 file의 get 메소드를 활용해 필요한 정보들을 가져오고 
         // 그걸 DTO에 담아 insert하면 된다. 
         // 간단한거니 후의 과정은 생략하고 파일로 서버에 저장하는 걸 보자면
-        userinfo kakaoEVo= new userinfo(kakaoE);
-        userinfo uvo = um.KakaoUser(kakaoEVo);
+
         
-        int user_num = uvo.getUser_num();
-        String fish_img = "c:/tmp/"+file.getOriginalFilename();
-        
-        userhistory hvo = new userhistory(user_num, fish_img);
-        hm.historyInsert(hvo);
 
         try (
                 // 맥일 경우
