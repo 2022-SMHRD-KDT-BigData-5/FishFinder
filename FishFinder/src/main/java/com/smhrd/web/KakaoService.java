@@ -122,14 +122,13 @@ public class KakaoService {
 				id = element.getAsJsonObject().get("id").getAsString();
 				
 				String nickname = properties.getAsJsonObject().get("nickname").getAsString();
-				String email = kakao_account.getAsJsonObject().get("email").getAsString();
+
 				
 				System.out.println("뽑아낸 닉네임 : " + nickname);
-				System.out.println("뽑아낸 이메일 : " + email);
+
 				System.out.println("뽑아낸 openID : " + id);
 				
 				vo.setKakao_name(nickname);
-				vo.setKakao_email(email);
 				vo.setOpenID(id);
 				
 			} catch (IOException e) {

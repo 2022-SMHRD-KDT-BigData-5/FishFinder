@@ -49,7 +49,5 @@
 		function login() {
 	           window.location.href = "https://kauth.kakao.com/oauth/authorize?client_id=594ae1b3ed146deb6d74549625ebeb66&redirect_uri=http://localhost:8083/fish/login&response_type=code"
 	       }
-
-		
 	</script>
 </html>
