@@ -13,10 +13,12 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/qna.css" />
-		<link rel="stylesheet" href="assets/css/view.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="resource/assets/css/main.css" />
+		<link rel="stylesheet" href="resource/assets/css/qna.css" />
+		<link rel="stylesheet" href="resource/assets/css/view.css" />
+		<!--<noscript>
+			<link rel="stylesheet" href="resource/assets/css/noscript.css" />
+		</noscript>-->
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<script src="/assets/js/view.js"></script>
@@ -50,9 +52,9 @@
 							<div class="comments_menu">
 								<!-- 수정 삭제는 내 글에서만 -->
 								<div class="view_md">
-									<a href="goUpdate(${community.article_seq})" class="view_modify" value="${community.article_seq}">수정</a>
-									<a href="goDelete(${community.article_seq})" class="view_delete" value="${community.article_seq}">삭제</a>
-									<a href="goList()">목록</a>
+									<a href='javascript:(${community.article_seq})' class="view_modify" value="${community.article_seq}">수정</a>
+									<a href='javascript:goDelete(${community.article_seq})' class="view_delete" value="${community.article_seq}">삭제</a>
+									<a href='javascript:goList()'>목록</a>
 									<a href="#here"><span class="write_comments">댓글쓰기</span></a>
 								</div>
 							</div>
@@ -135,24 +137,21 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-</html>eta charset="UTF-8">
-<title>Insert title here</title>
+	<script type="text/javascript">
+		//목록가기
+		function goList(){
+			location.href = '/fish/communityList.do';
+		}
+		// 삭제하기
+		function goDelete(article_seq){
+			console.log(article_seq);
+			location.href = '/fish/communityDelete.do?article_s eq=' + article_seq;
+		}
+		// 수정하기
+		function goUpdate(article_seq){		
+			location.href = '/fish/communityGoUpdate.do?article_seq=' + article_seq;
+		}	
+	</script>
+</html>
 </head>
-<body>
-<script type="text/javascript">
-	//목록가기
-	function goList(){
-		location.href = '/fish/communityList.do';
-	}
-	// 삭제하기
-	function goDelete(article_seq){
-		console.log(article_seq);
-		location.href = '/fish/communityDelete.do?article_s eq=' + article_seq;
-	}
-	// 수정하기
-	function goUpdate(article_seq){		
-		location.href = '/fish/communityGoUpdate.do?article_seq=' + article_seq;
-	}	
-</script>
-</body>
 </html>

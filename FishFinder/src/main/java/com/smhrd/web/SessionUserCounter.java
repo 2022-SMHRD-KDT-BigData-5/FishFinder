@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.smhrd.domain.Visit;
+import com.smhrd.domain.userinfo;
 import com.smhrd.mapper.userCountMapper;
 
 public class SessionUserCounter implements HttpSessionListener {
@@ -18,8 +19,8 @@ public class SessionUserCounter implements HttpSessionListener {
   
   @Autowired
   userCountMapper mapper;
-  
   Visit vo = new Visit();
+  userinfo userInfo= new userinfo(); 
   
   public static int getCount() {
     return count;
@@ -32,11 +33,40 @@ public class SessionUserCounter implements HttpSessionListener {
     if(session.getId() != null) {
     	count ++;
     	logger.error("\n\tSESSION CREATED : {}, TOTAL ACCESSER : {}", session.getId(), count);
-    	mapper.setTotalCount(vo);
+    	// mapper.getTotalCount();
+    	if(event.getSession().isNew()) {
+    		execute(event);
+    	}
     }else {
     	logger.error("\n\t세션실패ㅠㅠ : {}, TOTAL ACCESSER : {}", session.getId(), count);
     }
   }
+  
+  private void execute(HttpSessionEvent event) {
+	  
+	  VisitCount count = VisitCount.getInstance();
+	  
+	  try {
+		  	System.out.println("트라이 들어옴");
+		  	// 전체 방문자 증가
+		  	count.setTotalCount();
+		  	System.out.println("전체 방문자");
+		  	// 총 방문자 수 증가
+		  	int totalCount = count.getTotalCount();		  	
+		  	// 오늘 방문자 수 증가
+		  	int todayCount = count.getTodayCount();
+		  	
+		  	HttpSession session = event.getSession();
+		  	// 방문자수 세션
+		  	session.setAttribute("totalCount", totalCount);
+		  	session.setAttribute("todayCount", todayCount);
+		  	System.out.println("====================카운트 성공==================");
+	  } catch(Exception e){
+		  System.out.println("================방문자 카운트 오류=================");
+		  e.printStackTrace();
+	  }
+  }
+    
 
   @Override
   public void sessionDestroyed(HttpSessionEvent event) {

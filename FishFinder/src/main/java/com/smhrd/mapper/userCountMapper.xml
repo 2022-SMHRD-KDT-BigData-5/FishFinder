@@ -9,7 +9,7 @@
     
     <!-- 총방문자 수 증가를 위해 현재 날짜 추가 -->
     <insert id="setTotalCount">
-        insert into visit (v_date) values(now())
+        insert into visit(v_date) values(NOW())
     </insert>
     
     <!-- 총 방문자수 가져오기 -->
@@ -20,7 +20,7 @@
     <!-- 오늘 방문자수 가져오기 -->
     <select id="getTodayCount" resultType="Integer">
         select count(*) as todayCnt from visit
-        where to_date(v_date, 'YYYY-MM-DD')=to_date(now(), 'YYYY-MM-DD')
+        where to_date(v_date)=to_date(now())
     </select>
 
     

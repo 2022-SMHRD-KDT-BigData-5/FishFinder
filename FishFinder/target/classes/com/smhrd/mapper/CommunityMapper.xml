@@ -9,6 +9,7 @@
     <!-- 모든 커뮤니티 글 가져오기 -->
     <select id="communityList" resultType="com.smhrd.domain.Community">
        select * from community_info order by article_date desc
+       limit #{startIndex}, #{endIndex}
     </select>
  	
     <!-- 커뮤니티 글 작성 -->

@@ -27,5 +27,7 @@ public class Community {
 	private int viewPage = 1;
 	private int startIndex = 1;
 	private int endIndex = 10;
+	private int unit = 10;
+
 	
 }

@@ -30,7 +30,7 @@
 					<td>조회수</td>
 				</tr>
 				</thead>
-				<c:set var="cnt" value="${startRowNo}"/>
+				<c:set var="cnt" value="1"/>
 				<c:forEach var="list" items="${list}">
 				<tr>
 					<td><c:out value="${cnt}"/></td>
@@ -39,24 +39,40 @@
 					<td><a href='javascript:open(${list.article_seq})'><c:out value="${list.article_title}"/></a></td>
 					<td id="count${list.article_seq}"><c:out value="${list.article_cnt}"/></td>
 				</tr>
+				<c:set var="cnt" value="${cnt+1}"/>
 				</c:forEach>
-				<c:set var="cnt" value="${cnt-1}"/>
 				<caption>
 					<div>커뮤니티 목록</div>
 					<div>Total : ${total}</div>
 				</caption>
 			</table>
 			<div>
-				<c:forEach var="i" begin="1" end="${totalPage}">
-					<a href="communityList.do?viewPage=${i}">${i}</a>	
-				</c:forEach>		
+			<div id="outter">
+			<div style="display: block; text-align: center;">		
+				<c:if test="${startIndex != 1 }">
+					<a href="/boardList?viewPage=${startIndex-1}&cntPerPage=${unit}" tabindex="-1" aria-disabled="true">Previous</a>
+				</c:if>
+				<c:forEach begin="1" end="${totalPage}" var="i">
+				<c:choose>
+					<c:when test="${i == viewPage}">
+						<b>${i}</b>
+					</c:when>
+					<c:when test="${i != viewPage}">
+						<a href="communityList.do?viewPage=${i}&cntPerPage=${unit}">${i}</a>
+					</c:when>
+				</c:choose>
+			</c:forEach>
+			<c:if test="${endIndex < lastPage}">
+				<a href="/boardList?viewPage=${endIndex+1}&cntPerPage=${unit}" aria-disabled="true">Next</a>
+			</c:if>
+			</div>	
 			</div>
 			<button onclick=" location.href='communityInsert.do' " class="btn btn-sm btn-success">작성</button>			
 			</div>
 		<div class="panel-footer">빅데이터12차 김승현</div>
 		</div>
 	</div>
-<script type="text/javascript" src="resources/js/community.js">"
-</script>
+<script type="text/javascript" src="resources/js/community.js"></script>
+
 </body>
 </html>

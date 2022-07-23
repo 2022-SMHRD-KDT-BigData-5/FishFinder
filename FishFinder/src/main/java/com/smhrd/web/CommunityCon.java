@@ -23,13 +23,14 @@ public class CommunityCon {
 	
 	@RequestMapping("/communityList.do")
 	public String communityList(Community vo, Model model) {
-		
-		int unit = 10;
+		int unit = vo.getUnit();
+		int cntPage = 5; // 페이징 구간에 보이는 숫자 갯수
 		// 총 데이터 개수
 		int total = mapper.selectCommunityTotal(vo);
 	
 		int totalPage = (int)Math.ceil((double)total/unit);
 		int viewPage = vo.getViewPage();
+		int lastPage = (int)Math.ceil(((double)viewPage/(double)cntPage)*unit);
 		
 		int startIndex = (viewPage - 1) * unit + 1;
 		int endIndex = startIndex + (unit - 1);
@@ -41,8 +42,9 @@ public class CommunityCon {
 		
 		List<Community> list = mapper.communityList(vo);
 		
-		model.addAttribute("startRowNo", startRowNo);
+		model.addAttribute("unit", unit);
 		model.addAttribute("list", list);
+		model.addAttribute("startRowNo", startRowNo);
 		model.addAttribute("total", total);
 		model.addAttribute("totalPage", totalPage);
 		return "communityList";
