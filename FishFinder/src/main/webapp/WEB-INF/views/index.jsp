@@ -10,38 +10,36 @@
    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Aerial by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="resources/assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
-		<!-- fontawesome token -->
-		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
-		<!--main js-->
-		<script src="resources/assets/js/main.js"></script>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
-				<!-- Header -->
-				<header id="header">
-					<!-- <a href="kakaolink://launch">카카오톡앱</a> -->
-					<img src="/assets/css/images/logo.png" alt="">
-					<!-- &nbsp;&bull;&nbsp; : 중앙 점 하나 -->
-					<h1>암행漁사</h1>
-					<form>
+   <head>
+      <title>Aerial by HTML5 UP</title>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+      <link rel="stylesheet" href="resources/assets/css/main.css" />
+      <noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
+      <!-- fontawesome token -->
+      <script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
+   </head>
+   <body class="is-preload">
+      <div id="wrapper">
+         <div id="bg"></div>
+         <div id="overlay"></div>
+         <div id="main">
+            <!-- Header -->
+            <img src="resources/assets/css/images/smallLogo.png" class="smallLogo">
+            <header id="header">
+               <!-- <a href="kakaolink://launch">카카오톡앱</a> -->
+               <img src="resources/assets/css/images/logo2.png" alt="" class="mainLogo">
+               <!-- <h1 class="mainTitle"></h1> -->
+               <div class="preview_container" id="imagePreview">
+                  <img class="img_thumbnail" id="show-picture" src="">
+               </div>
+               <form>
 						전체 : ${session.totalCount }   
 						<br>    
 						오늘 : ${session.todayCount }      
 						<br>
 						현재 접속자 수 : <%=SessionUserCounter.getCount()%>
 				</form>
-               <div class="preview_container" id="imagePreview">
-                  <img class="img_thumbnail" id="show-picture" src="">
-               </div>
                <nav>
                   <ul>                  
                      <!-- 카메라 호출 -->
