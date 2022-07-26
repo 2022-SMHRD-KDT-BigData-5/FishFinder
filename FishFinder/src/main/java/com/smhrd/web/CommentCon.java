@@ -27,7 +27,7 @@ public class CommentCon {
 			@PathVariable("article_seq") int article_seq) {
 		List<Comment> clist = cmapper.commentContent(article_seq);
 		model.addAttribute("clist", clist);
-		return "communityContent";
+		return "view";
 	}
 	// Comment 등록
 	@PostMapping("/commInsert")
