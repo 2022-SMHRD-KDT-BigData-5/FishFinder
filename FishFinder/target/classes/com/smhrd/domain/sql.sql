@@ -35,3 +35,32 @@ select * from
        			
 select * from community_info order by article_date desc 
 limit #{startIndex} , #{endIndex};
+
+
+SELECT * FROM community_info ORDER BY article_date DESC
+
+SELECT B.* FROM 
+      	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
+			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
+		WHERE RN > (#{nowPage}-1)*#{cntPerPage} and RN <= #{nowPage}*#{cntPerPage}
+		
+SELECT * FROM 
+      	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
+			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
+		WHERE RN BETWEEN #{start} AND #{end}	
+		
+		
+SELECT COUNT(article_seq) FROM comment where user_num = (select user_num from user_info)	
+
+SELECT COUNT(comment_seq) FROM comment 
+        where article_seq = (select article_seq from community_info where article_seq=1)
+        
+select * from comment where article_seq = 1
+
+SELECT B.* FROM 
+      	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
+			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
+		WHERE RN BETWEEN 1 AND 10
+		
+SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
+			(SELECT * FROM community_info ORDER BY article_date DESC) A WHERE RN BETWEEN 1 AND 10

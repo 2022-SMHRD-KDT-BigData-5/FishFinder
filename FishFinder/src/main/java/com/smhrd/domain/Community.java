@@ -10,8 +10,10 @@ import lombok.RequiredArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @RequiredArgsConstructor
-public class Community {
-
+public class Community{
+	
+	Paging paging = new Paging();
+	
 	private int article_seq;	
 	private String article_title;
 	@NonNull
@@ -23,11 +25,6 @@ public class Community {
 	private String article_file2;	
 	private int article_cnt;
 	private int article_report;
-
-	private int viewPage = 1;
-	private int startIndex = 1;
-	private int endIndex = 10;
-	private int unit = 10;
-
-	
+	private int start = paging.getStart();
+	private int end = paging.getEnd();
 }

@@ -17,9 +17,24 @@
 <body>
 	<div class="container">
 		<h2>FishFinde22</h2>
+		<div id="outter">
+		<div style="float: right;">
+		<select id="cntPerPage" name="sel" onchange="selChange()">
+			<option value="5"
+				<c:if test="${paging.cntPerPage == 5}">selected</c:if>>5줄 보기</option>
+			<option value="10"
+				<c:if test="${paging.cntPerPage == 10}">selected</c:if>>10줄 보기</option>
+			<option value="15"
+				<c:if test="${paging.cntPerPage == 15}">selected</c:if>>15줄 보기</option>
+			<option value="20"
+				<c:if test="${paging.cntPerPage == 20}">selected</c:if>>20줄 보기</option>
+		</select>
+		</div> <!-- 옵션선택 끝 -->
 		<div class="panel panel-default">
 		<div class="panel-heading">Panel Heading</div>
 		<div class="panel-body">
+			<div>커뮤니티 목록</div>
+			<div>Total : ${paging.total}</div>
 			<table class="table table-bordered table-hover">
 				<thead>
 				<tr>
@@ -30,7 +45,7 @@
 					<td>조회수</td>
 				</tr>
 				</thead>
-				<c:set var="cnt" value="1"/>
+				<c:set var="cnt" value="${paging.startRowNum }"/>
 				<c:forEach var="list" items="${list}">
 				<tr>
 					<td><c:out value="${cnt}"/></td>
@@ -41,38 +56,42 @@
 				</tr>
 				<c:set var="cnt" value="${cnt+1}"/>
 				</c:forEach>
-				<caption>
-					<div>커뮤니티 목록</div>
-					<div>Total : ${total}</div>
-				</caption>
 			</table>
 			<div>
 			<div id="outter">
 			<div style="display: block; text-align: center;">		
-				<c:if test="${startIndex != 1 }">
-					<a href="/boardList?viewPage=${startIndex-1}&cntPerPage=${unit}" tabindex="-1" aria-disabled="true">Previous</a>
+				<c:if test="${paging.startPage != 1 }">
+					<a href="/viewList?nowPage=${paging.startPage-1}&cntPerPage=${paging.cntPerPage}" tabindex="-1" aria-disabled="true">Previous</a>
 				</c:if>
-				<c:forEach begin="1" end="${totalPage}" var="i">
+				<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="i">
 				<c:choose>
-					<c:when test="${i == viewPage}">
+					<c:when test="${i == paging.nowPage}">
 						<b>${i}</b>
 					</c:when>
-					<c:when test="${i != viewPage}">
-						<a href="communityList.do?viewPage=${i}&cntPerPage=${unit}">${i}</a>
+					<c:when test="${i != paging.nowPage}">
+						<a href="/viewList.do?nowPage=${i}&cntPerPage=${paging.cntPerPage}">${i}</a>
 					</c:when>
 				</c:choose>
 			</c:forEach>
-			<c:if test="${endIndex < lastPage}">
-				<a href="/boardList?viewPage=${endIndex+1}&cntPerPage=${unit}" aria-disabled="true">Next</a>
+			<c:if test="${paging.endPage != paging.lastPage}">
+				<a href="/viewList?nowPage=${paging.endPage+1}&cntPerPage=${paging.cntPerPage}" aria-disabled="true">Next</a>
 			</c:if>
 			</div>	
 			</div>
 			<button onclick=" location.href='communityInsert.do' " class="btn btn-sm btn-success">작성</button>			
 			</div>
-		<div class="panel-footer">빅데이터12차 김승현</div>
+			<div class="panel-footer">빅데이터12차 김승현</div>
 		</div>
 	</div>
+</div>
+</div>	
 <script type="text/javascript" src="resources/js/community.js"></script>
+<script>
+	function selChange() {
+		var sel = document.getElementById('cntPerPage').value;
+		location.href="/viewList?nowPage=${paging.nowPage}&cntPerPage="+sel;
+	}
+</script>
 
 </body>
 </html>

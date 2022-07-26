@@ -9,10 +9,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.smhrd.domain.Comment;
 import com.smhrd.domain.Community;
+import com.smhrd.domain.Paging;
 import com.smhrd.mapper.CommunityMapper;
+import com.smhrd.mapper.commentMapper;
 
 @Controller
 public class CommunityCon {
@@ -20,34 +24,35 @@ public class CommunityCon {
 	@Autowired
 	CommunityMapper mapper;
 	
+	@Autowired
+	commentMapper cmapper;
+		
 	
-	@RequestMapping("/communityList.do")
+	@RequestMapping("/view")
 	public String communityList(Community vo, Model model) {
-		int unit = vo.getUnit();
-		int cntPage = 5; // 페이징 구간에 보이는 숫자 갯수
-		// 총 데이터 개수
-		int total = mapper.selectCommunityTotal(vo);
-	
-		int totalPage = (int)Math.ceil((double)total/unit);
-		int viewPage = vo.getViewPage();
-		int lastPage = (int)Math.ceil(((double)viewPage/(double)cntPage)*unit);
-		
-		int startIndex = (viewPage - 1) * unit + 1;
-		int endIndex = startIndex + (unit - 1);
-		
-		int startRowNo = total - (viewPage-1)*unit;
-		
-		vo.setStartIndex(startIndex);
-		vo.setEndIndex(endIndex);
-		
-		List<Community> list = mapper.communityList(vo);
-		
-		model.addAttribute("unit", unit);
+		List<Community> list = mapper.communityList(vo);		
 		model.addAttribute("list", list);
-		model.addAttribute("startRowNo", startRowNo);
-		model.addAttribute("total", total);
-		model.addAttribute("totalPage", totalPage);
-		return "communityList";
+		return "viewList";
+	}
+		
+	@GetMapping("/viewList")
+	public String viewList(Paging pvo, Model model
+		, @RequestParam(value="nowPage", required=false)String nowPage
+			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
+		int total = mapper.countBoard();
+		if (nowPage == null && cntPerPage == null) {
+			nowPage = "1";
+			cntPerPage = "5";
+		} else if (nowPage == null) {
+			nowPage = "1";
+		} else if (cntPerPage == null) { 
+			cntPerPage = "5";
+		}
+		pvo = new Paging(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+		model.addAttribute("paging", pvo);
+		//List<Community> list = mapper.communityList(pvo);
+		model.addAttribute("list", mapper.pagingList(pvo));
+		return "listPaging";
 	}
 		
 	// community 작성하기 -> 폼화면 불러오기
@@ -60,16 +65,16 @@ public class CommunityCon {
 	@PostMapping("/communityInsert.do")
 	public String communityInsert(Community vo, MultipartFile file) {		
 		mapper.communityInsert(vo);
-		return "redirect:/communityList.do";
+		return "redirect:/viewList.do";
 	}
 	
-	// 선택한 community로 이동
-	@RequestMapping("communityContent.do/{article_seq}")
-	public String communityContent(Model model, @PathVariable("article_seq") int article_seq) {
-		Community vo = mapper.communityContent(article_seq);		
-		System.out.println("제목 : " + vo.getArticle_title());
+	// 선택한 community로 이동 -> 댓글 불로오기로 이동
+	@GetMapping("communityContent.do/{article_seq}")
+	public String communityContent(Model model,
+			@PathVariable("article_seq") int article_seq) {
+		Community vo = mapper.communityContent(article_seq);	
 		model.addAttribute("community", vo);		
-		return "communityContent";
+		return "commentList";
 	}
 	
 	// community 삭제
@@ -77,7 +82,7 @@ public class CommunityCon {
 	public String communityDelete( @PathVariable("article_seq") int article_seq) {
 		System.out.println("번호 : " + article_seq);
 		mapper.communityDelete(article_seq);		
-		return "redirect:/communityList.do";
+		return "redirect:/viewList.do";
 	}
 	
 	// community수정 페이지로 이동
@@ -92,7 +97,7 @@ public class CommunityCon {
 	@PostMapping("/communityUpdate.do")
 	public String communityUpdate(Community vo) {		
 		mapper.communityUpdate(vo);
-		return "redirect:/communityList.do";
+		return "redirect:/viewList.do";
 	}
 	
 		

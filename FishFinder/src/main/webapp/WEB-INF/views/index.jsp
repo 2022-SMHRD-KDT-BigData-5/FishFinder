@@ -63,7 +63,7 @@
 						<ul>
 							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
 							<li><a href="history.html" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="/fish/communityList.do?viewPage=1" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
 							<li><a href="#" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
 					</nav>

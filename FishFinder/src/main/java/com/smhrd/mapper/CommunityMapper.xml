@@ -6,15 +6,32 @@
   
 <mapper namespace="com.smhrd.mapper.CommunityMapper">
 
-    <!-- 모든 커뮤니티 글 가져오기 -->
+    <!-- 총 게시글 갯수 출력 -->
+	<select id="countBoard" resultType="integer">
+		SELECT COUNT(*) FROM community_info
+	</select>
+    
+	<!-- 모든 커뮤니티 글 가져오기 -->
     <select id="communityList" resultType="com.smhrd.domain.Community">
-       select * from community_info order by article_date desc
-       limit #{startIndex}, #{endIndex}
+    <![CDATA[
+			SELECT * FROM community_info ORDER BY article_date DESC
+    ]]>
+    </select>
+	
+    <!-- 글 페이징 -->
+    <select id="pagingList" resultType="com.smhrd.domain.Community">
+    <![CDATA[
+      SELECT * FROM 
+      	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
+			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
+			WHERE RN BETWEEN #{start} AND #{end}
+    ]]>
     </select>
  	
     <!-- 커뮤니티 글 작성 -->
     <insert id="communityInsert" parameterType="com.smhrd.domain.Community">
-        insert into community_info(article_title,article_content,article_date,user_num) values(#{article_title},#{article_content},now(),#{user_num})
+        insert into community_info(article_title,article_content,article_date,user_num) 
+        values(#{article_title},#{article_content},now(),#{user_num})
     </insert>
     
     <!-- 특정 커뮤니티 글 가져오기 -->
@@ -37,9 +54,5 @@
         delete from community_info where article_seq=#{article_seq}
     </delete>
     
-    <!-- 총 게시물 수(페이징) -->
-    <select	id="selectCommunityTotal" resultType="Integer">
-        select count(*) total from community_info
-    </select>
   
 </mapper>

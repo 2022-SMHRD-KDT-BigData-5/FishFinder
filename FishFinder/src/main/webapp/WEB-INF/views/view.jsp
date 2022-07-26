@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
 	Aerial by HTML5 UP
@@ -29,11 +31,11 @@
 					<h1>View</h1>
 					<div class="qna_box">
 						<div class="view_scroll">
-							<div class="view_title">벌써 5시 반</div>
+							<div class="view_title">${ requestScope.community.article_title }</div>
 							<div class="view_writer">김건우</div>
 							<div class="view_dvc">
-								<span class="view_date">2022-07-13 </span>
-								<span class="view_views">조회수 1234 </span>
+								<span class="view_date">${ fn:split(community.article_date, " ")[0] }</span>
+								<span class="view_views">${ community.article_cnt }</span>
 								<span class="view_comments">댓글 123</span>
 							</div>
 							<div class="view_content">
@@ -41,74 +43,35 @@
 									<img src="https://cdn.pixabay.com/photo/2018/04/15/17/45/fish-3322230_960_720.jpg" class="view_img">
 								</div>
 								<div class="content">
-								글 내용<br>글 내용<br>글 내용<br>
-								글 내용<br>글 내용<br>글 내용<br>
+									<% pageContext.setAttribute("newLine", "\n"); %>
+									${ fn:replace( community.article_content, newLine, "<br>") }
 								</div>
 							</div>
 							<div class="comments_menu">
 								<!-- 수정 삭제는 내 글에서만 -->
 								<div class="view_md">
-									<a href="#" class="view_modify">수정</a>
-									<a href="#" class="view_delete">삭제</a>
-									<a href="#" class="view_report">신고</a>
+									<a href='javascript:(${community.article_seq})' class="view_modify" value="${community.article_seq}">수정</a>
+									<a href='javascript:goDelete(${community.article_seq})' class="view_delete" value="${community.article_seq}">삭제</a>
+									<a href='javascript:goList()'>목록</a>
 									<a href="#here"><span class="write_comments">댓글쓰기</span></a>
 								</div>
 							</div>
 							<div class="comments_box">
-								<div class="comments_writer">김아무개</div>
+								<div class="comments_writer" value="${clist.user_num}">${clist.user_num}</div>
 								<div class="comments_content">
-									댓글 내용<br>댓글 내용<br>댓글 내용
+									${fn:replace(clist.comment_content, newLine, "<br>")}
 								</div>
 								<div class="comments_dmd">
-									<div class="comments_date">2022-07-19</div>
+									<div class="comments_date">${fn:split(clist.comment_date, " ")[0]}</div>
 									<div class="comments_md">
-										<a href="#" class="comments_modify">수정</a>
-										<a href="#" class="comments_delete" onclick="commDel()">삭제</a>
-									</div>
-								</div>
-							</div>
-							<div class="comments_box">
-								<div class="comments_writer">김아무개</div>
-								<div class="comments_content">
-									댓글 내용<br>댓글 내용<br>댓글 내용
-								</div>
-								<div class="comments_dmd">
-									<div class="comments_date">2022-07-19</div>
-									<div class="comments_md">
-										<a href="#" class="comments_modify">수정</a>
-										<a href="#" class="comments_delete" onclick="commDel()">삭제</a>
-									</div>
-								</div>
-							</div>
-							<div class="comments_box">
-								<div class="comments_writer">김아무개</div>
-								<div class="comments_content">
-									댓글 내용<br>댓글 내용<br>댓글 내용
-								</div>
-								<div class="comments_dmd">
-									<div class="comments_date">2022-07-19</div>
-									<div class="comments_md">
-										<a href="#" class="comments_modify">수정</a>
-										<a href="#" class="comments_delete" onclick="commDel()">삭제</a>
-									</div>
-								</div>
-							</div>
-							<div class="comments_box">
-								<div class="comments_writer">김아무개</div>
-								<div class="comments_content">
-									댓글 내용<br>댓글 내용<br>댓글 내용
-								</div>
-								<div class="comments_dmd">
-									<div class="comments_date">2022-07-19</div>
-									<div class="comments_md">
-										<a href="#" class="comments_modify">수정</a>
-										<a href="#" class="comments_delete" onclick="commDel()">삭제</a>
+										<a href="commUp(${comment.comment_seq})" class="comments_modify" value="${comment.comment_seq}">수정</a>
+										<a href="commDel(${comment.comment_seq})" class="comments_delete" value="${comment.comment_seq}">삭제</a>
 									</div>
 								</div>
 							</div>
 							<div class="comm_write_box">
 								<a name="here"><textarea class="comm_text"></textarea></a>
-								<button class="custom-btn btn-3"><span>등록</span></button>
+								<button onclick="commInsert(${community.article_seq})" class="custom-btn btn-3"><span>등록</span></button>
 							</div>
 						</div>
 					</div>
@@ -135,10 +98,32 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-</html>eta charset="UTF-8">
-<title>Insert title here</title>
+	<script type="text/javascript">
+		//목록가기
+		function goList(){
+			location.href = '/fish/viewList.do';
+		}
+		// 삭제하기
+		function goDelete(article_seq){
+			console.log(article_seq);
+			location.href = '/fish/communityDelete.do?article_seq=' + article_seq;
+		}
+		// 수정하기
+		function goUpdate(article_seq){		
+			location.href = '/fish/communityGoUpdate.do?article_seq=' + article_seq;
+		}
+		// 댓글삭제하기
+		function commDel(comment_seq){
+			location.href = '/fish/commDelete?comment_seq' + comment+seq;
+		}
+		// 댓글삭제하기
+		function commUp(comment_seq){
+			location.href = '/fish/commUpdate?comment_seq' + comment+seq;
+		}
+		//댓글 등록
+		function commInsert(article_seq){
+			location.href = 'fish/commInsert';
+		}
+	</script>
 </head>
-<body>
-
-</body>
 </html>
