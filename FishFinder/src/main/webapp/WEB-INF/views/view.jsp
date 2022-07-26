@@ -38,9 +38,9 @@
 							</div>
 							<div class="view_content">
 								<div class="view_image">
-									<img src="/assets/css/images/img_test.jpg" class="view_img">
+									<img src="https://cdn.pixabay.com/photo/2018/04/15/17/45/fish-3322230_960_720.jpg" class="view_img">
 								</div>
-								<div>
+								<div class="content">
 								글 내용<br>글 내용<br>글 내용<br>
 								글 내용<br>글 내용<br>글 내용<br>
 								</div>
@@ -50,6 +50,7 @@
 								<div class="view_md">
 									<a href="#" class="view_modify">수정</a>
 									<a href="#" class="view_delete">삭제</a>
+									<a href="#" class="view_report">신고</a>
 									<a href="#here"><span class="write_comments">댓글쓰기</span></a>
 								</div>
 							</div>
@@ -122,8 +123,10 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-				</footer>
+	               <span class="copyright"><a href="join.html">Logout</a>.</span>
+	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
+	               <span class="copyright"><a href="admin.html">Admin</a>.</span>
+	            </footer>
 			</div>
 		</div>
 	</body>

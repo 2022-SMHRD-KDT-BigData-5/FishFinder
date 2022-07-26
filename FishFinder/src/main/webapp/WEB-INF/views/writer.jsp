@@ -60,8 +60,10 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-				</footer>
+	               <span class="copyright"><a href="join.html">Logout</a>.</span>
+	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
+	               <span class="copyright"><a href="admin.html">Admin</a>.</span>
+	            </footer>
 			</div>
 		</div>
 	</body>
