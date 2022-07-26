@@ -15,8 +15,8 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="logo-apple"></ion-icon></span>
-                        <span class="title">Brand Name</span>
+                        <span class="icon"><ion-icon name="#"></ion-icon></span>
+                        <span class="title">암행漁사</span>
                     </a>
                 </li>
                 <li>
@@ -25,12 +25,14 @@
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
+                <!-- 
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></ion-icon></span>
                         <span class="title">Customers</span>
                     </a>
                 </li>
+                 -->
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>
@@ -43,18 +45,22 @@
                         <span class="title">Q&A</span>
                     </a>
                 </li>
+                <!--
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                         <span class="title">Settings</span>
                     </a>
                 </li>
+                 -->
+                <!-- 
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                         <span class="title">Password</span>
                     </a>
                 </li>
+                 -->
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
@@ -77,10 +83,11 @@
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
-                <!-- user -->
+                <!-- user
                 <div class="user">
                     <img src="/arm/assets/css/images/user.jpg">
                 </div>
+                 -->
             </div>
 
             <!-- cards -->
