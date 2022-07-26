@@ -35,22 +35,24 @@
                      <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
-                     <!-- 카메라 호출 -->
-                     <li>
-                        <a><label class="input-file-button" for="inputFile"><i class="icon solid fa-camera"></i></label></a>
-                        <input type="file" accept="image/*" capture="camera" id="inputFile" style="display:none"/>
-                     </li>
-                     <!-- 이미지 호출 -->
-                     <li>
-                        <a><label class="input-file-button2" for="images" id="call_image"><i class="icon solid fa-image"></i></label></a>
-                        <!-- <input type="file" accept="image/*" id="input-file" style="display:none"/> -->
-                        <input type="file" name="images[]" id="images" accept="image/*" multiple="multiple" style="display:none">
-                     </li>
-                     <!-- 이미지 전송 -->
-                     <li>
-                        <a><label class="input-file-button2" for="submit_img" id="submit_image"><i class="icon solid fa-check"></i></label></a>
-                        <input type="submit" id="submit_img" style="display: none;">
-                     </li>
+                     <form action="/fish/upload" method="post">
+                     	<!-- 카메라 호출 -->
+	                    <li>
+	                        <a><label class="input-file-button" for="inputFile"><i class="icon solid fa-camera"></i></label></a>
+	                        <input type="file" name="file" accept="image/*" capture="camera" id="inputFile" style="display:none"/>
+	                    </li>
+	                    <!-- 이미지 호출 -->
+	                    <li>
+	                        <a><label class="input-file-button2" for="images" id="call_image"><i class="icon solid fa-image"></i></label></a>
+	                        <!-- <input type="file" accept="image/*" id="input-file" style="display:none"/> -->
+	                        <input type="file" name="file" id="images" accept="image/*" multiple="multiple" style="display:none">
+	                    </li>
+	                    <!-- 이미지 전송 -->
+	                    <li>
+	                    	<a><label class="input-file-button2" for="submit_img" id="submit_image"><i class="icon solid fa-check"></i></label></a>
+	                        <input type="submit" id="submit_img" style="display: none;">
+	                 	</li>
+                     </form>
                   </ul>
                   <br>
                   <ul>
