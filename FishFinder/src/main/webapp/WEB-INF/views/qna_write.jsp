@@ -30,8 +30,8 @@
 						<div class="board_write">
 							<div class="title">
 								<dl class="title_flex">
-									<dt>제목 : </dt>
-									<input type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요.">
+									<!-- <dt>제목 : </dt>
+									<input type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요."> -->
 								</dl>
 							</div>
 							<div class="cont">
