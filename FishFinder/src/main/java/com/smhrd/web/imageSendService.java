@@ -10,6 +10,7 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.StringHttpMessageConverter;
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.AsyncRestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,6 +19,7 @@ import com.google.gson.JsonObject;
 import com.smhrd.domain.userhistory;
 import com.smhrd.mapper.userhistoryMapper;
 
+@Service
 public class imageSendService {
 
 	
