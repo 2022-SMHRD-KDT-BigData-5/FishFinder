@@ -12,6 +12,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -55,6 +56,8 @@ public class userinfoCon {
 	KakaoService ks;
 	@Autowired
 	userhistoryMapper hm;
+	@Autowired
+	imageSendService is;
 	
 	@RequestMapping("/")
 	public String test() {
@@ -98,11 +101,6 @@ public class userinfoCon {
 		return "index";
     }
 	
-	@RequestMapping("/message")
-	public String message() {
-		return "message";
-	}
-	
 	@RequestMapping("/historyList/{user_num}")
 	public String historyList(Model model, @PathVariable("user_num") int user_num) {
 		userhistory list = (userhistory)hm.userhistory(user_num);
@@ -111,48 +109,39 @@ public class userinfoCon {
 	}
 	
 	@PostMapping("/upload")
-    public String upload(@RequestParam("file") MultipartFile file, String kakaoE) {
+    public void upload(@RequestParam("file") MultipartFile file) {
  
+		int user_num = (Integer)session.getAttribute("user_num");
+		String access_Token = (String)session.getAttribute("access_Token");
+		
         System.out.println("파일 이름 : " + file.getOriginalFilename());
         System.out.println("파일 크기 : " + file.getSize());
-        System.out.println("사용자 이메일 : " + kakaoE);
-        // 데이터 베이스에 정보를 저장하는 건
-        // 이렇게 file의 get 메소드를 활용해 필요한 정보들을 가져오고 
-        // 그걸 DTO에 담아 insert하면 된다. 
-        // 간단한거니 후의 과정은 생략하고 파일로 서버에 저장하는 걸 보자면
+        System.out.println("사용자 번호 : " + user_num);
 
+     // 실제 물리경로
+        String reaPath = "C:\\Users\\smhrd\\git\\FishFinder\\FishFinder\\src\\main\\webapp\\resources\\image\\"; 
         
+        LocalDate now = LocalDate.now();
+        String fileName = now + "_" +file.getOriginalFilename();
+        
+        userhistory vo = is.DBUpdate(fileName, user_num, reaPath);
 
-        try (
-                // 맥일 경우
-                // FileOutputStream fos = new FileOutputStream("/tmp/" +file.getOriginalFilename());
-                
-        		// 윈도우일 경우
-                FileOutputStream fos = new FileOutputStream("c:/tmp/" + file.getOriginalFilename());
-        		
-                // 파일 저장할 경로 + 파일명을 파라미터로 넣고 fileOutputStream 객체 생성하고
-                InputStream is = file.getInputStream();) {
-                // file로 부터 inputStream을 가져온다.
-            
-            int readCount = 0;
-            byte[] buffer = new byte[2048];
-            // 파일을 읽을 크기 만큼의 buffer를 생성하고
-            // ( 보통 1024, 2048, 4096, 8192 와 같이 배수 형식으로 버퍼의 크기를 잡는 것이 일반적이다.)
-            
-            while ((readCount = is.read(buffer)) != -1) {
-                //  파일에서 가져온 fileInputStream을 설정한 크기 (1024byte) 만큼 읽고
-                
-                fos.write(buffer, 0, readCount);
-                // 위에서 생성한 fileOutputStream 객체에 출력하기를 반복한다
-            }
-        } catch (Exception ex) {
-            throw new RuntimeException("file Save Error");
-        }
+        // File을 서버에 저장
+        is.ServerUpdate(file, reaPath, fileName);
+        // 프로젝트에 업로드된 이미지 프로젝트에 바로 적용하는 방법이 있는 주소
+        // 안하면 바로 업데이트 안돼서 기능 안댐
+        //https://record-than-remember.tistory.com/entry/%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-%ED%9B%84%EC%97%90-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%9E%90%EB%8F%99-refresh
+        
+        // 플라스크 서버 통신 (이미지 경로, 사용자 토큰)
+        is.Flask(vo.getFish_img(), access_Token, vo.getHis_seq());
+        
  
-        return "base";
     }
 
-	
+	@RequestMapping("/result")
+	public String message() {
+		return "result";
+	}
 	
 	
 	

@@ -9,5 +9,9 @@ public interface userhistoryMapper {
 	
 	public int historyInsert(userhistory vo);
 	
+	public int last_insert_id();
+	
+	public userhistory historyPk(int his_seq);
+	
 	
 }
