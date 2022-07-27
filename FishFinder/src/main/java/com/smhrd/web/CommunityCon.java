@@ -105,7 +105,7 @@ public class CommunityCon {
 	@PostMapping("/communityUpdate.do")
 	public String communityUpdate(Community vo) {		
 		mapper.communityUpdate(vo);
-		return "redirect:/viewList.do";
+		return "redirect:/view";
 	}
 	
 		
