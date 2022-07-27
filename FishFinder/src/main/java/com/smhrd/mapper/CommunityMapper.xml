@@ -19,14 +19,14 @@
     </select>
 	
     <!-- 글 페이징 -->
-    <select id="pagingList" resultType="com.smhrd.domain.Community">
+    <!--<select id="pagingList" resultType="com.smhrd.domain.Community">
     <![CDATA[
       SELECT * FROM 
       	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
 			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
 			WHERE RN BETWEEN #{start} AND #{end}
     ]]>
-    </select>
+    </select>-->
  	
     <!-- 커뮤니티 글 작성 -->
     <insert id="communityInsert" parameterType="com.smhrd.domain.Community">

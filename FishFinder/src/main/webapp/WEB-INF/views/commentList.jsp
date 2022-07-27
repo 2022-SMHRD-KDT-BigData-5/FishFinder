@@ -32,7 +32,7 @@
 					<div class="qna_box">
 						<div class="view_scroll">
 							<div class="view_title">${ requestScope.community.article_title }</div>
-							<div href='/fish/getname' class="view_writer">${getname}</div>
+							<div class="view_writer">김건우</div>
 							<div class="view_dvc">
 								<span class="view_date">${ fn:split(community.article_date, " ")[0] }</span>
 								<span class="view_views">${ community.article_cnt }</span>

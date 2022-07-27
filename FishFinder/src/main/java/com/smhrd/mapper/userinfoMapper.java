@@ -17,5 +17,7 @@ public interface userinfoMapper {
 	public userinfo KakaoLogin(String id);
 	
 	public int KakaoJoin(userinfo vo);
+	
+	public String usernameGet(int user_num);
 
 }
