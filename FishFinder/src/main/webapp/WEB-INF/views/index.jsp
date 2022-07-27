@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import ="com.smhrd.web.SessionUserCounter" trimDirectiveWhitespaces="true" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
    Aerial by HTML5 UP
@@ -33,17 +30,12 @@
                <div class="preview_container" id="imagePreview">
                   <img class="img_thumbnail" id="show-picture" src="">
                </div>
-               <form>
-						전체 : ${session.totalCount }   
-						<br>    
-						오늘 : ${session.todayCount }      
-						<br>
-						현재 접속자 수 : <%=SessionUserCounter.getCount()%>
-				</form>
+               <nav>
+                  <ul>
                      <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
-                     <form action="/fish/upload" method="post">
+                     <form action="/fish/upload" method="post" enctype="multipart/form-data">
                      	<!-- 카메라 호출 -->
 	                    <li>
 	                        <a><label class="input-file-button" for="inputFile"><i class="icon solid fa-camera"></i></label></a>
@@ -53,7 +45,7 @@
 	                    <li>
 	                        <a><label class="input-file-button2" for="images" id="call_image"><i class="icon solid fa-image"></i></label></a>
 	                        <!-- <input type="file" accept="image/*" id="input-file" style="display:none"/> -->
-	                        <input type="file" name="file" id="images" accept="image/*" multiple="multiple" style="display:none">
+	                        <input type="file" name="file2" id="images" accept="image/*" multiple="multiple" style="display:none">
 	                    </li>
 	                    <!-- 이미지 전송 -->
 	                    <li>
@@ -61,6 +53,7 @@
 	                        <input type="submit" id="submit_img" style="display: none;">
 	                 	</li>
                      </form>
+                  </ul>
                   <br>
                   <ul>
                      <li><a href="index.jsp" class="icon solid fa-home"><span class="label">Home</span></a></li>
@@ -81,9 +74,4 @@
    </body>
    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
    <script src="resources/assets/js/main.js"></script>
-   	<script>
-		window.onload = function() { document.body.classList.remove('is-preload'); }
-		window.ontouchmove = function() { return false; }
-		window.onorientationchange = function() { document.body.scrollTop = 0; }
-	</script>
 </html>

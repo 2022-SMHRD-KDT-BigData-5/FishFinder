@@ -78,12 +78,7 @@ public class userinfoCon {
 
 		return "board";
 	}
-	@RequestMapping("/history")
-	public String history() {
-		
-
-		return "history";
-	}
+	
 	@RequestMapping("/index")
 	public String index() {
 		
@@ -108,12 +103,7 @@ public class userinfoCon {
 
 		return "qna";
 	}
-	@RequestMapping("/view")
-	public String view() {
-		
 
-		return "view";
-	}
 	@RequestMapping("/viewList")
 	public String viewList() {
 		
@@ -174,15 +164,14 @@ public class userinfoCon {
 		return "redirect:/";
 	}
 	
-	@RequestMapping("/historyList/{user_num}")
-	public String historyList(Model model, @PathVariable("user_num") int user_num) {
-		userhistory list = (userhistory)hm.userhistory(user_num);
-		model.addAttribute("list",list);
-		return "historyList";
-	}
 	
 	@PostMapping("/upload")
-    public String upload(@RequestParam("file") MultipartFile file, Model model) {
+    public String upload(@RequestParam("file") MultipartFile file,@RequestParam("file2") MultipartFile file2, Model model) {
+		
+		if(file.getOriginalFilename().equals("")) {
+			file = file2;
+			System.out.println("if 파일 이름 : " + file.getOriginalFilename());
+		}
  
 		int user_num = (Integer)session.getAttribute("user_num");
 		String access_Token = (String)session.getAttribute("access_Token");
@@ -197,7 +186,8 @@ public class userinfoCon {
         LocalDate now = LocalDate.now();
         String fileName = now + "_" +file.getOriginalFilename();
         
-        userhistory vo = is.DBUpdate(fileName, user_num, reaPath);
+        // file 경로와 유저 정보를 DB에 저장
+        userhistory vo = is.DBUpdate(fileName, user_num);
 
         // File을 서버에 저장
         is.ServerUpdate(file, reaPath, fileName);
@@ -206,19 +196,35 @@ public class userinfoCon {
         //https://record-than-remember.tistory.com/entry/%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-%ED%9B%84%EC%97%90-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%9E%90%EB%8F%99-refresh
         
         // 플라스크 서버 통신 (이미지 경로, 사용자 토큰)
-        int his_seq_res = is.Flask(vo.getFish_img(), access_Token, vo.getHis_seq());
+        //int his_seq_res = 
+        is.Flask(vo.getFish_img(), access_Token, vo.getHis_seq());
         
-        userhistory resultVo = hm.historyPk(his_seq_res);
-        model.addAttribute("resultVo", resultVo);
+        //위 Flask 함수에서 일어날 일들이 다 이뤄지고 다음 줄로 넘어가면 좋겠는데 
         
-        return "redirect:/result?his_seq="+his_seq_res;
+        
+        return "redirect:/result/"+vo.getHis_seq();
     }
-
-	@RequestMapping("/result")
+	
+	
+	
+	// AI분석 후, 히스토리에서 접근
+	@RequestMapping("/result/{his_seq}")
 	public String result(@PathVariable("his_seq") int his_seq, Model model) {
 		userhistory his_vo = hm.historyPk(his_seq);
 		model.addAttribute("his_vo",his_vo);
+		
+		System.out.println(his_vo.getResult());
+		
 		return "result";
+	}
+	
+	//내 히스토리 보기
+	@RequestMapping("/history")
+	public String history(Model model) {
+		int user_num = (int) session.getAttribute("user_num");
+		List<userhistory> his_list = hm.userhistory(user_num);
+		model.addAttribute("his_list", his_list);
+		return "history";
 	}
 	
 	

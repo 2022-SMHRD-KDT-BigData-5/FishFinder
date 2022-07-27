@@ -30,8 +30,8 @@ public class imageSendService {
 	userhistoryMapper hm;
 
 	
-	
-	public userhistory DBUpdate(String fileName, int user_num, String reaPath) {
+	 // file 경로와 유저 정보를 DB에 저장
+	public userhistory DBUpdate(String fileName, int user_num) {
 		
         userhistory hvo = new userhistory(user_num, fileName);
         hm.historyInsert(hvo);
@@ -44,7 +44,7 @@ public class imageSendService {
         return vo;
 	}
 	
-	
+	// File을 서버에 저장
 	public void ServerUpdate(MultipartFile file, String reaPath, String fileName) {
 		
 		 try (
@@ -75,9 +75,9 @@ public class imageSendService {
         
 	}
 	@JsonIgnore
-    public int Flask(String Fish_img, String access_Token, int his_seq) {
+    public void Flask(String Fish_img, String access_Token, int his_seq) {
 		//url
-		String url = "http://121.147.52.236:9000/fish/Flask";
+		String url = "http://localhost:9000/fish/Flask";
 		
 		// 비동기 전달
         AsyncRestTemplate restTemplate = new AsyncRestTemplate(); // 비동기 전달
@@ -98,11 +98,13 @@ public class imageSendService {
         HttpEntity<String> logRequest = new HttpEntity<>(jsonObject.toString(), httpHeaders);
         System.out.println(logRequest);
         // post 요청
-        ResponseEntity<Map> res = (ResponseEntity<Map>) restTemplate.postForEntity(url, logRequest, Map.class);
-        Map result = res.getBody();
-        int his_seq_res = (Integer) result.get("his_seq");
+        restTemplate.postForEntity(url, logRequest, Map.class);
         
-        return his_seq_res;
+//        ResponseEntity<Map> res = (ResponseEntity<Map>) 
+//        Map result = res.getBody();
+//        int his_seq_res = (Integer) result.get("his_seq");
+//        
+//        return his_seq_res;
 
     }
 }
