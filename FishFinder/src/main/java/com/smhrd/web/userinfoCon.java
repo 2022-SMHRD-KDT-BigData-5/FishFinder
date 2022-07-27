@@ -16,6 +16,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import javax.servlet.RequestDispatcher;
@@ -65,13 +66,68 @@ public class userinfoCon {
 
 		return "join";
 	}
-//	@RequestMapping("/index")
-//	public String index() {
-//		
-//
-//		return "index";
-//	}
-	
+	@RequestMapping("/admin")
+	public String admin() {
+		
+
+		return "admin";
+	}
+	@RequestMapping("/board")
+	public String board() {
+		
+
+		return "board";
+	}
+	@RequestMapping("/history")
+	public String history() {
+		
+
+		return "history";
+	}
+	@RequestMapping("/index")
+	public String index() {
+		
+
+		return "index";
+	}
+	@RequestMapping("/listPaging")
+	public String listPaging() {
+		
+
+		return "listPaging";
+	}
+	@RequestMapping("/qna_write")
+	public String qna_write() {
+		
+
+		return "qna_write";
+	}
+	@RequestMapping("/qna")
+	public String qna() {
+		
+
+		return "qna";
+	}
+	@RequestMapping("/view")
+	public String view() {
+		
+
+		return "view";
+	}
+	@RequestMapping("/viewList")
+	public String viewList() {
+		
+
+		return "viewList";
+	}
+	@RequestMapping("/writer")
+	public String writer() {
+		
+
+		return "writer";
+	}
+
+
 	
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String testloginsuc(@RequestParam(value = "code", required = false) String code,Model model) throws Exception {
@@ -96,10 +152,27 @@ public class userinfoCon {
 		session.setAttribute("kakaoN", userInfo.getKakao_name());
 		session.setAttribute("kakaoE", userInfo.getKakao_email());
 		session.setAttribute("access_Token", access_Token);
+		
 		// jsp에서 ${sessionScope.kakaoN}
 		
 		return "index";
     }
+	
+	@RequestMapping(value="/logout")
+	public String access(HttpSession session) throws IOException {
+		
+		KakaoService conn = KakaoService.getInstance();
+		String access_Token = (String)session.getAttribute("access_Token");
+		
+		String access_token = (String)session.getAttribute("access_token");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("Authorization", "Bearer "+ access_Token);
+		
+		String result = conn.HttpPostConnection("https://kapi.kakao.com/v1/user/logout", map).toString();
+		System.out.println(result);
+		
+		return "redirect:/";
+	}
 	
 	@RequestMapping("/historyList/{user_num}")
 	public String historyList(Model model, @PathVariable("user_num") int user_num) {
@@ -109,7 +182,7 @@ public class userinfoCon {
 	}
 	
 	@PostMapping("/upload")
-    public void upload(@RequestParam("file") MultipartFile file) {
+    public String upload(@RequestParam("file") MultipartFile file, Model model) {
  
 		int user_num = (Integer)session.getAttribute("user_num");
 		String access_Token = (String)session.getAttribute("access_Token");
@@ -133,16 +206,20 @@ public class userinfoCon {
         //https://record-than-remember.tistory.com/entry/%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-%ED%9B%84%EC%97%90-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%9E%90%EB%8F%99-refresh
         
         // 플라스크 서버 통신 (이미지 경로, 사용자 토큰)
-        is.Flask(vo.getFish_img(), access_Token, vo.getHis_seq());
+        int his_seq_res = is.Flask(vo.getFish_img(), access_Token, vo.getHis_seq());
         
- 
+        userhistory resultVo = hm.historyPk(his_seq_res);
+        model.addAttribute("resultVo", resultVo);
+        
+        return "redirect:/result?his_seq="+his_seq_res;
     }
 
 	@RequestMapping("/result")
-	public String message() {
+	public String result(@PathVariable("his_seq") int his_seq, Model model) {
+		userhistory his_vo = hm.historyPk(his_seq);
+		model.addAttribute("his_vo",his_vo);
 		return "result";
 	}
-	
 	
 	
 

@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
+import org.springframework.util.concurrent.ListenableFuture;
 import org.springframework.web.client.AsyncRestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -52,7 +54,8 @@ public class imageSendService {
 	        		// 윈도우일 경우
 	                FileOutputStream fos = new FileOutputStream(reaPath+fileName);
 	                // 파일 저장할 경로 + 파일명을 파라미터로 넣고 fileOutputStream 객체 생성하고
-	                InputStream is = file.getInputStream();) {
+	                InputStream is = file.getInputStream();
+				 ) {
 	                // file로 부터 inputStream을 가져온다.
 	            
 	            int readCount = 0;
@@ -72,7 +75,7 @@ public class imageSendService {
         
 	}
 	@JsonIgnore
-    public void Flask(String Fish_img, String access_Token, int his_seq) {
+    public int Flask(String Fish_img, String access_Token, int his_seq) {
 		//url
 		String url = "http://121.147.52.236:9000/fish/Flask";
 		
@@ -95,7 +98,11 @@ public class imageSendService {
         HttpEntity<String> logRequest = new HttpEntity<>(jsonObject.toString(), httpHeaders);
         System.out.println(logRequest);
         // post 요청
-        restTemplate.postForEntity(url, logRequest, Map.class);
+        ResponseEntity<Map> res = (ResponseEntity<Map>) restTemplate.postForEntity(url, logRequest, Map.class);
+        Map result = res.getBody();
+        int his_seq_res = (Integer) result.get("his_seq");
+        
+        return his_seq_res;
 
     }
 }
