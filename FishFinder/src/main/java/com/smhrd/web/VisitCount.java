@@ -15,18 +15,6 @@ public class VisitCount {
 	@Autowired
 	userCountMapper mapper;
 	
-	private static VisitCount instance;
-	
-	// 싱글톤 패턴
-	private VisitCount() {}
-	
-	public static VisitCount getInstance() {
-		if(instance == null) {
-			instance = new VisitCount();
-		}
-		return instance;
-	}
-	
 	// 날짜값 추가 
 	public void setTotalCount() {
 		System.out.println("셋 토탈 카운트");

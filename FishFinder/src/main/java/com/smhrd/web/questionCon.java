@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.smhrd.domain.Comment;
-import com.smhrd.domain.Community;
 import com.smhrd.domain.questionBoard;
 import com.smhrd.mapper.questionMapper;
 
@@ -27,7 +25,7 @@ public class questionCon {
 	public String questionList(questionBoard qvo, Model model) {
 		List<questionBoard> qlist = qmapper.questionList(qvo);		
 		model.addAttribute("qlist", qlist);
-		return "questionList";
+		return "qna";
 	}
 	
 	// 질문 조회수 수정
@@ -67,7 +65,7 @@ public class questionCon {
 		return "redirect:/qna.do";
 	}
 	
-	// community수정 페이지로 이동
+	// 문의 수정 페이지로 이동
 	@RequestMapping("/questionGoUpdate.do")
 	public String questionGoUpdate(Model model, int q_seq) {		
 		questionBoard qvo = qmapper.questionView(q_seq);
@@ -75,7 +73,7 @@ public class questionCon {
 		return "questionUpdate";
 	}
 	
-	// community 수정 후 DB에 업데이트
+	// 문의 수정 후 DB에 업데이트
 	@PostMapping("/questionUpdate.do")
 	public String questionUpdate(questionBoard qvo) {		
 		qmapper.questionUpdate(qvo);

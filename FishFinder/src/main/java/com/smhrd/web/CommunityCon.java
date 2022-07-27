@@ -78,6 +78,13 @@ public class CommunityCon {
 		return "commentList";
 	}
 	
+	// 커뮤니티 조회수 수정
+	@RequestMapping("/communityCntUpdate.do") 
+	public int communityCntUpdate(Community vo){
+		int cnt = mapper.communityCntUpdate(vo);
+		return cnt;
+	}
+	
 	// community 삭제
 	@RequestMapping("/communityDelete.do")
 	public String communityDelete( @PathVariable("article_seq") int article_seq) {

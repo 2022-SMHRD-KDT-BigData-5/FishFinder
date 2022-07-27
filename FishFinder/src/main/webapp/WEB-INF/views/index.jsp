@@ -30,6 +30,13 @@
                <div class="preview_container" id="imagePreview">
                   <img class="img_thumbnail" id="show-picture" src="">
                </div>
+               <!-- 지울부분 -->
+               	<br>
+               	오늘 접속 수 : ${sessionScope.todayCount}
+               	<br>
+               	총 접속자 수 : ${sessionScope.totalCount}
+               	<br>
+               <!-- 지울부분  끝-->
                <nav>
                   <ul>
                      <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
@@ -59,7 +66,7 @@
                      <li><a href="index.jsp" class="icon solid fa-home"><span class="label">Home</span></a></li>
                      <li><a href="history.jsp" class="icon solid fa-history"><span class="label">History</span></a></li>
                      <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
-                     <li><a href="qna.jsp" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+                     <li><a href="/fish/questionview" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
                   </ul>
                </nav>
             </header>

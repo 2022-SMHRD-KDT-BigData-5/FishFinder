@@ -67,3 +67,8 @@ SELECT B.* FROM
 		
 SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
 			(SELECT * FROM community_info ORDER BY article_date DESC) A WHERE RN BETWEEN 1 AND 10
+			
+update question_board set q_status=1 
+        where q_seq=(select q_seq from question_board where q_seq (insert into answer_info(q_seq) values (1)))			
+        
+update question_board set q_status=1 where q_seq=1

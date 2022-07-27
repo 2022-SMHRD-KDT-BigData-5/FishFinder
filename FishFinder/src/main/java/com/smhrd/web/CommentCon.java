@@ -25,7 +25,7 @@ public class CommentCon {
 	@GetMapping("/commentList/{article_seq}")
 	public String communityContent(Comment cvo, Model model,
 			@PathVariable("article_seq") int article_seq) {
-		List<Comment> clist = cmapper.commentContent(article_seq);
+		List<Comment> clist = cmapper.commentList(article_seq);
 		model.addAttribute("clist", clist);
 		return "view";
 	}
@@ -37,7 +37,7 @@ public class CommentCon {
 	}
 	
 	// Comment 삭제
-	@RequestMapping("/commDelete")
+	@RequestMapping("/{commet_seq}")
 	public String commentDelete( @PathVariable("comment_seq") int comment_seq) {
 		System.out.println("번호 : " + comment_seq);
 		cmapper.commentDelete(comment_seq);		
@@ -51,7 +51,7 @@ public class CommentCon {
 	}
 	
 	// Comment 수정 후 DB에 업데이트
-	@PostMapping("/commUpdate")
+	@PostMapping("/{commet_seq}")
 	public String commentUpdate(Comment cvo) {
 		cmapper.commentUpdate(cvo);
 		return "redirect:/communityContent.do/{article_seq}";

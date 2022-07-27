@@ -18,8 +18,8 @@ public class answerInfo {
 	
 	private int a_seq;
 	private int q_seq;
-	private Text a_content;
 	@NonNull
+	private String a_content;
 	private String a_file;
 	private Date a_date;
 	private int answer_num;

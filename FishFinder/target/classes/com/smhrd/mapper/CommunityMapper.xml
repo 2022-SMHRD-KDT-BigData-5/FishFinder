@@ -13,9 +13,7 @@
     
 	<!-- 모든 커뮤니티 글 가져오기 -->
     <select id="communityList" resultType="com.smhrd.domain.Community">
-    <![CDATA[
-			SELECT * FROM community_info ORDER BY article_date DESC
-    ]]>
+			SELECT * FROM community_info ORDER BY article_date DESC    
     </select>
 	
     <!-- 글 페이징 -->

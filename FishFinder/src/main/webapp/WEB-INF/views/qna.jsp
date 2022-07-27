@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
@@ -38,14 +38,22 @@
 							<ul>
 								<li>
 									<div class="qna_qa">
-									<c:set var="cnt" value="1"/>
 									<c:forEach var="qlist" items="${qlist}">
-										<div class="qna_q" id="clickQ-${cnt}"><span id="clickQ-1-toggle">+</span>
-											<span class="qna_title">${qlist.q_title}
-											<div class="qna_date" id='date${qlist.q_date}'>${ fn:split(qlist.q_date, " ")[0]}</div></span></div>
-										<div class="qna_a" id="showA-1" >A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
-									<c:set var="cnt" value="${cnt+1}"/>
+										<div class="qna_q" id="clickQ-${cnt}"><span  id="clickQ-1-toggle" value="${qlist.q_seq}">+</span>
+											<span class="qna_title">
+											<c:choose>
+												<c:when test="${fn:length(qlist.q_content) > 20}">
+													<c:out value="${fn:substring(qlist.q_content,0,19)}"/>...				
+												</c:when>
+												<c:otherwise>
+													<c:out value="${qlist.q_content}"/>
+												</c:otherwise>
+											</c:choose>
+											</span>
+											<div class="qna_date" id='date${qlist.q_date}'>${ fn:split(qlist.q_date, " ")[0]}</div>
+										</div>
 									</c:forEach>
+										<div class="qna_a" id="showA-1" >${answer.a_content}</div>
 									</div>
 								</li>
 							</ul>
