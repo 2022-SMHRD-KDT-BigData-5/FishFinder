@@ -125,8 +125,8 @@ public class KakaoService {
 				
 				String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 
-				
 				System.out.println("뽑아낸 닉네임 : " + nickname);
+
 				System.out.println("뽑아낸 openID : " + id);
 				
 				vo.setKakao_name(nickname);

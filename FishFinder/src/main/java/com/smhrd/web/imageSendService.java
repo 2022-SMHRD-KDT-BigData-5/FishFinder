@@ -52,7 +52,8 @@ public class imageSendService {
 	        		// 윈도우일 경우
 	                FileOutputStream fos = new FileOutputStream(reaPath+fileName);
 	                // 파일 저장할 경로 + 파일명을 파라미터로 넣고 fileOutputStream 객체 생성하고
-	                InputStream is = file.getInputStream();) {
+	                InputStream is = file.getInputStream();
+				 ) {
 	                // file로 부터 inputStream을 가져온다.
 	            
 	            int readCount = 0;
