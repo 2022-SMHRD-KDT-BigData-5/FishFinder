@@ -5,6 +5,12 @@
     font-style: normal;
     transform: skew(-1deg);
 }
+@font-face {
+    font-family: 'OTWelcomeBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 /* meter tag */
 meter {
 	margin-top: 20px;
@@ -76,6 +82,7 @@ meter {
     display: none;
   }
 .result_font{
-	margin-top: 1%;
 	margin-bottom: 1%;
+	font-family: 'OTWelcomeBA';
+	font-size: large;
 }
