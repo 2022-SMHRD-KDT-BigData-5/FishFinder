@@ -55,6 +55,7 @@
 									</c:forEach>
 										<div class="qna_a" id="showA-1" >${answer.a_content}</div>
 									</div>
+									<a href="qna_answer.html" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>
 								</li>
 							</ul>
 						</div>
