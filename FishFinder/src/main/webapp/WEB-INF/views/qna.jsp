@@ -11,8 +11,8 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/qna.css" />
+		<link rel="stylesheet" href="resources/assets/css/main.css" />
+		<link rel="stylesheet" href="resources/assets/css/qna.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
@@ -39,6 +39,8 @@
 										<div class="qna_q" id="clickQ-1"><span id="clickQ-1-toggle">+</span><span class="qna_title">Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
 										<div class="qna_a" id="showA-1">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
 									</div>
+									<!-- 답변하기 -->
+									<a href="qna_answer.html" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>
 								</li>
 								<li>
 									<div class="qna_qa">
