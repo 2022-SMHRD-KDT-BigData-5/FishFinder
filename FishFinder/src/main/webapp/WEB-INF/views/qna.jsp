@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
 	Aerial by HTML5 UP
@@ -36,47 +38,24 @@
 							<ul>
 								<li>
 									<div class="qna_qa">
-										<div class="qna_q" id="clickQ-1"><span id="clickQ-1-toggle">+</span><span class="qna_title">Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-1">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
+									<c:forEach var="qlist" items="${qlist}">
+										<div class="qna_q" id="clickQ-${cnt}"><span  id="clickQ-1-toggle" value="${qlist.q_seq}">+</span>
+											<span class="qna_title">
+											<c:choose>
+												<c:when test="${fn:length(qlist.q_content) > 20}">
+													<c:out value="${fn:substring(qlist.q_content,0,19)}"/>...				
+												</c:when>
+												<c:otherwise>
+													<c:out value="${qlist.q_content}"/>
+												</c:otherwise>
+											</c:choose>
+											</span>
+											<div class="qna_date" id='date${qlist.q_date}'>${ fn:split(qlist.q_date, " ")[0]}</div>
+										</div>
+									</c:forEach>
+										<div class="qna_a" id="showA-1" >${answer.a_content}</div>
 									</div>
-									<!-- 답변하기 -->
 									<a href="qna_answer.html" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>
-								</li>
-								<li>
-									<div class="qna_qa">
-										<div class="qna_q" id="clickQ-2"><span id="clickQ-2-toggle">+</span><span>Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-2">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
-									</div>
-								</li>
-								<li>
-									<div class="qna_qa">
-										<div class="qna_q" id="clickQ-3"><span id="clickQ-3-toggle">+</span><span>Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-3">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
-									</div>
-								</li>
-								<li>
-									<div class="qna_qa">
-										<div class="qna_q" id="clickQ-4"><span id="clickQ-4-toggle">+</span><span>Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-4">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
-									</div>
-								</li>
-								<li>
-									<div class="qna_qa">
-										<div class="qna_q" id="clickQ-5"><span id="clickQ-5-toggle">+</span><span>Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-5">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
-									</div>
-								</li>
-								<li>
-									<div class="qna_qa">
-										<div class="qna_q" id="clickQ-6"><span id="clickQ-6-toggle">+</span><span>Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-6">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
-									</div>
-								</li>
-								<li>
-									<div class="qna_qa">
-										<div class="qna_q" id="clickQ-7"><span id="clickQ-7-toggle">+</span><span>Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-7">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
-									</div>
 								</li>
 							</ul>
 						</div>

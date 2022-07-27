@@ -31,29 +31,30 @@ public class CommunityCon {
 	@RequestMapping("/view")
 	public String communityList(Community vo, Model model) {
 		List<Community> list = mapper.communityList(vo);		
+		int total = mapper.countBoard();
 		model.addAttribute("list", list);
+		model.addAttribute("total", total);
 		return "viewList";
 	}
 		
-	@GetMapping("/viewList")
-	public String viewList(Paging pvo, Model model
-		, @RequestParam(value="nowPage", required=false)String nowPage
-			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
-		int total = mapper.countBoard();
-		if (nowPage == null && cntPerPage == null) {
-			nowPage = "1";
-			cntPerPage = "5";
-		} else if (nowPage == null) {
-			nowPage = "1";
-		} else if (cntPerPage == null) { 
-			cntPerPage = "5";
-		}
-		pvo = new Paging(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
-		model.addAttribute("paging", pvo);
-		//List<Community> list = mapper.communityList(pvo);
-		model.addAttribute("list", mapper.pagingList(pvo));
-		return "listPaging";
-	}
+//	@GetMapping("/viewList")
+//	public String viewList(Paging pvo, Model model
+//		, @RequestParam(value="nowPage", required=false)String nowPage
+//			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
+//		if (nowPage == null && cntPerPage == null) {
+//			nowPage = "1";
+//			cntPerPage = "5";
+//		} else if (nowPage == null) {
+//			nowPage = "1";
+//		} else if (cntPerPage == null) { 
+//			cntPerPage = "5";
+//		}
+//		pvo = new Paging(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+//		model.addAttribute("paging", pvo);
+//		//List<Community> list = mapper.communityList(pvo);
+//		model.addAttribute("list", mapper.pagingList(pvo));
+//		return "listPaging";
+//	}
 		
 	// community 작성하기 -> 폼화면 불러오기
 	@GetMapping("/communityInsert.do")
@@ -77,6 +78,13 @@ public class CommunityCon {
 		return "commentList";
 	}
 	
+	// 커뮤니티 조회수 수정
+	@RequestMapping("/communityCntUpdate.do") 
+	public int communityCntUpdate(Community vo){
+		int cnt = mapper.communityCntUpdate(vo);
+		return cnt;
+	}
+	
 	// community 삭제
 	@RequestMapping("/communityDelete.do")
 	public String communityDelete( @PathVariable("article_seq") int article_seq) {
@@ -97,7 +105,7 @@ public class CommunityCon {
 	@PostMapping("/communityUpdate.do")
 	public String communityUpdate(Community vo) {		
 		mapper.communityUpdate(vo);
-		return "redirect:/viewList.do";
+		return "redirect:/view";
 	}
 	
 		

@@ -20,7 +20,7 @@
     <!-- 오늘 방문자수 가져오기 -->
     <select id="getTodayCount" resultType="Integer">
         select count(*) as todayCnt from visit
-        where to_date(v_date)=to_date(now())
+        where v_date > DATE_ADD(now(), interval -24 hour)
     </select>
 
     

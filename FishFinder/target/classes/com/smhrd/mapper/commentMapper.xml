@@ -14,7 +14,12 @@
     </insert>
     
     <!-- 댓글 가져오기 -->
-    <select id="commentContent" resultType="com.smhrd.domain.Comment">
+    <select id="commentview" resultType="com.smhrd.domain.Comment">
+        select * from comment where comment_seq = #{comment_seq}
+    </select>
+    
+    <!-- 특정 게시물 댓글 가져오기 -->
+    <select id="commentList" resultType="com.smhrd.domain.Comment">
         select * from comment where article_seq = #{article_seq}
     </select>
 	
@@ -32,7 +37,7 @@
     <!-- 댓글 수정 -->
     <update id="commentUpdate" parameterType="com.smhrd.domain.Comment">
         update comment set comment_content=#{comment_content}, comment_date=now() 
-        where comment_seq=#{comment_seq}, user_num=#{user_num}, comment_seq=#{comment_seq}
+        where comment_seq=#{comment_seq}
     </update>
     
 </mapper>
