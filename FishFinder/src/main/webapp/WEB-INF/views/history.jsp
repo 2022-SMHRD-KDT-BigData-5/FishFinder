@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
 	Aerial by HTML5 UP
@@ -28,147 +29,23 @@
 					<h1>HISTORY</h1>
 					<div class="history_box">
 						<ul>
-							<!-- a태그가 기록 하나 -->
-							<a href="result.html" class="his_list">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
-							<a href="result.html">
-								<li class="history_list">
-									<div class="preview_img">
-										<img class="history_img" src="/assets/css/images/img_test.jpg" alt="">
-									</div>
-									<div class="history_tnd">
-										<div class="history_title">95.6% 감성돔입니다.</div>
-										<div class="history_date">2022-07-13</div>
-									</div>
-									<div class="history_dnn">
-										<button id="his_del" onclick="hisDel()" class="history_delete">삭제</button>
-									</div>
-								</li>
-							</a>
+							<c:forEach var="his_list" items="${his_list}">
+				               <a href="result?his_seq=${his_list.his_seq }" class="his_list">
+				                  <li class="history_list">
+				                     <div class="preview_img">
+				                        <img class="history_img" src="${pageContext.request.contextPath}/image/${his_list.fish_img }"
+				                           alt="">
+				                     </div>
+				                     <div class="history_tnd">
+				                        <div class="history_title"><c:out value="${his_list.result }"/></div>
+				                        <div id="date${list.article_date}" class="history_date">${ fn:split(his_list.search_date, " ")[0]}</div>
+				                     </div>
+				                     <div class="history_dnn">
+				                        <button id="his_del" onclick="hisDel(${his_list.his_seq })" class="history_delete">삭제</button>
+				                     </div>
+				                  </li>
+				               </a>
+				            </c:forEach>
 						</ul>
 					</div>
 					<nav>
@@ -194,4 +71,16 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
+	   <script type="text/javascript">
+      
+	   function hisDel(his_seq){
+	      
+	      let bool = confirm('기록을 삭제 하시겠습니까?');
+	      if(bool ==true){
+	         location.href = '/fish/historyDel/'+his_seq;
+	      }
+	      
+	   }
+   
+   </script>
 </html>

@@ -35,7 +35,7 @@
                      <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
-                     <form action="/fish/upload" method="post">
+                     <form action="/fish/upload" method="post" enctype="multipart/form-data">
                      	<!-- 카메라 호출 -->
 	                    <li>
 	                        <a><label class="input-file-button" for="inputFile"><i class="icon solid fa-camera"></i></label></a>
