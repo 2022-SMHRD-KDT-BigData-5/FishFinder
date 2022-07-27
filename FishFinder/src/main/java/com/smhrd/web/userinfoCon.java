@@ -7,39 +7,21 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.time.LocalDate;
-import java.util.ArrayList;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletRequest;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import com.smhrd.domain.userhistory;
 import com.smhrd.domain.userinfo;
 import com.smhrd.mapper.userhistoryMapper;
@@ -178,6 +160,13 @@ public class userinfoCon {
 		return "result";
 	}
 	
+	@RequestMapping("/getname")
+	public String usernameGet(@PathVariable("user_num") int user_num, Model model) {
+		String getname = um.usernameGet(user_num);
+		model.addAttribute("getname",getname);
+		return "nameget";
+	}
+	
 	//내 히스토리 보기
 	@RequestMapping("/history")
 	public String history(Model model) {
@@ -186,10 +175,6 @@ public class userinfoCon {
 		model.addAttribute("his_list", his_list);
 		return "history";
 	}
-	
-	
-
-	
 	
 	
 }

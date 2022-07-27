@@ -9,7 +9,9 @@ public interface commentMapper {
 	// 댓글 쓰기
 	public int commentInsert(Comment cvo);
 	// 해당 게시물의 댓글 보기 -> CommunitCon에 같이 씀
-	public List<Comment> commentContent(int article_seq);
+	public List<Comment> commentList(int article_seq);
+	
+	public Comment commentview(int comment_seq);
 	// 댓글 수
 	public int commentCount(int article_seq);
 	// 댓글 삭제
