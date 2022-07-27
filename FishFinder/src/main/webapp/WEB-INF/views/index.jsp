@@ -42,7 +42,7 @@
                      <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
-                     <form action="/fish/upload" method="post" enctype="multipart/form-data">
+                     <form method="post" enctype="multipart/form-data">
                      	<!-- 카메라 호출 -->
 	                    <li>
 	                        <a><label class="input-file-button" for="inputFile"><i class="icon solid fa-camera"></i></label></a>
@@ -52,12 +52,12 @@
 	                    <li>
 	                        <a><label class="input-file-button2" for="images" id="call_image"><i class="icon solid fa-image"></i></label></a>
 	                        <!-- <input type="file" accept="image/*" id="input-file" style="display:none"/> -->
-	                        <input type="file" name="file" id="images" accept="image/*" multiple="multiple" style="display:none">
+	                        <input type="file" name="file2" id="images" accept="image/*" multiple="multiple" style="display:none">
 	                    </li>
 	                    <!-- 이미지 전송 -->
 	                    <li>
 	                    	<a><label class="input-file-button2" for="submit_img" id="submit_image"><i class="icon solid fa-check"></i></label></a>
-	                        <input type="submit" id="submit_img" style="display: none;">
+	                        <button type="button" onclick="fileUpload()" id="submit_img" style="display: none;">
 	                 	</li>
                      </form>
                   </ul>
@@ -81,4 +81,5 @@
    </body>
    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
    <script src="resources/assets/js/main.js"></script>
+   <script src="resources/assets/js/upload.js"></script>
 </html>
