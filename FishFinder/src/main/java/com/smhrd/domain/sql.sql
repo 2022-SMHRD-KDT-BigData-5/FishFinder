@@ -37,6 +37,9 @@ select * from community_info order by article_date desc
 limit #{startIndex} , #{endIndex};
 
 
+select count(*) as todayCnt from visit
+        where v_date > DATE_ADD(now(), interval -24 hour)
+
 SELECT * FROM community_info ORDER BY article_date DESC
 
 SELECT B.* FROM 

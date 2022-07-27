@@ -18,6 +18,8 @@ public class questionBoard {
 	@NonNull
 	private String q_title; // 질문 제목
 	private int user_num; // 질문한 회원
+	@NonNull
+	private String q_content; // 질문 내용
 	private Date q_date; // 질문 날짜
 	private int q_cnt; // 질문 조회수
 	private int q_status; // 질문 진행상태 (0->미답변, 1->답변완료)

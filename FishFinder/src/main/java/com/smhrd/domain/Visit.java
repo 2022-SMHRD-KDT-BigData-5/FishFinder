@@ -1,7 +1,6 @@
 package com.smhrd.domain;
 
-
-import java.sql.Timestamp;
+import java.util.Date;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,9 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Visit {
 	
-	private Timestamp v_date;
+	private Date v_date;
 
-	public Visit(Timestamp v_date) {
+	public Visit(Date v_date) {
 		super();
 		this.v_date = v_date;
 	}
