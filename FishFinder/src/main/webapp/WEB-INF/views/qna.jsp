@@ -11,8 +11,8 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/qna.css" />
+		<link rel="stylesheet" href="resources/assets/css/main.css" />
+		<link rel="stylesheet" href="resources/assets/css/qna.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@
 								<li>
 									<div class="qna_qa">
 										<div class="qna_q" id="clickQ-1"><span id="clickQ-1-toggle">+</span><span class="qna_title">Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-1">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
+										<div class="qna_a" id="showA-1"></div>
 									</div>
 								</li>
 								<li>
@@ -49,7 +49,7 @@
 								<li>
 									<div class="qna_qa">
 										<div class="qna_q" id="clickQ-3"><span id="clickQ-3-toggle">+</span><span>Q. 글자 제한 두기<div class="qna_date">2022-07-19</div></span></div>
-										<div class="qna_a" id="showA-3">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
+										<div class="qna_a" id="showA-3"></div>
 									</div>
 								</li>
 								<li>
@@ -97,7 +97,19 @@
 			</div>
 		</div>
 	</body>
+	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
+	$( document ).ready(function() {
+         if($('.qna_a').text()===""){
+        	 if(1===1){
+        		 
+        		 $(this).text("바보")
+        	 }
+         }
+
+	})
+	
+	
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
@@ -117,5 +129,13 @@
 		}
 
 		items.forEach(item => item.addEventListener('click', openCloseAnswer));
+		
+		
+	
 	</script>
+
+
+	
+	
+
 </html>
