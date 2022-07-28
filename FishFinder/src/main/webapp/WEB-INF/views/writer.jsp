@@ -37,7 +37,7 @@
 								</dl>
 							</div>
 							<div class="cont">
-								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요."></textarea>
+								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요.(최대 100글자 )" maxlength="100"></textarea>
 							</div>
 							<div class="upload_image">
 								<input type="file" name="images[]" id="inputImage" accept="image/*">
@@ -46,8 +46,8 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="/fish/view" class="icon solid fa-check"><span class="label">Check</span></a></li>
-								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
+								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
+								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>
 							</ul>
 						</nav>
 					</div>
