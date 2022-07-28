@@ -15,8 +15,6 @@ import lombok.RequiredArgsConstructor;
 public class questionBoard {
 
 	private int q_seq; // 질답 순번
-	@NonNull
-	private String q_title; // 질문 제목
 	private int user_num; // 질문한 회원
 	@NonNull
 	private String q_content; // 질문 내용

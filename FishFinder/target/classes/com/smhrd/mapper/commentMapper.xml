@@ -15,7 +15,7 @@
     
     <!-- 댓글 가져오기 -->
     <select id="commentview" resultType="com.smhrd.domain.Comment">
-        select * from comment where comment_seq = #{comment_seq}
+        select * from comment where article_seq = #{article_seq}
     </select>
     
     <!-- 특정 게시물 댓글 가져오기 -->
@@ -25,19 +25,19 @@
 	
     <!-- 댓글 수 -->
     <select id="commentCount" resultType="com.smhrd.domain.Comment">
-        SELECT COUNT(comment_seq) FROM comment 
-        where article_seq = (select article_seq from community_info where article_seq=#{article_seq})
+        SELECT COUNT(*) FROM comment 
+        where article_seq = article_seq=#{article_seq}
     </select>
     
     <!-- 댓글 삭제 -->
-    <delete id="commentDelete">
-        delete from comment where comment_seq=#{comment_seq}
+    <delete id="commentDelete" parameterType="com.smhrd.domain.Comment">
+        delete from comment where comment_seq=#{comment_seq} and article_seq=#{article_seq}
     </delete>
     
     <!-- 댓글 수정 -->
     <update id="commentUpdate" parameterType="com.smhrd.domain.Comment">
         update comment set comment_content=#{comment_content}, comment_date=now() 
-        where comment_seq=#{comment_seq}
+        where comment_seq=#{comment_seq} and article_seq=#{article_seq}
     </update>
     
 </mapper>
