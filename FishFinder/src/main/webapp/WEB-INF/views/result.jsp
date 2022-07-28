@@ -35,11 +35,11 @@
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
                     	<span>감성돔과 X % 일치합니다.</span>
 					</div> -->
-					<div class="progress-bar" style="--width:10" data-label="n%..."></div>
+					<div class="progress-bar" style="--width:${his_vo.accuracy }" data-label="${his_vo.accuracy }%..."></div>
 					<br>
 					<!-- 결과 안내 창 -->
 					<div class = "card">
-						<div class="result_font"> 80% 감성돔입니다.</div>				
+						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>				
 						표준어로는 '넙치'이고 '광어'가 사투리였지만 광어라는 이름으로 널리 불리면서 광어도 표준말로 대접받게 되었다.
 						<br>
 						생김새가 비슷한 어종으로는 도다리와 가자미가 있다.
@@ -76,14 +76,14 @@
 	            </footer>
 			</div>
 		</div>
-		<script>
+	<!-- 	<script>
 			const progressBar = document.getElementsByClassName('progress-bar')[0]
 			setInterval(() => {
 			const computeredStyle = getComputedStyle(progressBar)
 			const width = parseFloat(computeredStyle.getPropertyValue('--width')) || 0
 			progressBar.style.setProperty('--width',width + .1)
 			}, 5)
-		</script>
+		</script>  -->
 	</body>
 	<script>
 		window.onload = function() { document.body.classList.remove('is-preload'); }
