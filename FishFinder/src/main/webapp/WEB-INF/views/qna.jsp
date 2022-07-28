@@ -35,28 +35,19 @@
 							<a href="qna_write.html">질문하기</a>
 						</div>
 						<div class="qna_scroll">
-							<ul>
-								<li>
-									<div class="qna_qa">
-									<c:forEach var="qlist" items="${qlist}">
-										<div class="qna_q" id="clickQ-${cnt}"><span  id="clickQ-1-toggle" value="${qlist.q_seq}">+</span>
-											<span class="qna_title">
-											<c:choose>
-												<c:when test="${fn:length(qlist.q_content) > 20}">
-													<c:out value="${fn:substring(qlist.q_content,0,19)}"/>...				
-												</c:when>
-												<c:otherwise>
-													<c:out value="${qlist.q_content}"/>
-												</c:otherwise>
-											</c:choose>
-											</span>
-											<div class="qna_date" id='date${qlist.q_date}'>${ fn:split(qlist.q_date, " ")[0]}</div>
-										</div>
-									</c:forEach>
-										<div class="qna_a" id="showA-1" >${answer.a_content}</div>
-									</div>
-									<a href="qna_answer.html" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>
-								</li>
+							<ul id="list">
+							<li class="tes">
+                           <div class="qna_qa">
+                              <div class="qna_q" id="clickQ-10"><span id="clickQ-10-toggle">+</span>
+                              <span class="qna_title">Q. 글자 제한 두기
+                              <div class="qna_date">2022-07-19</div></span></div>
+                              
+                              <div class="qna_a" id="showA-10">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
+                           </div>
+                           <a href="qna_answer.html" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>
+                        </li>
+									
+								
 							</ul>
 						</div>
 					</div>
@@ -80,16 +71,10 @@
 	</body>
 	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
-	$( document ).ready(function() {
-         if($('.qna_a').text()===""){
-        	 if(1===1){
-        		 
-        		 $(this).text("바보")
-        	 }
-         }
-
+	$(document).ready( (e) => {
+		allQuestions()		
 	})
-	
+
 	
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
@@ -98,7 +83,9 @@
 		const items = document.querySelectorAll('.qna_q');
 
 		function openCloseAnswer() {
+			console.log("클릭은 됨")
 			const answerId = this.id.replace('clickQ', 'showA');
+			console.log(answerId)
 
 			if(document.getElementById(answerId).style.display === 'block') {
 			document.getElementById(answerId).style.display = 'none';
@@ -110,6 +97,97 @@
 		}
 
 		items.forEach(item => item.addEventListener('click', openCloseAnswer));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		function allQuestions(){
+			$.ajax({
+
+                url : '/fish/qnaShow',
+                type : 'get',
+                data : {
+                },
+                dataType : "json",
+                success : function(data){
+                	
+                	let table="";
+                	
+                	for(let i=0;i<data.length;i++) {
+ 
+                		table += '<li class="tes">'
+                		table += '<div class="qna_qa">'
+                		table += '<div class="qna_q" id="clickQ-'+i+'"><span id="clickQ-'+i+'-toggle">+</span>'
+                		table += '<span class="qna_title">'+data[i].q_content
+                		table += '<div class="qna_date">'+data[i].q_date+'</div></span></div>'
+                        
+
+                		
+                        if(data[i].q_status ==0){
+                        	table +=  '</div>'
+                       		table +=  '<a href="qna_answer.html" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>'
+                        	table +=  '</li>'
+
+                        }else{
+                        	table += getAnswer(data[i].q_seq, i);
+                            	   
+                        }
+                    
+                	}
+            		$('#list').append(table);
+                },
+                error : function(){
+                    alert('error!')
+                }
+
+
+            })
+		}
+		
+		
+		 
+		
+		
+		
+		function getAnswer(q_seq, i){
+			let table ="";
+	            $.ajax({
+
+	                url : '/fish/answerShow',
+	                type : 'get',
+	                async: false,     //값을 리턴시 해당코드를 추가하여 동기로 변경
+	                data : {
+						'q_seq' : q_seq
+	                },
+	                dataType : "json",
+	                success : function(data){
+                 
+	                	table +=  '<div class="qna_a" id="showA-'+i+'" style="display : block;">'+data.a_content+'</div>'
+                        table +=  '</div></li>'
+
+                        
+	                },
+	                error : function(){
+	                    alert('error!')
+	                }
+
+
+	            })
+
+				return table;
+	        }
+
+		function freQuestions(){
+			
+		}
+		function myQuestions(){
+	
+		}
 		
 		
 	

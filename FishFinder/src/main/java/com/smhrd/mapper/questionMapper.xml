@@ -10,7 +10,7 @@
 	<!-- 모든 문의 글 가져오기 -->
     <select id="questionList" resultType="com.smhrd.domain.questionBoard">
     <![CDATA[
-			SELECT * FROM question_board ORDER BY q_date DESC
+			SELECT * ,DATE_FORMAT(q_date,'%Y-%m-%d') as date FROM question_board ORDER BY q_date DESC
     ]]>
     </select>
  	
