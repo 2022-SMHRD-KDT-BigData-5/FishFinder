@@ -7,7 +7,7 @@ import com.smhrd.domain.questionBoard;
 public interface questionMapper {
 	
 	// 질문 리스트
-	public List<questionBoard> questionList(questionBoard qvo);
+	public List<questionBoard> questionList();
 	// 질문 하기
 	public int questionInsert(questionBoard qvo);
 	// 질문 보기

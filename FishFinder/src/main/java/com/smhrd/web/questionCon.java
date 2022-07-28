@@ -23,7 +23,7 @@ public class questionCon {
 	// 질문 리스트
 	@RequestMapping("/questionview") 
 	public String questionList(questionBoard qvo, Model model) {
-		List<questionBoard> qlist = qmapper.questionList(qvo);		
+		List<questionBoard> qlist = qmapper.questionList();		
 		model.addAttribute("qlist", qlist);
 		return "qna";
 	}

@@ -7,7 +7,7 @@ import com.smhrd.domain.answerInfo;
 public interface answerMapper {
 	
 	// 답변 리스트
-	public List<answerInfo> answerList(answerInfo qvo);
+	public answerInfo answerList(int q_seq);
 	// 답변 하기
 	public int answerInsert(answerInfo avo);
 	// 답변 보기
