@@ -30,12 +30,19 @@
                <div class="preview_container" id="imagePreview">
                   <img class="img_thumbnail" id="show-picture" src="">
                </div>
+               <!-- 지울부분 -->
+               	<br>
+               	오늘 접속 수 : ${sessionScope.todayCount}
+               	<br>
+               	총 접속자 수 : ${sessionScope.totalCount}
+               	<br>
+               <!-- 지울부분  끝-->
                <nav>
                   <ul>
                      <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li> -->
                      <!-- <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li> -->
-                     <form action="/fish/upload" method="post">
+                     <form method="post" enctype="multipart/form-data">
                      	<!-- 카메라 호출 -->
 	                    <li>
 	                        <a><label class="input-file-button" for="inputFile"><i class="icon solid fa-camera"></i></label></a>
@@ -45,21 +52,28 @@
 	                    <li>
 	                        <a><label class="input-file-button2" for="images" id="call_image"><i class="icon solid fa-image"></i></label></a>
 	                        <!-- <input type="file" accept="image/*" id="input-file" style="display:none"/> -->
-	                        <input type="file" name="file" id="images" accept="image/*" multiple="multiple" style="display:none">
+	                        <input type="file" name="file2" id="images" accept="image/*" multiple="multiple" style="display:none">
 	                    </li>
 	                    <!-- 이미지 전송 -->
 	                    <li>
 	                    	<a><label class="input-file-button2" for="submit_img" id="submit_image"><i class="icon solid fa-check"></i></label></a>
-	                        <input type="submit" id="submit_img" style="display: none;">
+	                        <button type="button" onclick="fileUpload()" id="submit_img" style="display: none;">
 	                 	</li>
                      </form>
                   </ul>
                   <br>
                   <ul>
+<<<<<<< HEAD
                      <li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
                      <li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
                      <li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
                      <li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+=======
+                     <li><a href="index.jsp" class="icon solid fa-home"><span class="label">Home</span></a></li>
+                     <li><a href="history.jsp" class="icon solid fa-history"><span class="label">History</span></a></li>
+                     <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+                     <li><a href="/fish/questionview" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
                   </ul>
                </nav>
             </header>
@@ -73,5 +87,7 @@
       </div>
    </body>
    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
    <script src="resources/assets/js/main.js"></script>
+   <script src="resources/assets/js/upload.js"></script>
 </html>

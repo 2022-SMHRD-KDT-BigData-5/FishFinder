@@ -35,22 +35,27 @@
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
                     	<span>감성돔과 X % 일치합니다.</span>
 					</div> -->
-					<div class="progress-bar" style="--width:10" data-label="X%..."></div>
+					<div class="progress-bar" style="--width:10" data-label="n%..."></div>
 					<br>
 					<!-- 결과 안내 창 -->
 					<div class = "card">
-						<p>
-						감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.
-						감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은
-						맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.
-						감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.
-						감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.감성돔은 맛있다.
-						</p>
+						<div class="result_font"> 80% 감성돔입니다.</div>				
+						표준어로는 '넙치'이고 '광어'가 사투리였지만 광어라는 이름으로 널리 불리면서 광어도 표준말로 대접받게 되었다.
+						<br>
+						생김새가 비슷한 어종으로는 도다리와 가자미가 있다.
+						<br>
+						광어의 특징 :
+						<br>
+						가슴지느러미를 아래로 향했을 때, 얼굴이 왼쪽 방향이다.
+						<br>
+						얼굴을 아래로 향하게 했을 때, 눈이 왼쪽으로 몰려있다.
+						<br>
+						입이 크고 이빨이 발달했다.
 					</div>
 					<nav>
 						<ul>
-							<li><a href="#" class="fa-solid fa-link" style="color: #000;"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="fa-solid fa-floppy-disk" style="color: #069;"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="fa-solid fa-link" style="color: #fff;"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="fa-solid fa-floppy-disk" style="color: #fff;"><span class="label">Facebook</span></a></li>
 						</ul>
 					</nav>
 					

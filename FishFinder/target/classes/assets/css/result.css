@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Cafe24Ssurround';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+    transform: skew(-1deg);
+}
+@font-face {
+    font-family: 'OTWelcomeBA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
 /* meter tag */
 meter {
 	margin-top: 20px;
@@ -32,6 +45,7 @@ meter {
 	color:rgb(0, 0, 0);
 	margin: auto;
 	margin-top: 20px;
+	margin-bottom: 20px;
 	max-width: 300px;
 
 }
@@ -61,7 +75,14 @@ meter {
 	max-width: 300px;
 	overflow: scroll;
     border: 2px solid #eee;
+    font-family: 'Cafe24Ssurround';
+	text-align: left;
 }
 .card::-webkit-scrollbar {
     display: none;
   }
+.result_font{
+	margin-bottom: 1%;
+	font-family: 'OTWelcomeBA';
+	font-size: large;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.smhrd.mapper.commentMapper">
+    
+    
+    <!-- 댓글 입력 -->
+    <insert id="commentInsert" parameterType="com.smhrd.domain.Comment">
+        insert into comment(article_seq,user_num,comment_content,comment_date)
+        values(#{article_seq},#{user_num},#{comment_content},now())
+    </insert>
+    
+    <!-- 댓글 가져오기 -->
+    <select id="commentview" resultType="com.smhrd.domain.Comment">
+        select * from comment where comment_seq = #{comment_seq}
+    </select>
+    
+    <!-- 특정 게시물 댓글 가져오기 -->
+    <select id="commentList" resultType="com.smhrd.domain.Comment">
+        select * from comment where article_seq = #{article_seq}
+    </select>
+	
+    <!-- 댓글 수 -->
+    <select id="commentCount" resultType="com.smhrd.domain.Comment">
+        SELECT COUNT(comment_seq) FROM comment 
+        where article_seq = (select article_seq from community_info where article_seq=#{article_seq})
+    </select>
+    
+    <!-- 댓글 삭제 -->
+    <delete id="commentDelete">
+        delete from comment where comment_seq=#{comment_seq}
+    </delete>
+    
+    <!-- 댓글 수정 -->
+    <update id="commentUpdate" parameterType="com.smhrd.domain.Comment">
+        update comment set comment_content=#{comment_content}, comment_date=now() 
+        where comment_seq=#{comment_seq}
+    </update>
+    
+</mapper>
