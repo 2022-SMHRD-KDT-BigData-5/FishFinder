@@ -23,4 +23,25 @@ function open(article_seq){
 		
 }
 //====================================================================================
-//====================================================================================
+//댓글 등록
+function commInsert(article_seq, user_num){			
+	
+	let commentCnt = Number($('#commentCnt').html());
+	
+	$.ajax({
+	
+		type : "post",
+		url : 'viwContent/commIn',
+		data : {
+			"article_seq" : article_seq,
+			"user_num" : user_num
+			},
+		success : function(res){
+				$('#commentCnt').html( commentCnt + 1 );
+			},
+		error : function(e){
+				alert('댓글 등록 실패')
+			}	
+				
+	});
+}

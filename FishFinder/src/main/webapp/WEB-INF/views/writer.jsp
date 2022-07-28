@@ -11,10 +11,10 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/qna_write.css" />
-		<link rel="stylesheet" href="assets/css/writer.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="./resources/assets/css/board.css" />
+		<link rel="stylesheet" href="./resources/assets/css/qna_write.css" />
+		<link rel="stylesheet" href="./resources/assets/css/writer.css" />
+		<noscript><link rel="stylesheet" href="./resources/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -25,17 +25,19 @@
 			<div id="main">
 				<!-- Header -->
 				<header id="header">
+				<form action="viewIn" method="post" enctype="multipart/form-data">
 					<h1>Write</h1>
 					<div class="question_box">
 						<div class="board_write">
 							<div class="title">
 								<dl class="title_flex">
 									<dt>제목 : </dt>
-									<input type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요.">
+									<input value ='${sessionScope.user_num}' type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
+									<input name="article_title" type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요.">
 								</dl>
 							</div>
 							<div class="cont">
-								<textarea class="write_content" placeholder="내용을 입력해주세요."></textarea>
+								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요."></textarea>
 							</div>
 							<div class="upload_image">
 								<input type="file" name="images[]" id="inputImage" accept="image/*">
@@ -44,7 +46,7 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#" class="icon solid fa-check"><span class="label">Check</span></a></li>
+								<li><a href="/fish/view" class="icon solid fa-check"><span class="label">Check</span></a></li>
 								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
 						</nav>
@@ -58,6 +60,7 @@
 						</ul>
 					</nav>
 				</header>
+				</form>
 				<!-- Footer -->
 				<footer id="footer">
 	               <span class="copyright"><a href="join.html">Logout</a>.</span>

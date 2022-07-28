@@ -36,7 +36,7 @@
 							<div class="view_dvc">
 								<span class="view_date">${ fn:split(community.article_date, " ")[0] }</span>
 								<span class="view_views">${ community.article_cnt }</span>
-								<span class="view_comments">댓글 123</span>
+								<span class="view_comments" id="commentCnt"></span>
 							</div>
 							<div class="view_content">
 								<div class="view_image">
@@ -57,7 +57,7 @@
 							</div>
 							<div class="comm_write_box">
 								<a name="here"><textarea class="comm_text"></textarea></a>
-								<button onclick="commInsert(${community.article_seq})" class="custom-btn btn-3"><span>등록</span></button>
+								<button onclick="commInsert(${community.article_seq},${sessionScope.user_num})" class="custom-btn btn-3"><span>등록</span></button>
 							</div>
 							<c:forEach items="${comment}" var="clist">
 							<div class="comments_box">
@@ -121,10 +121,7 @@
 		function commUp(){
 			location.href = '/fish/viewContent/commUp?comment_seq' + comment+seq;
 		}
-		//댓글 등록
-		function commInsert(article_seq){
-			location.href = '/fish/viewContent/commIn/'+article_seq;
-		}
+		
 	</script>
 </head>
 </html>

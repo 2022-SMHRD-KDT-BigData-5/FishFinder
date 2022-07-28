@@ -48,7 +48,7 @@
 		<div class="panel-footer">빅데이터12차 김승현</div>
 		</div>
 	</div>
-<script type="text/javascript" src="resources/js/community.js"></script>
+<script type="text/javascript" src="resources/js/community2.js"></script>
 </div>
 </body>
 </html>
