@@ -24,7 +24,7 @@ public class answerCon {
 	// 답변 리스트
 	@RequestMapping("/answerview") 
 	public String answerList(answerInfo avo, Model model) {
-		List<answerInfo> alist = amapper.answerList(avo);		
+		answerInfo alist = amapper.answerList(avo.getA_seq());		
 		model.addAttribute("alist", alist);
 		return "qna";
 	}
