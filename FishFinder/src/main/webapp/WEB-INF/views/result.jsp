@@ -29,7 +29,7 @@
 					<h1>RESULT</h1>
 					<!-- <a href="kakaolink://launch">카카오톡앱</a> -->
                     <div class="container">
-					    <img class="result" src="assets/css/images/fish.jpg" alt="">
+					    <img class="result" src="resources/assets/css/images/fish.jpg" alt="">
 					</div>
 					<!-- <div class="meter1">
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
