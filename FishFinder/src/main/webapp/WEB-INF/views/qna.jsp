@@ -71,16 +71,29 @@
 	</body>
 	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
+	
+
 	$(document).ready( (e) => {
 		allQuestions()		
+		
+
+		
+		
 	})
+	
+
+	$(document).on("click",'.qna_q', ()=>{ // on 이벤트로 변경
+		
+		$(this).ready(openCloseAnswer())
+	});
 
 	
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 		// 접고 펼치기
-		const items = document.querySelectorAll('.qna_q');
+		
+		
 
 		function openCloseAnswer() {
 			console.log("클릭은 됨")
@@ -95,8 +108,10 @@
 			document.getElementById(this.id + '-toggle').textContent = '-';
 			}
 		}
+		
+		//items.forEach(item => item.addEventListener('click', openCloseAnswer));
 
-		items.forEach(item => item.addEventListener('click', openCloseAnswer));
+		
 		
 		
 		
@@ -122,7 +137,7 @@
  
                 		table += '<li class="tes">'
                 		table += '<div class="qna_qa">'
-                		table += '<div class="qna_q" id="clickQ-'+i+'"><span id="clickQ-'+i+'-toggle">+</span>'
+                		table += '<div class="qna_q" id="clickQ-'+(i+1)+'"><span id="clickQ-'+(i+1)+'-toggle">+</span>'
                 		table += '<span class="qna_title">'+data[i].q_content
                 		table += '<div class="qna_date">'+data[i].q_date+'</div></span></div>'
                         
@@ -167,7 +182,7 @@
 	                dataType : "json",
 	                success : function(data){
                  
-	                	table +=  '<div class="qna_a" id="showA-'+i+'" style="display : block;">'+data.a_content+'</div>'
+	                	table +=  '<div class="qna_a" id="showA-'+(i+1)+'" style="display : block;">'+data.a_content+'</div>'
                         table +=  '</div></li>'
 
                         
