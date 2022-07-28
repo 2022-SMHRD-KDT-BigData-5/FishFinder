@@ -15,17 +15,7 @@
     <select id="communityList" resultType="com.smhrd.domain.Community">
 			SELECT * FROM community_info ORDER BY article_date DESC    
     </select>
-	
-    <!-- 글 페이징 -->
-    <!--<select id="pagingList" resultType="com.smhrd.domain.Community">
-    <![CDATA[
-      SELECT * FROM 
-      	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
-			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
-			WHERE RN BETWEEN #{start} AND #{end}
-    ]]>
-    </select>-->
- 	
+		
     <!-- 커뮤니티 글 작성 -->
     <insert id="communityInsert" parameterType="com.smhrd.domain.Community">
         insert into community_info(article_title,article_content,article_date,user_num) 

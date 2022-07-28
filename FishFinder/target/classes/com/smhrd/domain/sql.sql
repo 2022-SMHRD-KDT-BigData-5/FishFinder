@@ -23,52 +23,24 @@ select count(*) as totalCnt from visit;
 
 select count(*) as todayCnt from visit
         where v_date=now();
-        
-select * from 
-       	(select rownum rn, a.*from 
-       		(community_info order by article_date desc) a) where rn > (#{viewPage}-1)*#{unit} rd <= #{viewPage}*#{unit};
-       		
-select * from 
-       	(select rownum rn, a.*from 
-       		(select * from community_info order by article_date desc) a) 
-       			where rn BETWEEN #{startIndex} AND #{endIndex};
-       			
-select * from community_info order by article_date desc 
-limit #{startIndex} , #{endIndex};
-
+               
 
 select count(*) as todayCnt from visit
         where v_date > DATE_ADD(now(), interval -24 hour)
 
 SELECT * FROM community_info ORDER BY article_date DESC
-
-SELECT B.* FROM 
-      	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
-			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
-		WHERE RN > (#{nowPage}-1)*#{cntPerPage} and RN <= #{nowPage}*#{cntPerPage}
-		
-SELECT * FROM 
-      	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
-			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
-		WHERE RN BETWEEN #{start} AND #{end}	
-		
-		
+				
 SELECT COUNT(article_seq) FROM comment where user_num = (select user_num from user_info)	
 
 SELECT COUNT(comment_seq) FROM comment 
         where article_seq = (select article_seq from community_info where article_seq=1)
         
 select * from comment where article_seq = 1
-
-SELECT B.* FROM 
-      	(SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
-			(SELECT * FROM community_info ORDER BY article_date DESC) A ) B
-		WHERE RN BETWEEN 1 AND 10
-		
-SELECT  @ROWNUM:=@ROWNUM +1 AS RN, A.* FROM
-			(SELECT * FROM community_info ORDER BY article_date DESC) A WHERE RN BETWEEN 1 AND 10
 			
 update question_board set q_status=1 
         where q_seq=(select q_seq from question_board where q_seq (insert into answer_info(q_seq) values (1)))			
         
 update question_board set q_status=1 where q_seq=1
+
+INSERT INTO comment(article_seq, user_num,comment_content,comment_date)
+VALUES(1, 2, '댓르르르르르르ㅡ르르르르르르르르르르르르르르르으느므ㅡㄴ아림나허ㅣㅇ나허ㅣㅏ넣미아허ㅣㅏ가나나다라라하마나아하ㅏ바사ㅏ아하ㅏ나다사아ㅏ카아ㅏ남하아밯',NOW());
