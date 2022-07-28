@@ -30,7 +30,7 @@
 							<a href="#">전체</a>
 							<a href="#">주로 묻는 질문</a>
 							<a href="#">나의 질문</a>
-							<a href="qna_write.html">질문하기</a>
+							<a href="/qna_write">질문하기</a>
 						</div>
 						<div class="qna_scroll">
 							<ul>
@@ -81,18 +81,18 @@
 					</div>
 					<nav>
 						<ul>
-							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="history.html" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="board.html" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="qna.html" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+							<li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+							<li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
 					</nav>
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="join.html">Logout</a>.</span>
+	               <span class="copyright"><a href="/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="admin.html">Admin</a>.</span>
+	               <span class="copyright"><a href="/admin">Admin</a>.</span>
 	            </footer>
 			</div>
 		</div>

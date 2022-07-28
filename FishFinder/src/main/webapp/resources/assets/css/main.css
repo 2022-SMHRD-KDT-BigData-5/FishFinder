@@ -312,7 +312,7 @@ input, select, textarea {
 		transform: translate3d(0,0,0);
 	/* Set your background with this */
 
-		background: #348cb2 url("images/bg.jpg") bottom left;
+		background: #348cb2 url("images/bg.png") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -386,8 +386,8 @@ input, select, textarea {
 	}
 
 	#bg {
-		background-size: 2250px auto;
-		width: 6750px;
+		background-size: 900px auto;
+		width: 2250px;
 	}
 
 /* Overlay */
@@ -891,8 +891,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 1500px auto;
-			width: 4500px;
+			background-size: 900px auto;
+			width: 2250px;
 		} }
 
 /* Normal */
@@ -973,7 +973,7 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 750px auto;
+			background-size: 900px auto;
 			width: 2250px;
 		} }
 
@@ -1059,8 +1059,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 300px auto;
-			width: 900px;
+			background-size: 900px auto;
+			width: 2250px;
 		}
 
 	/* Header */

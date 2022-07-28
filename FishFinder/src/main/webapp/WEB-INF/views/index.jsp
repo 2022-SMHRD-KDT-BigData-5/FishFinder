@@ -56,18 +56,18 @@
                   </ul>
                   <br>
                   <ul>
-                     <li><a href="index.jsp" class="icon solid fa-home"><span class="label">Home</span></a></li>
-                     <li><a href="history.jsp" class="icon solid fa-history"><span class="label">History</span></a></li>
-                     <li><a href="board.jsp" class="icon solid fa-list"><span class="label">Board</span></a></li>
-                     <li><a href="qna.jsp" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+                     <li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+                     <li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+                     <li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
+                     <li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
                   </ul>
                </nav>
             </header>
             <!-- Footer -->
             <footer id="footer">
-               <span class="copyright"><a href="join.html">Logout</a>.</span>
+               <span class="copyright"><a href="/logout">Logout</a>.</span>
                <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-               <span class="copyright"><a href="admin.html">Admin</a>.</span>
+               <span class="copyright"><a href="/admin">Admin</a>.</span>
             </footer>
          </div>
       </div>

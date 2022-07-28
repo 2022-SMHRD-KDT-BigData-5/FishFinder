@@ -26,6 +26,8 @@
 		class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
 	</beans:bean>
 	
+	<resources mapping="/image/**" location="/resources/image/" />
+	
 	<!-- controller 구분, mapping -->
 	<!-- 프로젝트 만들때, 만든 기본 패키지로 설정되어있음 -->
 	<context:component-scan base-package="com.smhrd.web" />
