@@ -37,72 +37,58 @@ public class CommunityCon {
 		return "viewList";
 	}
 		
-//	@GetMapping("/viewList")
-//	public String viewList(Paging pvo, Model model
-//		, @RequestParam(value="nowPage", required=false)String nowPage
-//			, @RequestParam(value="cntPerPage", required=false)String cntPerPage) {
-//		if (nowPage == null && cntPerPage == null) {
-//			nowPage = "1";
-//			cntPerPage = "5";
-//		} else if (nowPage == null) {
-//			nowPage = "1";
-//		} else if (cntPerPage == null) { 
-//			cntPerPage = "5";
-//		}
-//		pvo = new Paging(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
-//		model.addAttribute("paging", pvo);
-//		//List<Community> list = mapper.communityList(pvo);
-//		model.addAttribute("list", mapper.pagingList(pvo));
-//		return "listPaging";
-//	}
-		
 	// community 작성하기 -> 폼화면 불러오기
-	@GetMapping("/communityInsert.do")
+	@GetMapping("/viewIn")
 	public String boardForm() {
-		return "communityForm";				
+		return "writer";				
 	}
 	
 	// community 작성 후 DB에 넣기
-	@PostMapping("/communityInsert.do")
+	@PostMapping("/viewIn")
 	public String communityInsert(Community vo, MultipartFile file) {		
 		mapper.communityInsert(vo);
-		return "redirect:/viewList.do";
+		return "redirect:/viewList";
 	}
 	
 	// 선택한 community로 이동 -> 댓글 불로오기로 이동
-	@GetMapping("communityContent.do/{article_seq}")
+	@GetMapping("/viewContent/{article_seq}")
 	public String communityContent(Model model,
 			@PathVariable("article_seq") int article_seq) {
+		
 		Community vo = mapper.communityContent(article_seq);	
-		model.addAttribute("community", vo);		
-		return "commentList";
+		model.addAttribute("community", vo);	
+		
+		// 댓글 조회
+		List<Comment> comment = cmapper.commentList(article_seq);
+		model.addAttribute("comment", comment);
+		return "view";
 	}
 	
 	// 커뮤니티 조회수 수정
-	@RequestMapping("/communityCntUpdate.do") 
+	@RequestMapping("/viewCntUp") 
 	public int communityCntUpdate(Community vo){
 		int cnt = mapper.communityCntUpdate(vo);
 		return cnt;
 	}
 	
 	// community 삭제
-	@RequestMapping("/communityDelete.do")
+	@RequestMapping("/viewDel")
 	public String communityDelete( @PathVariable("article_seq") int article_seq) {
 		System.out.println("번호 : " + article_seq);
 		mapper.communityDelete(article_seq);		
-		return "redirect:/viewList.do";
+		return "redirect:/viewList";
 	}
 	
 	// community수정 페이지로 이동
-	@RequestMapping("/communityGoUpdate.do")
+	@RequestMapping("/viewGoUp")
 	public String communityGoUpdate(Model model, int article_seq) {		
 		Community vo = mapper.communityContent(article_seq);
 		model.addAttribute("community", vo);
-		return "communityUpdate";
+		return "viewUp";
 	}
 	
 	// community 수정 후 DB에 업데이트
-	@PostMapping("/communityUpdate.do")
+	@PostMapping("/viewUp")
 	public String communityUpdate(Community vo) {		
 		mapper.communityUpdate(vo);
 		return "redirect:/view";

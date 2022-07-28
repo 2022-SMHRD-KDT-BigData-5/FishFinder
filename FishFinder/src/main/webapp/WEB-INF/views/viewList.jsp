@@ -43,7 +43,7 @@
 				</c:forEach>
 			</table>
 			<div>
-			<button onclick=" location.href='communityInsert.do' " class="btn btn-sm btn-success">작성</button>			
+			<button onclick=" location.href='viewIn' " class="btn btn-sm btn-success">작성</button>			
 			</div>
 		<div class="panel-footer">빅데이터12차 김승현</div>
 		</div>

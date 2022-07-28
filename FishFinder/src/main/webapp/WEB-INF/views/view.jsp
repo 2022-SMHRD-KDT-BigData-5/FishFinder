@@ -53,9 +53,13 @@
 									<a href='javascript:(${community.article_seq})' class="view_modify" value="${community.article_seq}">수정</a>
 									<a href='javascript:goDelete(${community.article_seq})' class="view_delete" value="${community.article_seq}">삭제</a>
 									<a href='javascript:goList()'>목록</a>
-									<!--<a href="#here"><span class="write_comments">댓글쓰기</span></a>-->
 								</div>
 							</div>
+							<div class="comm_write_box">
+								<a name="here"><textarea class="comm_text"></textarea></a>
+								<button onclick="commInsert(${community.article_seq})" class="custom-btn btn-3"><span>등록</span></button>
+							</div>
+							<c:forEach items="${comment}" var="clist">
 							<div class="comments_box">
 								<div class="comments_writer" value="${clist.user_num}">${clist.user_num}</div>
 								<div class="comments_content">
@@ -64,15 +68,12 @@
 								<div class="comments_dmd">
 									<div class="comments_date">${fn:split(clist.comment_date, " ")[0]}</div>
 									<div class="comments_md">
-										<a href="commUp(${comment.comment_seq})" class="comments_modify" value="${comment.comment_seq}">수정</a>
-										<a href="commDel(${comment.comment_seq})" class="comments_delete" value="${comment.comment_seq}">삭제</a>
+										<a href="commUp()" class="comments_modify" >수정</a>
+										<a href="commDel()" class="comments_delete" >삭제</a>
 									</div>
 								</div>
 							</div>
-							<div class="comm_write_box">
-								<a name="here"><textarea class="comm_text"></textarea></a>
-								<button onclick="commInsert(${community.article_seq})" class="custom-btn btn-3"><span>등록</span></button>
-							</div>
+							</c:forEach>
 						</div>
 					</div>
 					<nav>
@@ -106,23 +107,23 @@
 		// 삭제하기
 		function goDelete(article_seq){
 			console.log(article_seq);
-			location.href = '/fish/communityDelete.do?article_seq=' + article_seq;
+			location.href = '/fish/viewDel?article_seq=' + article_seq;
 		}
 		// 수정하기
 		function goUpdate(article_seq){		
-			location.href = '/fish/communityGoUpdate.do?article_seq=' + article_seq;
+			location.href = '/fish/viewGoUp?article_seq=' + article_seq;
 		}
 		// 댓글삭제하기
-		function commDel(comment_seq){
-			location.href = '/fish/commDelete?comment_seq' + comment+seq;
+		function commDel(){
+			location.href = '/fish/viewContent/commDel?comment_seq' + comment+seq;
 		}
 		// 댓글삭제하기
-		function commUp(comment_seq){
-			location.href = '/fish/commUpdate?comment_seq' + comment+seq;
+		function commUp(){
+			location.href = '/fish/viewContent/commUp?comment_seq' + comment+seq;
 		}
 		//댓글 등록
 		function commInsert(article_seq){
-			location.href = 'fish/commInsert';
+			location.href = '/fish/viewContent/commIn/'+article_seq;
 		}
 	</script>
 </head>

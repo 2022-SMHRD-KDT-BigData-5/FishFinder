@@ -2,12 +2,12 @@
 // 내용 보기 + 조회수 카운트
 function open(article_seq){	
 		
-		location.href='/fish/communityContent.do/' + article_seq;
+		location.href='/fish/viewContent/' + article_seq;
 		let count = Number($('#count' + article_seq).html());
 		
 		$.ajax({
 			type : "post",
-			url : "communityCntUpdate.do",
+			url : "viewCntUp",
 			dataType : "json",
 			data : {
 				"article_seq" : article_seq,
