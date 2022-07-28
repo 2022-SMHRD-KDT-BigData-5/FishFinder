@@ -387,7 +387,7 @@ input, select, textarea {
 
 	#bg {
 		background-size: 900px auto;
-		width: 2250px;
+		width: 4250px;
 	}
 
 /* Overlay */
@@ -892,7 +892,7 @@ input, select, textarea {
 
 		#bg {
 			background-size: 900px auto;
-			width: 2250px;
+			width: 4250px;
 		} }
 
 /* Normal */
@@ -974,7 +974,7 @@ input, select, textarea {
 
 		#bg {
 			background-size: 900px auto;
-			width: 2250px;
+			width: 4250px;
 		} }
 
 /* Mobile */

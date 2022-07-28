@@ -15,8 +15,8 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="#"></ion-icon></span>
-                        <span class="title">암행漁사</span>
+                        <span class="icon"><img src="/FishFinder/assets/css/images/logo3.png"></span>
+                        <span class="title1"><img src="/FishFinder/assets/css/images/logo4.png"></span>
                     </a>
                 </li>
                 <li>
@@ -25,14 +25,12 @@
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
-                <!-- 
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></ion-icon></span>
                         <span class="title">Customers</span>
                     </a>
                 </li>
-                 -->
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>
@@ -45,22 +43,18 @@
                         <span class="title">Q&A</span>
                     </a>
                 </li>
-                <!--
-                <li>
+                <!-- <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                         <span class="title">Settings</span>
                     </a>
                 </li>
-                 -->
-                <!-- 
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                         <span class="title">Password</span>
                     </a>
-                </li>
-                 -->
+                </li> -->
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
@@ -83,11 +77,10 @@
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
-                <!-- user
+                <!-- user -->
                 <div class="user">
                     <img src="/arm/assets/css/images/user.jpg">
                 </div>
-                 -->
             </div>
 
             <!-- cards -->
@@ -125,7 +118,7 @@
                         <div class="cardName">Total Q&A</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
+                        <ion-icon name="help-circle-outline"></ion-icon>
                     </div>
                 </div>
             </div>
@@ -142,7 +135,7 @@
                 <!-- 여따 넣고싶다 -->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 		    	<canvas id="line-chart" width="250" height="200"></canvas>
-                <script src="Chart.min.js"></script>
+                <script src="/assets/js/Chart.min.js"></script>
             </div>
             </div>
 
@@ -153,7 +146,7 @@
                 </div>
                 <table>
                     <tr>
-                        <td width="60px"><div class="imgBx"><img src="/arm/assets/css/images/fish1.jpg"></div></td>
+                        <td width="60px"><div class="imgBx"><img src="/assets/css/images/img_test.jpg"></div></td>
                         <td><h4>David<br><span>Italy</span></h4></td>
                     </tr>
                 </table>

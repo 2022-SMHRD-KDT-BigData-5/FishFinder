@@ -129,17 +129,11 @@ public class KakaoService {
 				JsonObject properties = element.getAsJsonObject().get("properties").getAsJsonObject();
 				JsonObject kakao_account = element.getAsJsonObject().get("kakao_account").getAsJsonObject();
 				id = element.getAsJsonObject().get("id").getAsString();
-<<<<<<< HEAD
 				
 				String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 
-				System.out.println("뽑아낸 닉네임 : " + nickname);
-=======
-
-				String nickname = properties.getAsJsonObject().get("nickname").getAsString();
 
 				System.out.println("뽑아낸 닉네임 : " + nickname);
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 				System.out.println("뽑아낸 openID : " + id);
 				
 				vo.setKakao_name(nickname);
