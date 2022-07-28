@@ -34,7 +34,7 @@ public class CommunityCon {
 		int total = mapper.countBoard();
 		model.addAttribute("list", list);
 		model.addAttribute("total", total);
-		return "viewList";
+		return "viewList"; // viewList라는 jsp로 이동
 	}
 		
 	// community 작성하기 -> 폼화면 불러오기
@@ -47,7 +47,7 @@ public class CommunityCon {
 	@PostMapping("/viewIn")
 	public String communityInsert(Community vo, MultipartFile file) {		
 		mapper.communityInsert(vo);
-		return "redirect:/viewList";
+		return "redirect:/view";  // url주소가 /view인 곳이로 이동
 	}
 	
 	// 선택한 community로 이동 -> 댓글 불로오기로 이동

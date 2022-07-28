@@ -50,7 +50,7 @@
 							<div class="comments_menu">
 								<!-- 수정 삭제는 내 글에서만 -->
 								<div class="view_md">
-									<a href='javascript:(${community.article_seq})' class="view_modify" value="${community.article_seq}">수정</a>
+									<a href='javascript:goUpdate(${community.article_seq})' class="view_modify" value="${community.article_seq}">수정</a>
 									<a href='javascript:goDelete(${community.article_seq})' class="view_delete" value="${community.article_seq}">삭제</a>
 									<a href='javascript:goList()'>목록</a>
 								</div>
