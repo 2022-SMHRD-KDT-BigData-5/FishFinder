@@ -44,3 +44,6 @@ update question_board set q_status=1 where q_seq=1
 
 INSERT INTO comment(article_seq, user_num,comment_content,comment_date)
 VALUES(1, 2, '댓르르르르르르ㅡ르르르르르르르르르르르르르르르으느므ㅡㄴ아림나허ㅣㅇ나허ㅣㅏ넣미아허ㅣㅏ가나나다라라하마나아하ㅏ바사ㅏ아하ㅏ나다사아ㅏ카아ㅏ남하아밯',NOW());
+
+
+insert into visit(v_date) values(NOW())

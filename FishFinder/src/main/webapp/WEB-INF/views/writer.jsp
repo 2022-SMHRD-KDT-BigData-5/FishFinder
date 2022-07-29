@@ -46,9 +46,14 @@
 						</div>
 						<nav>
 							<ul>
+<<<<<<< HEAD
+								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
+								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							</ul>
+=======
 								<li><a href="/view" class="icon solid fa-check"><span class="label">Check</span></a></li>
 								<li><a href="/history" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</nav>
 					</div>
 					<nav>
@@ -86,9 +91,9 @@
 		// })
 
 		// 파일 주소 불러오기
-		document.querySelector("#sendButton").addEventListener('click',()=>{
-		let selectFile = document.querySelector("#inputImage").files[0];
-		console.log(selectFile);
+		document.querySelector("#sendButton").addEventListener('click', () => {
+			let selectFile = document.querySelector("#inputImage").files[0];
+			console.log(selectFile);
 		})
 	</script>
 </html>

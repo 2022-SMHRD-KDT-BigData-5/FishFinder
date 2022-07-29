@@ -27,14 +27,22 @@ public class CommunityCon {
 	@Autowired
 	commentMapper cmapper;
 		
-	
+	// 게시판 보기
 	@RequestMapping("/view")
 	public String communityList(Community vo, Model model) {
 		List<Community> list = mapper.communityList(vo);		
 		int total = mapper.countBoard();
 		model.addAttribute("list", list);
 		model.addAttribute("total", total);
-		return "viewList"; // viewList라는 jsp로 이동
+		return "board"; // board라는 jsp로 이동
+	}
+	
+	// 내가 쓴 게시판 보기
+	@RequestMapping("/viewMy")
+	public String communityMyList(Community vo, Model model) {
+		List<Community> mlist = mapper.communityMyList(vo);		
+		model.addAttribute("mlist", mlist);
+		return "board"; // board라는 jsp로 이동
 	}
 		
 	// community 작성하기 -> 폼화면 불러오기
@@ -50,8 +58,8 @@ public class CommunityCon {
 		return "redirect:/view";  // url주소가 /view인 곳이로 이동
 	}
 	
-	// 선택한 community로 이동 -> 댓글 불로오기로 이동
-	@GetMapping("/viewContent/{article_seq}")
+	// 선택한 community로 이동 
+	@RequestMapping("/viewContent/{article_seq}")
 	public String communityContent(Model model,
 			@PathVariable("article_seq") int article_seq) {
 		
@@ -76,7 +84,7 @@ public class CommunityCon {
 	public String communityDelete( @PathVariable("article_seq") int article_seq) {
 		System.out.println("번호 : " + article_seq);
 		mapper.communityDelete(article_seq);		
-		return "redirect:/viewList";
+		return "redirect:/view";
 	}
 	
 	// community수정 페이지로 이동

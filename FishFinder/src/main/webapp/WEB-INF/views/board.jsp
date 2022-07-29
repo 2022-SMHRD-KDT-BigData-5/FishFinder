@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
 	Aerial by HTML5 UP
@@ -26,16 +28,27 @@
 				<header id="header">
 					<h1>Board</h1>
 					<div class="board_box">
+<<<<<<< HEAD
+						<div class="board_menu">
+							<a href="/fish/view" class="boardAll" onclick="showAll()">전체</a>
+							<a class="boardMy" onclick="showMy(${sessionScope.user_num})">내가 쓴 글</a>
+							<a href="/fish/viewIn" class="">글 작성</a>
+=======
 						<div class="board_menu">
 
 							<a href="#">전체</a>
 							<a href="#">내가 쓴 글</a>
 							<a href="/writer" class="">글 작성</a>
 
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</div>
 						<div class="board_scroll">
 							<ul class="board_selectAll">
 								<!-- a태그가 기록 하나 -->
+<<<<<<< HEAD
+								<c:forEach var="list" items="${list}">
+								<a href='javascript:open(${list.article_seq})'>
+=======
 								<a href="/view">
 									<li class="board_list">
 										<div class="preview_img">
@@ -55,43 +68,49 @@
 									</li>
 								</a>
 								<a href="view.html">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 									<li class="board_list">
 										<div class="preview_img">
 											<img class="board_img" src="resources/assets/css/images/img_test.jpg" onerror="">
 										</div>
 										<div class="board_tnd">
-											<div class="board_title">벌써5시반</div>
+											<div class="board_title"><c:out value="${list.article_title}"/></div>
 											<div class="board_wdv">
-												<span class="board_writer">김건우</span>
-												<span class="board_date">2022-07-13</span>
-												<span class="board_views">조회수 <span class="views_cnt">1234</span></span>
+												<span class="board_writer"><c:out value="${list.user_num}"/></span>
+												<span class="board_date" id='date${list.article_date}'>${ fn:split(list.article_date, " ")[0]}</span>
+												<span class="board_views">조회수 <span class="views_cnt" id="count${list.article_seq}"><c:out value="${list.article_cnt}"/></span></span>
 											</div>
 										</div>
 										<div class="comments_box">
-											<div class="board_comments">댓글<br>1</div>
+											<div href="javascript:commCnt(${list.article_seq})" class="board_comments">댓글<br><c:out value="${ctotal}"/></div>
 										</div>
-									</li>
+									</li>									
 								</a>
+								</c:forEach>
 							</ul>
 							<ul class="board_selectMy">
-								<a href="view.html">
+								<c:forEach var="list" items="${mlist}">
+								<c:when test="${mlist.user_num == sessionScope.user_num}">
+								<a href='javascript:open(${list.article_seq})'>
 									<li class="board_list">
 										<div class="preview_img">
 											<img class="board_img" src="/assets/css/images/img_test.jpg" onerror="">
 										</div>
 										<div class="board_tnd">
-											<div class="board_title">와 오늘 다금바리 먹음</div>
+											<div class="board_title">><c:out value="${mlist.article_title}"/></div>
 											<div class="board_wdv">
-												<span class="board_writer">김건우</span>
-												<span class="board_date">2022-07-27</span>
-												<span class="board_views">조회수 <span class="views_cnt">1234</span></span>
+												<span class="board_writer"><c:out value="${mlist.user_num}"/></span>
+												<span class="board_date" id='date${mlist.article_date}'>${ fn:split(mlist.article_date, " ")[0]}</span>
+												<span class="board_views">조회수 <span class="views_cnt"><c:out value="${mlist.article_cnt}"/></span></span>
 											</div>
 										</div>
 										<div class="comments_box">
-											<div class="board_comments">댓글<br>1</div>
+											<div href="javascript:commCnt(${list.article_seq})" class="board_comments">댓글<br><c:out value="${ctotal}"/></div>
 										</div>
 									</li>
 								</a>
+								</c:when>
+								</c:forEach>
 							</ul>
 						</div>
 						<div class="search_box">
@@ -101,21 +120,33 @@
 					</div>
 					<nav>
 						<ul>
-							<li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+							<li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
 					</nav>
 				</header>
 				<!-- Footer -->
+<<<<<<< HEAD
+				<footer id="footer">
+	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
+=======
 				<footer id="footer">
 
 	               <span class="copyright"><a href="/join">Logout</a>.</span>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
+<<<<<<< HEAD
+	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+            	</footer>
+					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+				</footer>
+=======
 	               <span class="copyright"><a href="/admin">Admin</a>.</span>
             	</footer>
 
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 			</div>
 		</div>
 	</body>

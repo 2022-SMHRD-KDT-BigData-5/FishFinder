@@ -15,6 +15,11 @@
     <select id="communityList" resultType="com.smhrd.domain.Community">
 			SELECT * FROM community_info ORDER BY article_date DESC    
     </select>
+    
+    <!-- 내가 쓴 글 가져오기 -->
+    <select id="communityMyList" resultType="com.smhrd.domain.Community">
+			SELECT * FROM community_info where user_num=#{user_num} ORDER BY article_date DESC    
+    </select>
 		
     <!-- 커뮤니티 글 작성 -->
     <insert id="communityInsert" parameterType="com.smhrd.domain.Community">
