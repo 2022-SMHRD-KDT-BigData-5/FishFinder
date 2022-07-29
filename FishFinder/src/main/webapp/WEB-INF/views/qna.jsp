@@ -102,7 +102,7 @@
  
                 		table += '<li class="tes">'
                 		table += '<div class="qna_qa">'
-                		table += '<div class="qna_q" id="clickQ-'+(i+1)+'"><span id="clickQ-'+(i+1)+'-toggle">+</span>'
+                		table += '<div class="qna_q" id="clickQ-'+(i+1)+'"><span id="clickQ-'+(i+1)+'-toggle"><i class="fa fa-plus" aria-hidden="true"></i></span>'
                 		table += '<span class="qna_title">'+data[i].q_content
                 		table += '<div class="qna_date">'+data[i].q_date+'</div></span></div>'
                         
@@ -147,7 +147,7 @@
 	                dataType : "json",
 	                success : function(data){
                  
-	                	table +=  '<div class="qna_a" id="showA-'+(i+1)+'" style="display : block;">'+data.a_content+'</div>'
+	                	table +=  '<div class="qna_a" id="showA-'+(i+1)+'">'+data.a_content+'</div>'
                         table +=  '</div></li>'
 
                         
@@ -173,15 +173,15 @@
 	
 	</script>
 
-	<script defer>
+	<script>
 	$(document).ready(function(){
 			$(document).on("click",".qna_q",function(event){             
 				if($(this).next().css("display") == 'none'){
 					$(this).next().show();
-					$(this).children()[0].textContent = "-";
+					$(this).children()[0].innerHTML = "<i class='fa fa-minus' aria-hidden='true'></i>";
 				}else{
 					$(this).next().hide();
-					$(this).children()[0].textContent = "+";
+					$(this).children()[0].innerHTML = "<i class='fa fa-plus' aria-hidden='true'></i>";
 				};
 			});      
 		});

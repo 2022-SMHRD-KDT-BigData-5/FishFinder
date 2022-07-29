@@ -24,6 +24,9 @@
     background-color: rgb(255, 255, 255, 0.9);
     border-radius: 5px;
 }
+a .board_list:hover{
+    background-color: rgb(255, 255, 255, 1);
+}
 .preview_img{
     width: 130px;
     padding: 1%;
