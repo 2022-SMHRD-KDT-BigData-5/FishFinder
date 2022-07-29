@@ -16,9 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class Comment {
 	
 	private int comment_seq;
-	@NonNull
 	private int article_seq;
-	@NonNull
 	private int user_num;
 	@NonNull
 	private String comment_content;
@@ -26,7 +24,7 @@ public class Comment {
 	
 	
 	
-	public Comment(@NonNull int user_num) {
+	public Comment(int user_num) {
 		super();
 		this.user_num = user_num;
 	}

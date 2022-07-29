@@ -13,7 +13,12 @@
 	    		his_seq = result[1]
 	    		access_Token = result[2]
 	    		console.log(fileName)
-	    		ajaxRequest(fileName, his_seq, access_Token);
+	    		
+	    		setTimeout(function() {
+				  ajaxRequest(fileName, his_seq, access_Token);
+				}, 5000);
+	    		
+	    		
 	    	},
 	    	error: function () {
 	    		alert('사진을 첨부하세요!')

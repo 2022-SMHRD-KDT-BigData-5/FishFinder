@@ -19,7 +19,7 @@
 		<noscript><link rel="stylesheet" href="/fish/resources/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
-		<script src="/assets/js/view.js"></script>
+		<script src="assets/js/view.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -56,7 +56,7 @@
 								</div>
 							</div>
 							<!-- 댓글작성 -->
-							<form action="commIn" method="Post">
+							<form action="/fish/commIn" method="get">
 							<div class="comm_write_box">
 								<a name="here"><textarea id="comment_content" class="comm_text" name="comment_content"></textarea></a>
 								<input id="article_seq" name="article_seq" type="hidden" value="${community.article_seq}">

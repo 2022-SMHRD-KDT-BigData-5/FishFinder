@@ -7,12 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.smhrd.domain.Comment;
-import com.smhrd.domain.Community;
 import com.smhrd.mapper.commentMapper;
 
 @Controller
@@ -31,7 +28,9 @@ public class CommentCon {
 	
 	// Comment 등록
 	@RequestMapping("/commIn")
-	public String commentInsert(Comment cvo) {		
+	public String commentInsert(Comment cvo) {	
+		
+		System.out.println(cvo.getArticle_seq());
 		cmapper.commentInsert(cvo);
 		int article_seq = cvo.getArticle_seq();
 		return "redirect:/viewContent/"+article_seq;
