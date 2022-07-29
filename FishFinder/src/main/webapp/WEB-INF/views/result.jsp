@@ -41,20 +41,12 @@
 					<div class = "card">
 						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>				
 						표준어로는 '넙치'이고 '광어'가 사투리였지만 광어라는 이름으로 널리 불리면서 광어도 표준말로 대접받게 되었다.
-						<br>
-						생김새가 비슷한 어종으로는 도다리와 가자미가 있다.
-						<br>
-						광어의 특징 :
-						<br>
-						가슴지느러미를 아래로 향했을 때, 얼굴이 왼쪽 방향이다.
-						<br>
-						얼굴을 아래로 향하게 했을 때, 눈이 왼쪽으로 몰려있다.
-						<br>
-						입이 크고 이빨이 발달했다.
+						${fish_vo.fish_kind }
+						${fish_vo.fish_spec }
 					</div>
 					<nav>
 						<ul>
-							<li><a href="#" class="fa-solid fa-link" style="color: #fff;"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="fa-solid fa-link" onclick="sendLinkDefault()" style="color: #fff;"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="fa-solid fa-floppy-disk" style="color: #fff;"><span class="label">Facebook</span></a></li>
 						</ul>
 					</nav>
@@ -90,5 +82,49 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
+	<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type="text/javascript">    
+	try {
+	  function sendLinkDefault() {
+	    Kakao.init('1164def143509ff0c0d32517fc31f7de')
+	    Kakao.Link.sendDefault({
+	      objectType: 'feed',
+	      content: {
+	        title: '딸기 치즈 케익',
+	        description: '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+	        imageUrl:
+	          'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+	        link: {
+	          mobileWebUrl: 'https://developers.kakao.com',
+	          webUrl: 'https://developers.kakao.com',
+	        },
+	      },
+	      social: {
+	        likeCount: 286,
+	        commentCount: 45,
+	        sharedCount: 845,
+	      },
+	      buttons: [
+	        {
+	          title: '웹으로 보기',
+	          link: {
+	            mobileWebUrl: 'https://developers.kakao.com',
+	            webUrl: 'https://developers.kakao.com',
+	          },
+	        },
+	        {
+	          title: '앱으로 보기',
+	          link: {
+	            mobileWebUrl: 'https://developers.kakao.com',
+	            webUrl: 'https://developers.kakao.com',
+	          },
+	        },
+	      ],
+	    })
+	  }
+	; window.kakaoDemoCallback && window.kakaoDemoCallback() }
+	catch(e) { window.kakaoDemoException && window.kakaoDemoException(e) }
+		
+</script>
 	
 </html>
