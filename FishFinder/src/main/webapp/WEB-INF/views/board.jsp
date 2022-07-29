@@ -27,15 +27,11 @@
 					<h1>Board</h1>
 					<div class="board_box">
 						<div class="board_menu">
-<<<<<<< HEAD
+
 							<a href="#">전체</a>
 							<a href="#">내가 쓴 글</a>
 							<a href="/writer" class="">글 작성</a>
-=======
-							<a href="#" class="boardAll" onclick="showAll()">전체</a>
-							<a href="#" class="boardMy" onclick="showMy()">내가 쓴 글</a>
-							<a href="writer.html" class="">글 작성</a>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
+
 						</div>
 						<div class="board_scroll">
 							<ul class="board_selectAll">
