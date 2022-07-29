@@ -21,22 +21,29 @@ public class CommentCon {
 	@Autowired
 	commentMapper cmapper;
 	
-	// Comment 등록
-	@PostMapping("viewContent/commIn")
-	public String commentInsert(Comment cvo, MultipartFile file) {		
-		cmapper.commentInsert(cvo);
-		return "redirect:/viewContent/?article_seq=" + cvo.getArticle_seq();
+	// 댓글 조회
+	@GetMapping("commList/{comment_seq}")
+	public String commentList(@PathVariable("comment_seq") int comment_seq, Model model) {
+	List<Comment> comment = cmapper.commentList(comment_seq);
+	model.addAttribute("comment", comment);
+	return "view";
 	}
 	
-	// 작성한 댓글보기
-	@GetMapping("/viewContent/{article_seq}")
-	public String commentview(Model model,
-			@PathVariable("article_seq") int article_seq) {
-		
-		Comment cvo = cmapper.commentview(article_seq);	
-		model.addAttribute("comment", cvo);
-		return "view";
+	// Comment 등록
+	@RequestMapping("/commIn")
+	public String commentInsert(Comment cvo) {		
+		cmapper.commentInsert(cvo);
+		return "redirect:/viewContent/{article_seq}";
 	}
+		
+	// 댓글 수 불러오기
+	@RequestMapping("/commCnt/{article_seq}")
+	public String commentCount(@PathVariable("article_seq") int article_seq, Model model) {
+		int ctotal = cmapper.commentCount(article_seq);
+		model.addAttribute("ctotal",ctotal);
+		return "board";
+	}
+	
 	// Comment 삭제
 	@RequestMapping("/commDel")
 	public String commentDelete( @PathVariable("comment_seq") int comment_seq) {
@@ -45,15 +52,10 @@ public class CommentCon {
 		return "redirect:/viewContent/{article_seq}";
 	}	
 	
-	// 댓글 수 불러오기
-	public int commentCount(@PathVariable("article_seq") int article_seq) {
-		int ctotal = cmapper.commentCount(article_seq);
-		return ctotal;
-	}
-	
 	// Comment 수정 후 DB에 업데이트
-	@PostMapping("/commUp")
-	public String commentUpdate(Comment cvo) {
+	@RequestMapping("/commUp")
+	public String commentUpdate(@PathVariable("comment_seq") int comment_seq, Comment cvo) {
+		cvo.setComment_seq(comment_seq);
 		cmapper.commentUpdate(cvo);
 		return "redirect:/viewContent/{article_seq}";
 	}

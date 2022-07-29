@@ -55,10 +55,17 @@
 									<a href='javascript:goList()'>목록</a>
 								</div>
 							</div>
+							<!-- 댓글작성 -->
+							<form action="commIn" method="Post">
 							<div class="comm_write_box">
-								<a name="here"><textarea class="comm_text"></textarea></a>
-								<button href="javascript:commInsert(${community.article_seq},${sessionScope.user_num})" class="custom-btn btn-3">등록</button>
+								<a name="here"><textarea id="comment_content" class="comm_text" name="comment_content"></textarea></a>
+								<input id="article_seq" name="article_seq" type="hidden" vlaue="${community.article_seq}">
+								<input id="user_num" name="user_num" type="hidden" vlaue="${sessionScope.user_num}">
+								<button type="submit" class="custom-btn btn-3">등록</button>
 							</div>
+							</form>
+							<!-- 댓글작성 끝 -->
+							<!-- 댓글목록 -->
 							<c:forEach items="${comment}" var="clist">
 							<div class="comments_box">
 								<div class="comments_writer" value="${clist.user_num}">${clist.user_num}</div>
@@ -67,13 +74,16 @@
 								</div>
 								<div class="comments_dmd">
 									<div class="comments_date">${fn:split(clist.comment_date, " ")[0]}</div>
-									<div class="comments_md">
-										<a href="commUp(${comment.comment_seq})" class="comments_modify" >수정</a>
-										<a href="commDel(${comment.comment_seq})" class="comments_delete" >삭제</a>
-									</div>
 								</div>
+								<c:if test="${comment.user_num == sessionScope.user_num}">
+								<div class="comments_md">
+									<a href="#" onclick="javascript:commUp(${comment.comment_seq})" class="comments_modify" >[수정]</a>
+									<a href="#" onclick="javascript:commDel(${comment.comment_seq})" class="comments_delete" >[삭제]</a>
+								</div>
+								</c:if>
 							</div>
 							</c:forEach>
+							<!-- 댓글목록  끝-->
 						</div>
 					</div>
 					<nav>
@@ -99,6 +109,6 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-<script type="text/javascript" src="resources/js/community2.js"></script>
+<script type="text/javascript" src="resources/js/community2.js"/>
 </head>
 </html>
