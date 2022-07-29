@@ -22,7 +22,7 @@ public class CommentCon {
 	commentMapper cmapper;
 	
 	// Comment 등록
-	@PostMapping("viwContent/commIn")
+	@PostMapping("viewContent/commIn")
 	public String commentInsert(Comment cvo, MultipartFile file) {		
 		cmapper.commentInsert(cvo);
 		return "redirect:/viewContent/?article_seq=" + cvo.getArticle_seq();
@@ -42,7 +42,7 @@ public class CommentCon {
 	public String commentDelete( @PathVariable("comment_seq") int comment_seq) {
 		System.out.println("번호 : " + comment_seq);
 		cmapper.commentDelete(comment_seq);		
-		return "redirect:/view/{article_seq}";
+		return "redirect:/viewContent/{article_seq}";
 	}	
 	
 	// 댓글 수 불러오기
@@ -55,6 +55,6 @@ public class CommentCon {
 	@PostMapping("/commUp")
 	public String commentUpdate(Comment cvo) {
 		cmapper.commentUpdate(cvo);
-		return "redirect:/view/{article_seq}";
+		return "redirect:/viewContent/{article_seq}";
 	}
 }

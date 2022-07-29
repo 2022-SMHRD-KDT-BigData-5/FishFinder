@@ -15,8 +15,10 @@ public class userhistory {
 	private int user_num;
 	private String fish_img;
 	private String result;
+	private int accuracy;
 	private String result_memo;
 	private String search_date;
+	
 	public userhistory(int user_num, String fish_img) {
 		super();
 		this.user_num = user_num;

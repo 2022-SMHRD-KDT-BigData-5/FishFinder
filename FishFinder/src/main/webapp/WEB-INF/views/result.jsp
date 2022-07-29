@@ -11,13 +11,13 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/result.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/fish/resources/assets/css/main.css" />
+		<link rel="stylesheet" href="/fish/resources/assets/css/result.css" />
+		<noscript><link rel="stylesheet" href="/fish/resources/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<!--main js-->
-		<script src="assets/js/main.js"></script>
+		<script src="/fish/resources/assets/js/main.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -29,17 +29,17 @@
 					<h1>RESULT</h1>
 					<!-- <a href="kakaolink://launch">카카오톡앱</a> -->
                     <div class="container">
-					    <img class="result" src="assets/css/images/fish.jpg" alt="">
+                    <img class="result" src="${pageContext.request.contextPath}/image/${his_vo.fish_img }" alt="">
 					</div>
 					<!-- <div class="meter1">
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
                     	<span>감성돔과 X % 일치합니다.</span>
 					</div> -->
-					<div class="progress-bar" style="--width:10" data-label="n%..."></div>
+					<div class="progress-bar" style="--width:${his_vo.accuracy }" data-label="${his_vo.accuracy }%..."></div>
 					<br>
 					<!-- 결과 안내 창 -->
 					<div class = "card">
-						<div class="result_font"> 80% 감성돔입니다.</div>				
+						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>				
 						표준어로는 '넙치'이고 '광어'가 사투리였지만 광어라는 이름으로 널리 불리면서 광어도 표준말로 대접받게 되었다.
 						<br>
 						생김새가 비슷한 어종으로는 도다리와 가자미가 있다.
@@ -62,28 +62,28 @@
 
 					<nav>
 						<ul>
-							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="history.html" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="board.html" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="qna.html" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+							<li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+							<li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
 					</nav>
 				</header>
 				<footer id="footer">
-	               <span class="copyright"><a href="join.html">Logout</a>.</span>
+	               <span class="copyright"><a href="/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="admin.html">Admin</a>.</span>
+	               <span class="copyright"><a href="/admin">Admin</a>.</span>
 	            </footer>
 			</div>
 		</div>
-		<script>
+	<!-- 	<script>
 			const progressBar = document.getElementsByClassName('progress-bar')[0]
 			setInterval(() => {
 			const computeredStyle = getComputedStyle(progressBar)
 			const width = parseFloat(computeredStyle.getPropertyValue('--width')) || 0
 			progressBar.style.setProperty('--width',width + .1)
 			}, 5)
-		</script>
+		</script>  -->
 	</body>
 	<script>
 		window.onload = function() { document.body.classList.remove('is-preload'); }

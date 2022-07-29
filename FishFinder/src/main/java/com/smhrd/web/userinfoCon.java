@@ -104,6 +104,10 @@ public class userinfoCon {
 	@RequestMapping(value="/login", method=RequestMethod.GET)
 	public String testloginsuc(@RequestParam(value = "code", required = false) String code,Model model) throws Exception {
 		
+		if(session.getAttribute("access_Token") !=null) {
+			
+			
+		}else {
 		// 코드 확인
 		System.out.println("#########" + code);
 		
@@ -125,6 +129,7 @@ public class userinfoCon {
 		session.setAttribute("kakaoE", userInfo.getKakao_email());
 		session.setAttribute("user_type", userInfo.getUser_type());
 		session.setAttribute("access_Token", access_Token);
+		}
 		
 		// jsp에서 ${sessionScope.kakaoN}
 		

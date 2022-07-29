@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>암행漁사</title>
     <link rel="stylesheet" href="assets/css/admin.css" />
 </head>
 <body>
@@ -15,56 +15,50 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="#"></ion-icon></span>
-                        <span class="title">암행漁사</span>
+                        <span class="icon"><img src="/FishFinder/assets/css/images/logo3.png"></span>
+                        <span class="title1"><img src="/FishFinder/assets/css/images/logo4.png"></span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
-                        <span class="title">Dashboard</span>
+                        <span class="title">홈</span>
                     </a>
                 </li>
-                <!-- 
-                <li>
+                <!-- <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></ion-icon></span>
                         <span class="title">Customers</span>
                     </a>
-                </li>
-                 -->
+                </li> -->
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>
-                        <span class="title">Boards</span>
+                        <span class="title">게시판</span>
                     </a>
                 </li>
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="help-outline"></ion-icon></ion-icon></span>
-                        <span class="title">Q&A</span>
+                        <span class="title">질문</span>
                     </a>
                 </li>
-                <!--
-                <li>
+                <!-- <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                         <span class="title">Settings</span>
                     </a>
                 </li>
-                 -->
-                <!-- 
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                         <span class="title">Password</span>
                     </a>
-                </li>
-                 -->
+                </li> -->
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                        <span class="title">Sign Out</span>
+                        <span class="title">로그아웃</span>
                     </a>
                 </li>
             </ul>
@@ -83,11 +77,10 @@
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
-                <!-- user
+                <!-- user -->
                 <div class="user">
                     <img src="/arm/assets/css/images/user.jpg">
                 </div>
-                 -->
             </div>
 
             <!-- cards -->
@@ -95,7 +88,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">1,504</div>
-                        <div class="cardName">Total Join</div>
+                        <div class="cardName">회원</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="people-circle-outline"></ion-icon>
@@ -104,7 +97,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">80</div>
-                        <div class="cardName">Total Search</div>
+                        <div class="cardName">검색량</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="search-outline"></ion-icon>
@@ -113,7 +106,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">284</div>
-                        <div class="cardName">Total Board</div>
+                        <div class="cardName">게시글</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="reader-outline"></ion-icon>
@@ -122,10 +115,10 @@
                 <div class="card">
                     <div>
                         <div class="numbers">42</div>
-                        <div class="cardName">Total Q&A</div>
+                        <div class="cardName">질문</div>
                     </div>
                     <div class="iconBx">
-                        <ion-icon name="cash-outline"></ion-icon>
+                        <ion-icon name="help-circle-outline"></ion-icon>
                     </div>
                 </div>
             </div>
@@ -135,25 +128,25 @@
             <!-- order details list -->
             <div class="recentOrders">
                 <div class="cardHeader">
-                    <h2>Statistics</h2>
+                    <h2>통계</h2>
                     <a href="#" class="btn">View All</a>
                 </div>
             <div>
                 <!-- 여따 넣고싶다 -->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 		    	<canvas id="line-chart" width="250" height="200"></canvas>
-                <script src="Chart.min.js"></script>
+                <script src="/assets/js/Chart.min.js"></script>
             </div>
             </div>
 
             <!-- New Customer -->
             <div class="recentCustomers">
                 <div class="cardHeader">
-                    <h2>Recent Q&A</h2>
+                    <h2>최근 질문</h2>
                 </div>
                 <table>
                     <tr>
-                        <td width="60px"><div class="imgBx"><img src="/arm/assets/css/images/fish1.jpg"></div></td>
+                        <td width="60px"><div class="imgBx"><img src="/assets/css/images/img_test.jpg"></div></td>
                         <td><h4>David<br><span>Italy</span></h4></td>
                     </tr>
                 </table>

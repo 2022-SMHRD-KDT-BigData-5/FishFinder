@@ -15,7 +15,8 @@
 	    		console.log(fileName)
 	    		ajaxRequest(fileName, his_seq, access_Token);
 	    	},
-	    	error: function (e) {
+	    	error: function () {
+	    		alert('사진을 첨부하세요!')
 	    	}
 	    });
 	}
@@ -39,12 +40,9 @@
                     window.location.href = "/fish/result/"+res
                 },
                 error : function(){
-                    alert('error!')
+                    alert('사진을 첨부하세요!')
                 }
 
-
             })
-
-
 
         }

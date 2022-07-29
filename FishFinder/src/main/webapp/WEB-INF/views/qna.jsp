@@ -32,7 +32,7 @@
 							<a href="#">전체</a>
 							<a href="#">주로 묻는 질문</a>
 							<a href="#">나의 질문</a>
-							<a href="qna_write.html">질문하기</a>
+							<a href="/qna_write">질문하기</a>
 						</div>
 						<div class="qna_scroll">
 							<ul id="list">
@@ -53,34 +53,47 @@
 					</div>
 					<nav>
 						<ul>
-							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="history.html" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="board.html" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="qna.html" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+							<li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+							<li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
 					</nav>
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="join.html">Logout</a>.</span>
+	               <span class="copyright"><a href="/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="admin.html">Admin</a>.</span>
+	               <span class="copyright"><a href="/admin">Admin</a>.</span>
 	            </footer>
 			</div>
 		</div>
 	</body>
 	 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script>
+	
+
 	$(document).ready( (e) => {
 		allQuestions()		
+		
+
+		
+		
 	})
+	
+
+	$(document).on("click",'.qna_q', ()=>{ // on 이벤트로 변경
+		
+		$(this).ready(openCloseAnswer())
+	});
 
 	
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 		// 접고 펼치기
-		const items = document.querySelectorAll('.qna_q');
+		
+		
 
 		function openCloseAnswer() {
 			console.log("클릭은 됨")
@@ -95,8 +108,10 @@
 			document.getElementById(this.id + '-toggle').textContent = '-';
 			}
 		}
+		
+		//items.forEach(item => item.addEventListener('click', openCloseAnswer));
 
-		items.forEach(item => item.addEventListener('click', openCloseAnswer));
+		
 		
 		
 		
@@ -122,7 +137,7 @@
  
                 		table += '<li class="tes">'
                 		table += '<div class="qna_qa">'
-                		table += '<div class="qna_q" id="clickQ-'+i+'"><span id="clickQ-'+i+'-toggle">+</span>'
+                		table += '<div class="qna_q" id="clickQ-'+(i+1)+'"><span id="clickQ-'+(i+1)+'-toggle">+</span>'
                 		table += '<span class="qna_title">'+data[i].q_content
                 		table += '<div class="qna_date">'+data[i].q_date+'</div></span></div>'
                         
@@ -167,7 +182,7 @@
 	                dataType : "json",
 	                success : function(data){
                  
-	                	table +=  '<div class="qna_a" id="showA-'+i+'" style="display : block;">'+data.a_content+'</div>'
+	                	table +=  '<div class="qna_a" id="showA-'+(i+1)+'" style="display : block;">'+data.a_content+'</div>'
                         table +=  '</div></li>'
 
                         
