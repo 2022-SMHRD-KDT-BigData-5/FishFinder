@@ -212,19 +212,23 @@ input, select, textarea {
 }
 /* 업로드 이미지 미리보기 */
 .preview_container{
+    /* border: 1px solid #fff; */
     width: 399px;
-    max-height: 532px;
-    line-height:532px;
+    height: 532px;
+	line-height:532px;
     margin: auto;
+	/* height: auto; */
     border-radius: 5px;
     margin-top: 1%;
+
 }
 .img_thumbnail{
 	border: 1px solid #fff;
+	/* margin: 0px auto; */
 	max-width: 100%;
     max-height: 100%;
     object-fit: scale-down;
-    vertical-align:middle;
+	vertical-align:middle;
 }
 .smallLogo{
 	position: absolute;
@@ -239,6 +243,7 @@ input, select, textarea {
 		height: 360px;
 		line-height: 360px;
 	}
+
 }
 .preview_container{
 	display: none;
@@ -313,9 +318,9 @@ input, select, textarea {
 		-webkit-transform: translate3d(0,0,0);
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
-	/* Set your background with this */
 
-		background: #348cb2 url("images/bg.png") bottom left;
+		/* Set your background with this */
+		background: #348cb2 url("images/bgbg.png") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -389,8 +394,8 @@ input, select, textarea {
 	}
 
 	#bg {
-		background-size: 900px auto;
-		width: 4250px;
+		background-size: 1500px auto;
+		width: 4500px;
 	}
 
 /* Overlay */
@@ -894,8 +899,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 900px auto;
-			width: 4250px;
+			background-size: 1500px auto;
+			width: 4500px;
 		} }
 
 /* Normal */
@@ -976,8 +981,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 900px auto;
-			width: 4250px;
+			background-size: 750px auto;
+			width: 2250px;
 		} }
 
 /* Mobile */
@@ -1062,8 +1067,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 900px auto;
-			width: 2250px;
+			background-size: 300px auto;
+			width: 900px;
 		}
 
 	/* Header */
@@ -1160,8 +1165,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 900px auto;
-			width: 4425px;
+			background-size: 412.5px auto;
+			width: 1237.5px;
 		}
 
 	/* Header */

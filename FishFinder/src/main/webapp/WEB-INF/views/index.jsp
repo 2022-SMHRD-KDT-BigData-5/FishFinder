@@ -22,7 +22,7 @@
          <div id="overlay"></div>
          <div id="main">
             <!-- Header -->
-            <img src="resources/assets/css/images/smallLogo.png" class="smallLogo">
+            <img src="resources/assets/css/images/wsmallLogo.png" class="smallLogo">
             <header id="header">
                <!-- <a href="kakaolink://launch">카카오톡앱</a> -->
                <img src="resources/assets/css/images/logo2.png" alt="" class="mainLogo">
@@ -30,13 +30,13 @@
                <div class="preview_container" id="imagePreview">
                   <img class="img_thumbnail" id="show-picture" src="">
                </div>
-               <!-- 지울부분 -->
+               <!-- 지울부분 
                	<br>
                	오늘 접속 수 : ${sessionScope.todayCount}
                	<br>
                	총 접속자 수 : ${sessionScope.totalCount}
                	<br>
-               <!-- 지울부분  끝-->
+               	지울부분  끝-->
                <nav>
                   <ul>
                      <!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li> -->
