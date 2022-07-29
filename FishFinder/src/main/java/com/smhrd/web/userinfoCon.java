@@ -166,6 +166,10 @@ public class userinfoCon {
 		
 		fishinfo fish_vo = fm.fishList(his_vo.getResult());
 		model.addAttribute("fish_vo",fish_vo);
+		String reaPath = "C:\\Users\\smhrd\\git\\FishFinder\\FishFinder\\src\\main\\webapp\\resources\\image\\"; 
+		java.io.File file = new java.io.File(reaPath + his_vo.getFish_img());
+
+		
 		
 		return "result";
 	}

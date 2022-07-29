@@ -11,8 +11,8 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/board.css" />
+		<link rel="stylesheet" href="resources/assets/css/main.css" />
+		<link rel="stylesheet" href="resources/assets/css/board.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
@@ -43,7 +43,7 @@
 								<a href="/view">
 									<li class="board_list">
 										<div class="preview_img">
-											<img class="board_img" src="/assets/css/images/img_test.jpg" alt="">
+											<img class="board_img" src="resources/assets/css/images/img_test.jpg" alt="">
 										</div>
 										<div class="board_tnd">
 											<div class="board_title">벌써5시반</div>
@@ -61,7 +61,7 @@
 								<a href="view.html">
 									<li class="board_list">
 										<div class="preview_img">
-											<img class="board_img" src="/assets/css/images/img_test.jpg" onerror="">
+											<img class="board_img" src="resources/assets/css/images/img_test.jpg" onerror="">
 										</div>
 										<div class="board_tnd">
 											<div class="board_title">벌써5시반</div>
@@ -114,15 +114,12 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-<<<<<<< HEAD
+
 	               <span class="copyright"><a href="/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 	               <span class="copyright"><a href="/admin">Admin</a>.</span>
             	</footer>
-=======
-					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-				</footer>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
+
 			</div>
 		</div>
 	</body>

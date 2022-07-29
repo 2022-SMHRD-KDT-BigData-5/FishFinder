@@ -1,6 +1,8 @@
 package com.smhrd.web;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,6 +34,7 @@ public class uploadRestCon {
 		}
  
 		int user_num = (Integer)session.getAttribute("user_num");
+		String kakaoN = (String)session.getAttribute("kakaoN");
 		String access_Token = (String)session.getAttribute("access_Token");
 		
         System.out.println("파일 이름 : " + file.getOriginalFilename());
@@ -39,16 +42,22 @@ public class uploadRestCon {
         System.out.println("사용자 번호 : " + user_num);
 
      // 실제 물리경로
-        String Path = session.getServletContext().getRealPath("/");
+        String Path = session.getServletContext().getRealPath("/resources/image");
+        System.out.println(Path);
         String reaPath = "C:\\Users\\smhrd\\git\\FishFinder\\FishFinder\\src\\main\\webapp\\resources\\image\\"; 
         
-        LocalDate now = LocalDate.now();
+        LocalDate date = LocalDate.now();
+        LocalTime time = LocalTime.now();
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH-mm-ss");
+	    String Time = time.format(formatter);
+        String now = kakaoN + "_" + date+"_"+Time;
+
         String fileName = now + "_" +file.getOriginalFilename();
         
 
         // File을 서버에 저장
-        is.ServerUpdate(file, reaPath, fileName);
         is.ServerUpdate(file, Path, fileName);
+        is.ServerUpdate(file, reaPath, fileName);
         // 프로젝트에 업로드된 이미지 프로젝트에 바로 적용하는 방법이 있는 주소
         // 안하면 바로 업데이트 안돼서 기능 안댐
         //https://record-than-remember.tistory.com/entry/%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C-%ED%9B%84%EC%97%90-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%9E%90%EB%8F%99-refresh
