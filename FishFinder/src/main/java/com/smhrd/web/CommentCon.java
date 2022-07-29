@@ -28,6 +28,15 @@ public class CommentCon {
 		return "redirect:/viewContent/?article_seq=" + cvo.getArticle_seq();
 	}
 	
+	// 작성한 댓글보기
+	@GetMapping("/viewContent/{article_seq}")
+	public String commentview(Model model,
+			@PathVariable("article_seq") int article_seq) {
+		
+		Comment cvo = cmapper.commentview(article_seq);	
+		model.addAttribute("comment", cvo);
+		return "view";
+	}
 	// Comment 삭제
 	@RequestMapping("/commDel")
 	public String commentDelete( @PathVariable("comment_seq") int comment_seq) {

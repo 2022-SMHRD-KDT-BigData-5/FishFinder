@@ -23,25 +23,49 @@ function open(article_seq){
 		
 }
 //====================================================================================
+//목록가기
+function goList(){
+	location.href = '/fish/view';
+}
+		
+// 삭제하기
+function goDelete(article_seq){
+	console.log(article_seq);
+	location.href = '/fish/viewDel?article_seq=' + article_seq;
+}
+		
+// 수정하기
+function goUpdate(article_seq){		
+	location.href = '/fish/viewGoUp?article_seq=' + article_seq;
+}
+
+// 댓글삭제하기
+function commDel(comment_seq){
+	location.href = '/fish/commDel?comment_seq=' + comment_seq;
+}
+		
+// 댓글삭제하기
+function commUp(comment_seq){
+	location.href = '/fish/commUp?comment_seq=' + comment_seq;
+}
+		
 //댓글 등록
-function commInsert(article_seq, user_num){			
-	
-	let commentCnt = Number($('#commentCnt').html());
-	
+function commInsert(article_seq, user_num){						
+			
 	$.ajax({
-	
-		type : "post",
+			
+		type : "GET",
 		url : 'viwContent/commIn',
 		data : {
 			"article_seq" : article_seq,
 			"user_num" : user_num
 			},
 		success : function(res){
-				$('#commentCnt').html( commentCnt + 1 );
+				alert('댓글 등록 성공')
 			},
 		error : function(e){
 				alert('댓글 등록 실패')
 			}	
-				
+						
 	});
 }

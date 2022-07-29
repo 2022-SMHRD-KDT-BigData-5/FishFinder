@@ -57,7 +57,7 @@
 							</div>
 							<div class="comm_write_box">
 								<a name="here"><textarea class="comm_text"></textarea></a>
-								<button onclick="commInsert(${community.article_seq},${sessionScope.user_num})" class="custom-btn btn-3"><span>등록</span></button>
+								<button href="javascript:commInsert(${community.article_seq},${sessionScope.user_num})" class="custom-btn btn-3">등록</button>
 							</div>
 							<c:forEach items="${comment}" var="clist">
 							<div class="comments_box">
@@ -68,8 +68,8 @@
 								<div class="comments_dmd">
 									<div class="comments_date">${fn:split(clist.comment_date, " ")[0]}</div>
 									<div class="comments_md">
-										<a href="commUp()" class="comments_modify" >수정</a>
-										<a href="commDel()" class="comments_delete" >삭제</a>
+										<a href="commUp(${comment.comment_seq})" class="comments_modify" >수정</a>
+										<a href="commDel(${comment.comment_seq})" class="comments_delete" >삭제</a>
 									</div>
 								</div>
 							</div>
@@ -99,29 +99,6 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-	<script type="text/javascript">
-		//목록가기
-		function goList(){
-			location.href = '/fish/view';
-		}
-		// 삭제하기
-		function goDelete(article_seq){
-			console.log(article_seq);
-			location.href = '/fish/viewDel?article_seq=' + article_seq;
-		}
-		// 수정하기
-		function goUpdate(article_seq){		
-			location.href = '/fish/viewGoUp?article_seq=' + article_seq;
-		}
-		// 댓글삭제하기
-		function commDel(){
-			location.href = '/fish/viewContent/commDel?comment_seq' + comment+seq;
-		}
-		// 댓글삭제하기
-		function commUp(){
-			location.href = '/fish/viewContent/commUp?comment_seq' + comment+seq;
-		}
-		
-	</script>
+<script type="text/javascript" src="resources/js/community2.js"></script>
 </head>
 </html>

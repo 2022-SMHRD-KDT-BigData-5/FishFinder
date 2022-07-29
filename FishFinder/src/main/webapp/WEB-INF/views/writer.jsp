@@ -86,9 +86,9 @@
 		// })
 
 		// 파일 주소 불러오기
-		document.querySelector("#sendButton").addEventListener('click',()=>{
-		let selectFile = document.querySelector("#inputImage").files[0];
-		console.log(selectFile);
+		document.querySelector("#sendButton").addEventListener('click', () => {
+			let selectFile = document.querySelector("#inputImage").files[0];
+			console.log(selectFile);
 		})
 	</script>
 </html>
