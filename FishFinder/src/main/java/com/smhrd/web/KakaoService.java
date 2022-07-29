@@ -56,7 +56,7 @@ public class KakaoService {
 				sb.append("grant_type=authorization_code");
 	            
 				sb.append("&client_id=594ae1b3ed146deb6d74549625ebeb66"); //REST API 키
-				sb.append("&redirect_uri=http://121.147.52.236:8083/fish/login"); // Redirect URI 주소
+				sb.append("&redirect_uri=http://localhost:8083/fish/login"); // Redirect URI 주소
 	            
 				sb.append("&code=" + authorize_code);
 				bw.write(sb.toString());

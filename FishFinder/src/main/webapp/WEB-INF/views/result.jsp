@@ -20,6 +20,7 @@
 		<script src="/fish/resources/assets/js/main.js"></script>
 		<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 		
+
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -31,7 +32,8 @@
 					<h1>RESULT</h1>
 					<!-- <a href="kakaolink://launch">카카오톡앱</a> -->
                     <div class="container">
-                    <img class="result" src="${pageContext.request.contextPath}/image/${his_vo.fish_img }?v=1" alt="">
+                    <img id="fishImg" class="result" src="${pageContext.request.contextPath}/image/${his_vo.fish_img }?v=1" alt="">
+					
 					</div>
 					<!-- <div class="meter1">
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
@@ -42,7 +44,7 @@
 					<!-- 결과 안내 창 -->
 					<div class = "card">
 						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>				
-						표준어로는 '넙치'이고 '광어'가 사투리였지만 광어라는 이름으로 널리 불리면서 광어도 표준말로 대접받게 되었다.
+
 						${fish_vo.fish_kind }
 						${fish_vo.fish_spec }
 					</div>
@@ -50,7 +52,9 @@
 						<ul>
 							<li><a href="#" class="fa-solid fa-link" onclick="sendLinkDefault()" style="color: #fff;"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="fa-solid fa-floppy-disk" style="color: #fff;"><span class="label">Facebook</span></a></li>
+
 						</ul>
+            
 					</nav>
 					
 
@@ -155,8 +159,6 @@
 			  ]
 			});
 	 }
-
-		
 </script>
 	
 </html>
