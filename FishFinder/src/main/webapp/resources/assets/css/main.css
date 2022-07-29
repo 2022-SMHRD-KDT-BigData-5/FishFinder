@@ -237,6 +237,7 @@ input, select, textarea {
 	.preview_container{
 		width: 270px;
 		height: 360px;
+		line-height: 360px;
 	}
 }
 .preview_container{
