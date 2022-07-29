@@ -27,14 +27,20 @@
 					<h1>Board</h1>
 					<div class="board_box">
 						<div class="board_menu">
+<<<<<<< HEAD
+							<a href="#">전체</a>
+							<a href="#">내가 쓴 글</a>
+							<a href="/writer" class="">글 작성</a>
+=======
 							<a href="#" class="boardAll" onclick="showAll()">전체</a>
 							<a href="#" class="boardMy" onclick="showMy()">내가 쓴 글</a>
 							<a href="writer.html" class="">글 작성</a>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</div>
 						<div class="board_scroll">
 							<ul class="board_selectAll">
 								<!-- a태그가 기록 하나 -->
-								<a href="view.html">
+								<a href="/view">
 									<li class="board_list">
 										<div class="preview_img">
 											<img class="board_img" src="/assets/css/images/img_test.jpg" alt="">
@@ -99,17 +105,24 @@
 					</div>
 					<nav>
 						<ul>
-							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="history.html" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="board.html" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="qna.html" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+							<li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+							<li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
 					</nav>
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
+<<<<<<< HEAD
+	               <span class="copyright"><a href="/join">Logout</a>.</span>
+	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
+	               <span class="copyright"><a href="/admin">Admin</a>.</span>
+            	</footer>
+=======
 					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
 				</footer>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 			</div>
 		</div>
 	</body>
