@@ -4,18 +4,31 @@ import java.sql.Timestamp;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class Comment {
-
+	
 	private int comment_seq;
+	@NonNull
 	private int article_seq;
+	@NonNull
 	private int user_num;
 	@NonNull
 	private String comment_content;
-	private String comment_date;
+	private Timestamp comment_date;
+	
+	
+	
+	public Comment(@NonNull int user_num) {
+		super();
+		this.user_num = user_num;
+	}
 	
 }

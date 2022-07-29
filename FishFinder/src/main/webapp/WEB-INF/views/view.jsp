@@ -13,10 +13,10 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/qna.css" />
-		<link rel="stylesheet" href="assets/css/view.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/fish/resources/assets/css/main.css" />
+		<link rel="stylesheet" href="/fish/resources/assets/css/qna.css" />
+		<link rel="stylesheet" href="/fish/resources/assets/css/view.css" />
+		<noscript><link rel="stylesheet" href="/fish/resources/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<script src="/assets/js/view.js"></script>
@@ -59,8 +59,8 @@
 							<form action="commIn" method="Post">
 							<div class="comm_write_box">
 								<a name="here"><textarea id="comment_content" class="comm_text" name="comment_content"></textarea></a>
-								<input id="article_seq" name="article_seq" type="hidden" vlaue="${community.article_seq}">
-								<input id="user_num" name="user_num" type="hidden" vlaue="${sessionScope.user_num}">
+								<input id="article_seq" name="article_seq" type="hidden" value="${community.article_seq}">
+								<input id="user_num" name="user_num" type="hidden" value="${sessionScope.user_num}">
 								<button type="submit" class="custom-btn btn-3">등록</button>
 							</div>
 							</form>
@@ -109,6 +109,5 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-<script type="text/javascript" src="resources/js/community2.js"/>
 </head>
 </html>
