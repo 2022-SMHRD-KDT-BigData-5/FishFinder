@@ -28,47 +28,16 @@
 				<header id="header">
 					<h1>Board</h1>
 					<div class="board_box">
-<<<<<<< HEAD
 						<div class="board_menu">
 							<a href="/fish/view" class="boardAll" onclick="showAll()">전체</a>
 							<a class="boardMy" onclick="showMy(${sessionScope.user_num})">내가 쓴 글</a>
 							<a href="/fish/viewIn" class="">글 작성</a>
-=======
-						<div class="board_menu">
-
-							<a href="#">전체</a>
-							<a href="#">내가 쓴 글</a>
-							<a href="/writer" class="">글 작성</a>
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</div>
 						<div class="board_scroll">
 							<ul class="board_selectAll">
 								<!-- a태그가 기록 하나 -->
-<<<<<<< HEAD
 								<c:forEach var="list" items="${list}">
 								<a href='javascript:open(${list.article_seq})'>
-=======
-								<a href="/view">
-									<li class="board_list">
-										<div class="preview_img">
-											<img class="board_img" src="resources/assets/css/images/img_test.jpg" alt="">
-										</div>
-										<div class="board_tnd">
-											<div class="board_title">벌써5시반</div>
-											<div class="board_wdv">
-												<span class="board_writer">김건우</span>
-												<span class="board_date">2022-07-13</span>
-												<span class="board_views">조회수 <span class="views_cnt">1234</span></span>
-											</div>
-										</div>
-										<div class="comments_box">
-											<div class="board_comments">댓글<br>999</div>
-										</div>
-									</li>
-								</a>
-								<a href="view.html">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 									<li class="board_list">
 										<div class="preview_img">
 											<img class="board_img" src="resources/assets/css/images/img_test.jpg" onerror="">
