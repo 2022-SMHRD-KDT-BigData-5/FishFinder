@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="resources/assets/css/main.css" />
 		<link rel="stylesheet" href="resources/assets/css/board.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -97,25 +97,11 @@
 					</nav>
 				</header>
 				<!-- Footer -->
-<<<<<<< HEAD
 				<footer id="footer">
 	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
-=======
-				<footer id="footer">
-
-	               <span class="copyright"><a href="/join">Logout</a>.</span>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-<<<<<<< HEAD
 	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
-            	</footer>
-					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
 				</footer>
-=======
-	               <span class="copyright"><a href="/admin">Admin</a>.</span>
-            	</footer>
-
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 			</div>
 		</div>
 	</body>

@@ -13,13 +13,13 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/qna.css" />
-		<link rel="stylesheet" href="assets/css/view.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="resources/assets/css/main.css" />
+		<link rel="stylesheet" href="resources/assets/css/qna.css" />
+		<link rel="stylesheet" href="resources/assets/css/view.css" />
+		<noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
-		<script src="/assets/js/view.js"></script>
+		<script src="resources/assets/js/view.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -88,11 +88,11 @@
 					</div>
 					<nav>
 						<ul>
-							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="history.html" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="qna.html" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
-						</ul>
+		                     <li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+		                     <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+		                     <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+		                     <li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+		                 </ul>
 					</nav>
 				</header>
 				<!-- Footer -->

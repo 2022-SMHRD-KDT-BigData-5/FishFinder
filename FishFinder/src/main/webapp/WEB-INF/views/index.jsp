@@ -68,7 +68,6 @@
                      <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
                      <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
                      <li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
-
                   </ul>
                </nav>
             </header>
