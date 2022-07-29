@@ -114,15 +114,12 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-<<<<<<< HEAD
+
 	               <span class="copyright"><a href="/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 	               <span class="copyright"><a href="/admin">Admin</a>.</span>
             	</footer>
-=======
-					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
-				</footer>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
+
 			</div>
 		</div>
 	</body>

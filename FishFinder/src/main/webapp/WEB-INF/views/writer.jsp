@@ -46,29 +46,17 @@
 						</div>
 						<nav>
 							<ul>
-<<<<<<< HEAD
 								<li><a href="/view" class="icon solid fa-check"><span class="label">Check</span></a></li>
 								<li><a href="/history" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
-=======
-								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
-								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 							</ul>
 						</nav>
 					</div>
 					<nav>
 						<ul>
-<<<<<<< HEAD
 							<li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
 							<li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
 							<li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
 							<li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
-=======
-							<li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="history.html" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="qna.html" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</ul>
 					</nav>
 				</header>
