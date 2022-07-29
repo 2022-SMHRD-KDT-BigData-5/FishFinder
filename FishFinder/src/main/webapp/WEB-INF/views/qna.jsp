@@ -36,16 +36,16 @@
                   </div>
                   <div class="qna_scroll">
                      <ul id="list">
-                     <li class="tes">
-                           <div class="qna_qa">
-                              <div class="qna_q" id="clickQ-10"><span id="clickQ-10-toggle">+</span>
-                              <span class="qna_title">Q. 글자 제한 두기
-                              <div class="qna_date">2022-07-19</div></span></div>
-                              
-                              <div class="qna_a" id="showA-10">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
-                           </div>
-                           <a href="qna_answer.html" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>
-                        </li>
+	                     <!-- <li class="tes">
+	                           <div class="qna_qa">
+	                              <div class="qna_q" id="clickQ-10"><span id="clickQ-10-toggle">+</span>
+	                              <span class="qna_title">Q. 글자 제한 두기
+	                              <div class="qna_date">2022-07-19</div></span></div>
+	                              
+	                              <div class="qna_a" id="showA-10">A. 답변은 글자 제한 영역 너무 차지하지 않게만</div>
+	                           </div>
+	                           <a href="qna_answer.html" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>
+	                        </li>  -->
                            
                         
                      </ul>
@@ -79,32 +79,8 @@
       window.onload = function() { document.body.classList.remove('is-preload'); }
       window.ontouchmove = function() { return false; }
       window.onorientationchange = function() { document.body.scrollTop = 0; }
-      // 접고 펼치기
-      const items = document.querySelectorAll('.qna_q');
+      
 
-      function openCloseAnswer() {
-         console.log("클릭은 됨")
-         const answerId = this.id.replace('clickQ', 'showA');
-         console.log(answerId)
-
-         if(document.getElementById(answerId).style.display === 'block') {
-         document.getElementById(answerId).style.display = 'none';
-         document.getElementById(this.id + '-toggle').textContent = '+';
-         } else {
-         document.getElementById(answerId).style.display = 'block';
-         document.getElementById(this.id + '-toggle').textContent = '-';
-         }
-      }
-
-      items.forEach(item => item.addEventListener('click', openCloseAnswer));
-      
-      
-      
-      
-      
-      
-      
-      
       
       function allQuestions(){
          $.ajax({
@@ -167,7 +143,7 @@
                    dataType : "json",
                    success : function(data){
                  
-                      table +=  '<div class="qna_a" id="showA-'+i+'" style="display : block;">'+data.a_content+'</div>'
+                      table +=  '<div class="qna_a" id="showA-'+i+'">'+data.a_content+'</div>'
                         table +=  '</div></li>'
 
                         
@@ -190,8 +166,32 @@
       }
       
       
-   
+
+				
+				
+				
+      
+      
    </script>
+   
+   
+   			<!-- 접고 펼치기 -->
+   			<script defer>
+   			
+   			$(document).ready(function(){
+   				$(document).on("click",".qna_q",function(event){             
+   					if($(this).next().css("display") == 'none'){
+   						$(this).next().show();
+   						$(this).children()[0].textContent = "-";
+   					}else{
+   						$(this).next().hide();
+   						$(this).children()[0].textContent = "+";
+   					};
+   				});      
+   			});
+   			
+   			
+			</script>
 
 
    
