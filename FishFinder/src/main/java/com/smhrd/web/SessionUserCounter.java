@@ -20,7 +20,8 @@ public class SessionUserCounter implements HttpSessionListener {
 	  
 	  try {
 		  System.out.println("트라이 안1");
-		  count.setTotalCount();
+		  
+		  //count.setTotalCount();
 		  System.out.println("트라이 안2");
 		  
 		  int todayCount = count.getTodayCount();		  

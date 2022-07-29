@@ -11,13 +11,13 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/fish/resources/assets/css/main.css" />
-		<link rel="stylesheet" href="/fish/resources/assets/css/result.css" />
-		<noscript><link rel="stylesheet" href="/fish/resources/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/result.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<!--main js-->
-		<script src="/fish/resources/assets/js/main.js"></script>
+		<script src="assets/js/main.js"></script>
 		<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 		
 

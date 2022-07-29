@@ -9,6 +9,8 @@ public interface CommunityMapper {
 
 	// 게시판 리스트
 	public List<Community> communityList(Community vo);
+	// 내가 쓴글 리스트
+	public List<Community> communityMyList(Community vo);
 	// 게시판 글 쓰기
 	public int communityInsert(Community vo);
 	// 게시판 선택한 해당 글 보기

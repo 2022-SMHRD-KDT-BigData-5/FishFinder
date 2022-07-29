@@ -11,8 +11,8 @@
       <title>Aerial by HTML5 UP</title>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-      <link rel="stylesheet" href="resources/assets/css/main.css" />
-      <noscript><link rel="stylesheet" href="resources/assets/css/noscript.css" /></noscript>
+      <link rel="stylesheet" href="assets/css/main.css" />
+      <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
       <!-- fontawesome token -->
       <script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
    </head>
@@ -63,12 +63,10 @@
                   </ul>
                   <br>
                   <ul>
-
-                     <li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
-                     <li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
-                     <li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
-                     <li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
-
+                     <li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+                     <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+                     <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+                     <li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
                   </ul>
                </nav>
             </header>
@@ -83,6 +81,6 @@
    </body>
    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="resources/assets/js/main.js"></script>
-   <script src="resources/assets/js/upload.js"></script>
+   <script src="assets/js/main.js"></script>
+   <script src="assets/js/upload.js"></script>
 </html>

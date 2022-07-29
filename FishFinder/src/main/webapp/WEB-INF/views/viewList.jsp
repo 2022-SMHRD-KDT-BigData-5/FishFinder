@@ -15,6 +15,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<!-- 실험용 게시판 리스트 나중에 지우기@@@@@ -->
 	<div class="container">
 		<h2>FishFinde22</h2>
 		<div class="panel panel-default">

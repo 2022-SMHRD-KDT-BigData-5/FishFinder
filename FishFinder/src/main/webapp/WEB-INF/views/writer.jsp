@@ -11,10 +11,10 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="./resources/assets/css/board.css" />
-		<link rel="stylesheet" href="./resources/assets/css/qna_write.css" />
-		<link rel="stylesheet" href="./resources/assets/css/writer.css" />
-		<noscript><link rel="stylesheet" href="./resources/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/board.css" />
+		<link rel="stylesheet" href="assets/css/qna_write.css" />
+		<link rel="stylesheet" href="assets/css/writer.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -46,9 +46,14 @@
 						</div>
 						<nav>
 							<ul>
+<<<<<<< HEAD
+								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
+								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							</ul>
+=======
 								<li><a href="/view" class="icon solid fa-check"><span class="label">Check</span></a></li>
 								<li><a href="/history" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</nav>
 					</div>
 					<nav>
@@ -86,9 +91,9 @@
 		// })
 
 		// 파일 주소 불러오기
-		document.querySelector("#sendButton").addEventListener('click',()=>{
-		let selectFile = document.querySelector("#inputImage").files[0];
-		console.log(selectFile);
+		document.querySelector("#sendButton").addEventListener('click', () => {
+			let selectFile = document.querySelector("#inputImage").files[0];
+			console.log(selectFile);
 		})
 	</script>
 </html>
