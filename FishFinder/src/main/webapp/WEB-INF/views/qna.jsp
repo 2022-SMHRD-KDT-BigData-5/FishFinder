@@ -147,7 +147,7 @@
 	                dataType : "json",
 	                success : function(data){
                  
-	                	table +=  '<div class="qna_a" id="showA-'+(i+1)+'" style="display : block;">'+data.a_content+'</div>'
+	                	table +=  '<div class="qna_a" id="showA-'+(i+1)+'">'+data.a_content+'</div>'
                         table +=  '</div></li>'
 
                         
@@ -173,7 +173,7 @@
 	
 	</script>
 
-	<script defer>
+	<script>
 	$(document).ready(function(){
 			$(document).on("click",".qna_q",function(event){             
 				if($(this).next().css("display") == 'none'){
