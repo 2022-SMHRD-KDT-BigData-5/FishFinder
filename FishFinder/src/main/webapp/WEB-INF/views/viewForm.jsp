@@ -17,7 +17,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">Panel Heading</div>
 			<div class="panel-body">
-				<form class="form-horizontal" action="communityInsert.do" method="post" enctype="multipart/form-data">
+				<form class="form-horizontal" action="viewIn" method="post" enctype="multipart/form-data">
     				<div class="form-group">
       					<label class="control-label col-sm-2" for="article_title">제목 : </label>
       					<div class="col-sm-10">
@@ -27,7 +27,7 @@
     				<div class="form-group">
       					<label class="control-label col-sm-2" for="user_num">작성자 : </label>
       					<div class="col-sm-10">          
-        					<input type="text" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
+        					<input type="text" class="form-control" id="user_num" name="user_num" readonly>${sessionScope.kakaoN}
       					</div>
     				</div>
     				<div class="form-group">        

@@ -61,8 +61,7 @@ public class CommunityCon {
 	// 선택한 community로 이동 
 	@RequestMapping("/viewContent/{article_seq}")
 	public String communityContent(Model model,
-			@PathVariable("article_seq") int article_seq) {
-		
+			@PathVariable("article_seq") int article_seq) {		
 		Community vo = mapper.communityContent(article_seq);	
 		model.addAttribute("community", vo);	
 		

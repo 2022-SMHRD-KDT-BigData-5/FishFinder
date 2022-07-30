@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
 	Aerial by HTML5 UP
@@ -11,10 +13,10 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/board.css" />
-		<link rel="stylesheet" href="assets/css/qna_write.css" />
-		<link rel="stylesheet" href="assets/css/writer.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="./assets/css/board.css" />
+		<link rel="stylesheet" href="./assets/css/qna_write.css" />
+		<link rel="stylesheet" href="./assets/css/writer.css" />
+		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -32,10 +34,10 @@
 							<div class="title">
 								<dl class="title_flex">
 									<dt>제목 : </dt>
-									<input value ='${sessionScope.user_num}' type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
 									<input name="article_title" type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요.">
 								</dl>
 							</div>
+							<input value ="${sessionScope.user_num}" type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
 							<div class="cont">
 								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요.(최대 100글자 )" maxlength="100"></textarea>
 							</div>
@@ -46,31 +48,28 @@
 						</div>
 						<nav>
 							<ul>
-<<<<<<< HEAD
 								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
-								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							</ul>
-=======
-								<li><a href="/view" class="icon solid fa-check"><span class="label">Check</span></a></li>
-								<li><a href="/history" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
+								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							
 							</ul>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</nav>
 					</div>
 					<nav>
 						<ul>
-							<li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+							<li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
 					</nav>
 				</header>
 				</form>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="/join">Logout</a>.</span>
-	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="/admin">Admin</a>.</span>
+	               	<span class="copyright"><a href="/join">Logout</a>.</span>
+	               	<!-- 관리자 로그인 시 이동 가능한 버튼 -->
+	               	<c:if test="${sessionScope.user_type == 0}">
+	               		<span class="copyright"><a href="admin.html">Admin</a>.</span>
+	               	</c:if>
 	            </footer>
 			</div>
 		</div>

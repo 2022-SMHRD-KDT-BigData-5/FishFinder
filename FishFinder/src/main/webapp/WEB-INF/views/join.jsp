@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" session="false"%>
 <!DOCTYPE HTML>
 <!--
 	Aerial by HTML5 UP
@@ -33,12 +33,6 @@
 						<a href="https://kauth.kakao.com/oauth/authorize?client_id=594ae1b3ed146deb6d74549625ebeb66&redirect_uri=http://localhost:8083/fish/login&response_type=code" class="kakaoLogin"><img src="resources/assets/css/images/kakaoLogin.png"></a>
 					</div>
 				</header>
-				<!-- Footer -->
-	            <footer id="footer">
-	               <span class="copyright"><a href="join.html">Logout</a>.</span>
-	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="admin.html">Admin</a>.</span>
-	            </footer>
 			</div>
 		</div>
 	</body>

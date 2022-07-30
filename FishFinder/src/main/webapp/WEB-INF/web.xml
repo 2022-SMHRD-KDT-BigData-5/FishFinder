@@ -51,7 +51,7 @@
 	
 	<!-- 방문자 카운트 -->
  	 <listener>
-    	<listener-class>com.smhrd.web.SessionUserCounter</listener-class>
+    	<listener-class>com.smhrd.web.LoginUserCounter</listener-class>
   	</listener>
 
 
