@@ -13,18 +13,11 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-<<<<<<< HEAD
-		<link rel="stylesheet" href="./assets/css/board.css" />
-		<link rel="stylesheet" href="./assets/css/qna_write.css" />
-		<link rel="stylesheet" href="./assets/css/writer.css" />
-		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
-=======
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/board.css" />
 		<link rel="stylesheet" href="assets/css/qna_write.css" />
 		<link rel="stylesheet" href="assets/css/writer.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -72,21 +65,12 @@
 						</nav>
 					</div>
 					<nav>
-<<<<<<< HEAD
-						<ul>
-							<li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
-						</ul>
-=======
 						<ul>
 		                     <li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
 		                     <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
 		                     <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
 		                     <li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 		                 </ul>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 					</nav>
 				</header>
 				</form>

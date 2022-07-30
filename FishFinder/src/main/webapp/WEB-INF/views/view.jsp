@@ -18,12 +18,7 @@
 		<link rel="stylesheet" href="/resources/assets/css/view.css" />
 		<noscript><link rel="stylesheet" href="/resources/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
-<<<<<<< HEAD
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
-=======
-		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
-		<script src="assets/js/view.js"></script>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
