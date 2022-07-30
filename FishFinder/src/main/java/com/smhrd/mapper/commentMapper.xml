@@ -8,8 +8,8 @@
      
     <!-- 댓글 입력 -->
     <insert id="commentInsert" parameterType="com.smhrd.domain.Comment">
-        insert into comment(article_seq,user_num,comment_content,comment_date)
-        values(#{article_seq},#{user_num},#{comment_content},now())
+        insert into comment(article_seq,user_num,comment_date,comment_content)
+        values(#{article_seq},#{user_num},now(),#{comment_content})
     </insert>
     
     <!-- 특정 게시물 댓글 가져오기 -->

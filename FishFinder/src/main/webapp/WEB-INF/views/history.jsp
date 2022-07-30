@@ -30,7 +30,7 @@
 					<div class="history_box">
 						<ul>
 							<c:forEach var="his_list" items="${his_list}">
-				               <a href="result?his_seq=${his_list.his_seq }" class="his_list">
+				               <a href="result/${his_list.his_seq }" class="his_list">
 				                  <li class="history_list">
 				                     <div class="preview_img">
 				                        <img class="history_img" src="${pageContext.request.contextPath}/image/${his_list.fish_img }"

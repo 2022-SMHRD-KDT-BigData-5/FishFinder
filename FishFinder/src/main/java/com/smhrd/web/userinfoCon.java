@@ -22,8 +22,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.smhrd.domain.fishinfo;
 import com.smhrd.domain.userhistory;
 import com.smhrd.domain.userinfo;
+import com.smhrd.mapper.fishinfoMapper;
 import com.smhrd.mapper.userhistoryMapper;
 import com.smhrd.mapper.userinfoMapper;
 
@@ -41,6 +43,8 @@ public class userinfoCon {
 	userhistoryMapper hm;
 	@Autowired
 	imageSendService is;
+	@Autowired
+	fishinfoMapper fm;
 	
 	@RequestMapping("/")
 	public String test() {
@@ -149,7 +153,7 @@ public class userinfoCon {
 		String result = conn.HttpPostConnection("https://kapi.kakao.com/v1/user/logout", map).toString();
 		System.out.println(result);
 		
-		return "redirect:/";
+		return "redirect:http://localhost:8083/fish/";
 	}
 	
 	
@@ -160,7 +164,12 @@ public class userinfoCon {
 		userhistory his_vo = hm.historyPk(his_seq);
 		model.addAttribute("his_vo",his_vo);
 		
-		System.out.println(his_vo.getResult());
+		fishinfo fish_vo = fm.fishList(his_vo.getResult());
+		model.addAttribute("fish_vo",fish_vo);
+		
+		//java.io.File file = new java.io.File( his_vo.getFish_img());
+
+		
 		
 		return "result";
 	}

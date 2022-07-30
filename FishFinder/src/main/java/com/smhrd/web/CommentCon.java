@@ -31,9 +31,12 @@ public class CommentCon {
 	
 	// Comment 등록
 	@RequestMapping("/commIn")
-	public String commentInsert(Comment cvo) {		
+	public String commentInsert(Comment cvo) {	
+		
+		System.out.println(cvo.getArticle_seq());
 		cmapper.commentInsert(cvo);
-		return "redirect:/viewContent/{article_seq}";
+		
+		return "redirect:/viewContent/"+cvo.getArticle_seq();
 	}
 		
 	// 댓글 수 불러오기

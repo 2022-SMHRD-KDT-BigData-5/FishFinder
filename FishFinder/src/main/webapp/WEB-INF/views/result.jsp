@@ -11,13 +11,16 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/fish/resources/assets/css/main.css" />
-		<link rel="stylesheet" href="/fish/resources/assets/css/result.css" />
-		<noscript><link rel="stylesheet" href="/fish/resources/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/result.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<!--main js-->
-		<script src="/fish/resources/assets/js/main.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+		
+
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -29,7 +32,8 @@
 					<h1>RESULT</h1>
 					<!-- <a href="kakaolink://launch">카카오톡앱</a> -->
                     <div class="container">
-                    <img class="result" src="${pageContext.request.contextPath}/image/${his_vo.fish_img }" alt="">
+                    <img id="fishImg" class="result" src="${pageContext.request.contextPath}/image/${his_vo.fish_img }?v=1" alt="">
+					
 					</div>
 					<!-- <div class="meter1">
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
@@ -40,23 +44,17 @@
 					<!-- 결과 안내 창 -->
 					<div class = "card">
 						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>				
-						표준어로는 '넙치'이고 '광어'가 사투리였지만 광어라는 이름으로 널리 불리면서 광어도 표준말로 대접받게 되었다.
-						<br>
-						생김새가 비슷한 어종으로는 도다리와 가자미가 있다.
-						<br>
-						광어의 특징 :
-						<br>
-						가슴지느러미를 아래로 향했을 때, 얼굴이 왼쪽 방향이다.
-						<br>
-						얼굴을 아래로 향하게 했을 때, 눈이 왼쪽으로 몰려있다.
-						<br>
-						입이 크고 이빨이 발달했다.
+
+						${fish_vo.fish_kind }
+						${fish_vo.fish_spec }
 					</div>
 					<nav>
 						<ul>
-							<li><a href="#" class="fa-solid fa-link" style="color: #fff;"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="fa-solid fa-link" onclick="sendLinkDefault()" style="color: #fff;"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="fa-solid fa-floppy-disk" style="color: #fff;"><span class="label">Facebook</span></a></li>
+
 						</ul>
+            
 					</nav>
 					
 
@@ -90,5 +88,77 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
+	<script type="text/javascript">    
+
+	  function sendLinkDefault() {
+		// 사용할 앱의 JavaScript 키 설정
+		  Kakao.init('1164def143509ff0c0d32517fc31f7de');
+		 
+		  // 카카오링크 버튼 생성
+		  Kakao.Share.sendDefault({
+			  objectType: 'feed',
+			  content: {
+			    title: '오늘의 디저트',
+			    description: '아메리카노, 빵, 케익',
+			    imageUrl:
+			      'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
+			    link: {
+			      mobileWebUrl: 'https://developers.kakao.com',
+			      androidExecutionParams: 'test',
+			    },
+			  },
+			  itemContent: {
+			    profileText: 'Kakao',
+			    profileImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+			    titleImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
+			    titleImageText: 'Cheese cake',
+			    titleImageCategory: 'Cake',
+			    items: [
+			      {
+			        item: 'Cake1',
+			        itemOp: '1000원',
+			      },
+			      {
+			        item: 'Cake2',
+			        itemOp: '2000원',
+			      },
+			      {
+			        item: 'Cake3',
+			        itemOp: '3000원',
+			      },
+			      {
+			        item: 'Cake4',
+			        itemOp: '4000원',
+			      },
+			      {
+			        item: 'Cake5',
+			        itemOp: '5000원',
+			      },
+			    ],
+			    sum: '총 결제금액',
+			    sumOp: '15000원',
+			  },
+			  social: {
+			    likeCount: 10,
+			    commentCount: 20,
+			    sharedCount: 30,
+			  },
+			  buttons: [
+			    {
+			      title: '웹으로 이동',
+			      link: {
+			        mobileWebUrl: 'https://developers.kakao.com',
+			      },
+			    },
+			    {
+			      title: '앱으로 이동',
+			      link: {
+			        mobileWebUrl: 'https://developers.kakao.com',
+			      },
+			    },
+			  ]
+			});
+	 }
+</script>
 	
 </html>
