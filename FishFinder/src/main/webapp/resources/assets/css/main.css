@@ -212,19 +212,22 @@ input, select, textarea {
 }
 /* 업로드 이미지 미리보기 */
 .preview_container{
-    width: 399px;
-    max-height: 532px;
-    line-height:532px;
+    /* border: 1px solid #fff; */
+    width: 736px;
+    height: 500px;
+	line-height:500px;
     margin: auto;
-    border-radius: 5px;
+	/* height: auto; */
     margin-top: 1%;
+
 }
 .img_thumbnail{
 	border: 1px solid #fff;
+	/* margin: 0px auto; */
 	max-width: 100%;
     max-height: 100%;
     object-fit: scale-down;
-    vertical-align:middle;
+	vertical-align:middle;
 }
 .smallLogo{
 	position: absolute;
@@ -235,10 +238,11 @@ input, select, textarea {
 /* 반응형 */
 @media screen and (max-width: 736px) {
 	.preview_container{
-		width: 270px;
+		width: 280px;
 		height: 360px;
 		line-height: 360px;
 	}
+
 }
 .preview_container{
 	display: none;
@@ -313,9 +317,8 @@ input, select, textarea {
 		-webkit-transform: translate3d(0,0,0);
 		-ms-transform: translate3d(0,0,0);
 		transform: translate3d(0,0,0);
-	/* Set your background with this */
-
-		background: #348cb2 url("images/bg.png") bottom left;
+		/* Set your background with this */
+		background: #348cb2 url("images/bgbg.png") bottom left;
 		background-repeat: repeat-x;
 		height: 100%;
 		left: 0;
@@ -389,8 +392,8 @@ input, select, textarea {
 	}
 
 	#bg {
-		background-size: 900px auto;
-		width: 4250px;
+		background-size: 2250px auto;
+		width: 6750px;
 	}
 
 /* Overlay */
@@ -808,12 +811,11 @@ input, select, textarea {
 		background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.5) 75%);
 		bottom: 0;
 		cursor: default;
-		height: 6em;
 		left: 0;
-		line-height: 8em;
 		position: absolute;
 		text-align: center;
 		width: 100%;
+		padding-bottom: 10px;
 	}
 
 /* Wide */
@@ -894,8 +896,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 900px auto;
-			width: 4250px;
+			background-size: 1500px auto;
+			width: 4500px;
 		} }
 
 /* Normal */
@@ -976,8 +978,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 900px auto;
-			width: 4250px;
+			background-size: 750px auto;
+			width: 2250px;
 		} }
 
 /* Mobile */
@@ -1062,8 +1064,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 900px auto;
-			width: 2250px;
+			background-size: 300px auto;
+			width: 900px;
 		}
 
 	/* Header */
@@ -1160,8 +1162,8 @@ input, select, textarea {
 		}
 
 		#bg {
-			background-size: 900px auto;
-			width: 4425px;
+			background-size: 412.5px auto;
+			width: 1237.5px;
 		}
 
 	/* Header */

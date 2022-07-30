@@ -13,9 +13,15 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<<<<<<< HEAD
 		<link rel="stylesheet" href="./assets/css/main.css" />
 		<link rel="stylesheet" href="./assets/css/board.css" />
 		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+=======
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/board.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -34,13 +40,23 @@
 							<a href="/fish/viewIn" class="">글 작성</a>
 						</div>
 						<div class="board_scroll">
+<<<<<<< HEAD
 							<ul class="board_selectAll">
+=======
+							<ul class="board_selectAll">
+
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 								<!-- a태그가 기록 하나 -->
 								<c:forEach var="list" items="${list}">
 								<a href='javascript:open(${list.article_seq})'>
 									<li class="board_list">
+<<<<<<< HEAD
 										<div class="preview_img">
 											<img class="board_img" src="resources/assets/css/images/img_test.jpg" onerror="">
+=======
+										<div class="preview_img">
+											<img class="board_img" src="assets/css/images/img_test.jpg" onerror="">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 										</div>
 										<div class="board_tnd">
 											<div class="board_title"><c:out value="${list.article_title}"/></div>
@@ -100,11 +116,17 @@
 				<footer id="footer">
 	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
+<<<<<<< HEAD
 	              	<c:if test="${sessionScope.user_type == 1}">
 	               		<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 	               	</c:if>
 					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
             	</footer>
+=======
+	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+
+				</footer>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 			</div>
 		</div>
 	</body>

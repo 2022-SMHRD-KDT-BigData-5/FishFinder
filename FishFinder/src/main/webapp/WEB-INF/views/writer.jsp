@@ -13,10 +13,18 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<<<<<<< HEAD
 		<link rel="stylesheet" href="./assets/css/board.css" />
 		<link rel="stylesheet" href="./assets/css/qna_write.css" />
 		<link rel="stylesheet" href="./assets/css/writer.css" />
 		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+=======
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/board.css" />
+		<link rel="stylesheet" href="assets/css/qna_write.css" />
+		<link rel="stylesheet" href="assets/css/writer.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -34,12 +42,17 @@
 							<div class="title">
 								<dl class="title_flex">
 									<dt>제목 : </dt>
+<<<<<<< HEAD
 									<input name="article_title" type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요.">
+=======
+									<input value ='${sessionScope.user_num}' type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
+									<input name="article_title" type="text" style="border: none; background: transparent;" size="43" placeholder="제목을 입력해주세요. (20자 이내)" maxlength="20">
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 								</dl>
 							</div>
 							<input value ="${sessionScope.user_num}" type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
 							<div class="cont">
-								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요.(최대 100글자 )" maxlength="100"></textarea>
+								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요.(400자 이내 )" maxlength="400"></textarea>
 							</div>
 							<div class="upload_image">
 								<input type="file" name="images[]" id="inputImage" accept="image/*">
@@ -49,17 +62,31 @@
 						<nav>
 							<ul>
 								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
+<<<<<<< HEAD
 								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							
 							</ul>
+=======
+								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							</ul>
+							</ul>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</nav>
 					</div>
 					<nav>
+<<<<<<< HEAD
 						<ul>
 							<li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
 							<li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
 							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
 							<li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
+=======
+						<ul>
+		                     <li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+		                     <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+		                     <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+		                     <li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+		                 </ul>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 					</nav>
 				</header>
 				</form>

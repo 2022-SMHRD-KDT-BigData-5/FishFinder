@@ -59,4 +59,5 @@ public class CommentCon {
 		cmapper.commentUpdate(cvo);
 		return "redirect:/viewContent/{article_seq}";
 	}
+	
 }

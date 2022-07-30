@@ -13,9 +13,9 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="./assets/css/main.css" />
-		<link rel="stylesheet" href="./assets/css/qna.css" />
-		<noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/qna.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -32,7 +32,7 @@
 							<a href="#">전체</a>
 							<a href="#">주로 묻는 질문</a>
 							<a href="#">나의 질문</a>
-							<a href="/qna_write">질문하기</a>
+							<a href="/fish/qna_write">질문하기</a>
 						</div>
 						<div class="qna_scroll">
 							<ul id="list">
@@ -42,11 +42,19 @@
 					</div>
 					<nav>
 						<ul>
+<<<<<<< HEAD
 							<li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
 							<li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
 							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
 							<li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
 						</ul>
+=======
+		                     <li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+		                     <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+		                     <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+		                     <li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+		                 </ul>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 					</nav>
 				</header>
 				<!-- Footer -->

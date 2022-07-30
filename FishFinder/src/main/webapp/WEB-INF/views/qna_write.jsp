@@ -35,7 +35,7 @@
 								</dl>
 							</div>
 							<div class="cont">
-								<textarea class="qna_content" placeholder="내용을 입력해주세요."></textarea>
+								<textarea class="qna_content" placeholder="내용을 입력해주세요. (60자 이내)" maxlength="60"></textarea>
 							</div>
 						</div>
 						<nav>
@@ -47,11 +47,11 @@
 					</div>
 					<nav>
 						<ul>
-							<li><a href="/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
-							<li><a href="/history" class="icon solid fa-history"><span class="label">History</span></a></li>
-							<li><a href="/board" class="icon solid fa-list"><span class="label">Board</span></a></li>
-							<li><a href="/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
-						</ul>
+		                     <li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+		                     <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+		                     <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+		                     <li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+		                 </ul>
 					</nav>
 				</header>
 				<!-- Footer -->
