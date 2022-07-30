@@ -40,8 +40,8 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="/qna" class="icon solid fa-check"><span class="label">Check</span></a></li>
-								<li><a href="/qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
+								<li><a href="fish/qna" class="icon solid fa-check"><span class="label">Check</span></a></li>
+								<li><a href="fish/qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
 						</nav>
 					</div>
@@ -56,9 +56,9 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="/join">Logout</a>.</span>
+	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="/admin">Admin</a>.</span>
+	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 	            </footer>
 			</div>
 		</div>

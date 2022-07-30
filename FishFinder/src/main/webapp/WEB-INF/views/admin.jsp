@@ -20,7 +20,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/fish/index">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                         <span class="title">홈</span>
                     </a>
@@ -32,13 +32,13 @@
                     </a>
                 </li> -->
                 <li>
-                    <a href="#">
+                    <a href="/fish/view">
                         <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>
                         <span class="title">게시판</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/fish/qna">
                         <span class="icon"><ion-icon name="help-outline"></ion-icon></ion-icon></span>
                         <span class="title">질문</span>
                     </a>
