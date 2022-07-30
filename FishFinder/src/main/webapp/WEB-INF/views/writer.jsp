@@ -47,7 +47,7 @@
 						</div>
 						<nav>
 							<ul>
-								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
+								<li><a href="#" class="icon solid fa-check"><span class="label">작성 완료</span></a></li>
 								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							</ul>
 							</ul>
 						</nav>
