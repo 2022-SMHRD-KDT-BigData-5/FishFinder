@@ -27,7 +27,7 @@ public class CommentCon {
 	}
 	
 	// Comment 등록
-	@RequestMapping("/commIn")
+	@RequestMapping("commIn")
 	public String commentInsert(Comment cvo) {	
 		
 		System.out.println(cvo.getArticle_seq());
@@ -37,27 +37,28 @@ public class CommentCon {
 	}
 		
 	// 댓글 수 불러오기
-	@RequestMapping("/commCnt/{article_seq}")
-	public String commentCount(@PathVariable("article_seq") int article_seq, Model model) {
+	@RequestMapping("commCnt/{article_seq}")
+	public int commentCount(@PathVariable("article_seq") int article_seq, Model model) {
 		int ctotal = cmapper.commentCount(article_seq);
 		model.addAttribute("ctotal",ctotal);
-		return "board";
+		return ctotal;
 	}
 	
 	// Comment 삭제
-	@RequestMapping("/commDel")
-	public String commentDelete( @PathVariable("comment_seq") int comment_seq) {
+	@RequestMapping("commDel")
+	public String commentDelete(@PathVariable("comment_seq") int comment_seq, Comment cvo) {
 		System.out.println("번호 : " + comment_seq);
-		cmapper.commentDelete(comment_seq);		
-		return "redirect:/viewContent/{article_seq}";
+		cmapper.commentDelete(comment_seq);
+		int article_seq = cvo.getArticle_seq();
+		return "redirect:/viewContent/" + article_seq;
 	}	
-	
+
 	// Comment 수정 후 DB에 업데이트
-	@RequestMapping("/commUp")
+	@RequestMapping("commUp")
 	public String commentUpdate(@PathVariable("comment_seq") int comment_seq, Comment cvo) {
-		cvo.setComment_seq(comment_seq);
 		cmapper.commentUpdate(cvo);
-		return "redirect:/viewContent/{article_seq}";
+		int article_seq = cvo.getArticle_seq();
+		return "redirect:/viewContent/"+ article_seq;
 	}
 	
 }

@@ -31,7 +31,7 @@
 					<div class="qna_box">
 						<div class="view_scroll">
 							<div class="view_title">${ requestScope.community.article_title }</div>
-							<div href='getname/${community.user_num}' class="view_writer">${getname}</div>
+							<div id="getname${community.user_num}" href='javascript:getname(${community.user_num})' class="view_writer">${getname}</div>
 							<div class="view_dvc">
 								<span class="view_date">${ fn:split(community.article_date, " ")[0] }</span>
 								<span class="view_views">${ community.article_cnt }</span>
@@ -57,7 +57,7 @@
 								</div>
 							</div>
 							<!-- 댓글작성 -->
-							<form action="/fish/commIn" method="get">
+							<form action="/fish/commIn" method="post">
 							<div class="comm_write_box">
 								<a name="here"><textarea id="comment_content" class="comm_text" name="comment_content"></textarea></a>
 								<input id="article_seq" name="article_seq" type="hidden" value="${community.article_seq}">
@@ -78,8 +78,8 @@
 								</div>
 								<c:if test="${clist.user_num == sessionScope.user_num}">
 								<div class="comments_md">
-									<a href="#" onclick="javascript:commUp(${clist.comment_seq})" class="comments_modify" >[수정]</a>
-									<a href="#" onclick="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
+									<a href="javascript:commUp(${clist.comment_seq})" class="comments_modify" >[수정]</a>
+									<a href="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
 								</div>
 								</c:if>
 							</div>
@@ -112,7 +112,7 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-	<script type="text/javascript" src="/resource/assets/js/view.js"></script>
+	<script type="text/javascript" src="resources/js/view.js"></script>
 	
 </head>
 </html>

@@ -46,6 +46,32 @@
     <delete id="communityDelete">
         delete from community_info where article_seq=#{article_seq}
     </delete>
-    
-  
+           
+    <!-- 검색 결과 -->
+    <select  id="getBoardList" resultType="com.smhrd.domain.Community">
+        select * from community_info
+        	<trim prefix="WHERE" prefixOverrides="AND|OR">
+        	    <if test="searchType=='article_title' and keyword != null and keyword != '' ">
+        	        AND article_title like CONCAT('%', #{keyword}, '%')
+        	    </if>
+        	    <if test="searchType=='article_content' and keyword != null and keyword != '' ">
+        	        AND article_content like CONCAT('%', #{keyword}, '%')
+        	    </if>
+        	</trim>
+    </select>
+           
+    <!-- 검색 결과 수 -->
+    <select  id="getBoardListCnt" resultType="int">
+        select count(*) as listCnt from community_info
+        	<trim prefix="WHERE" prefixOverrides="AND|OR">
+        	    <if test="keyword != null and keyword != '' ">
+        	        <if test="searchType=='article_title'">
+        	            AND article_title like CONCAT('%', #{keyword}, '%')
+        	        </if>
+        	        <if test="searchType=='article_content'">
+        	            AND article_content like CONCAT('%', #{keyword}, '%')
+        	        </if>
+				</if>
+			</trim>
+    </select>  
 </mapper>

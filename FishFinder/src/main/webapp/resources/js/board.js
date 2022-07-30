@@ -8,25 +8,9 @@ function showAll(){
 }
 // 내가 쓴 글
 document.getElementsByClassName(".boardMy").addEventListener('click', showMy);
-function showMy(user_num){
+function showMy(){
   document.querySelector('.board_selectAll').style.display = 'none';
-  document.querySelector('.board_selectMy').style.display = 'block';
-  
-  $.ajax({
-  		type : "post",
-		url : "viewMy",
-		data : {
-			"user_num" : user_num
-			},
-		success : function(res){
-			console.log('내 글 보기 성공')
-		},
-		error : function(e){
-			console.log('내 글 보기 실패')
-		}
-  });
-  
-  
+  document.querySelector('.board_selectMy').style.display = 'block';  
 }
 //====================================================================================
 // 내용 보기 + 조회수 카운트
@@ -53,3 +37,25 @@ function open(article_seq){
 		
 }
 //====================================================================================
+// 유저 넘버에서 이름 가져오기
+function getname(user_num){
+	
+	let getname = $('#getname' + user_num).html();
+	
+	$.ajax({
+		type : "post",
+		url : "getname",
+		data : {
+			"user_num" : user_num
+			},
+			success : function(res){
+				$('#getname'+article_seq).html( getname );
+			},
+			error : function(e){
+				alert('view error')
+			}
+			
+		});
+}
+//======================================================================================
+

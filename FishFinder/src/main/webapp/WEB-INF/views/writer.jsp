@@ -35,12 +35,8 @@
 							<div class="title">
 								<dl class="title_flex">
 									<dt>제목 : </dt>
-<<<<<<< HEAD
-									<input name="article_title" type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요.">
-=======
 									<input value ='${sessionScope.user_num}' type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
 									<input name="article_title" type="text" style="border: none; background: transparent;" size="43" placeholder="제목을 입력해주세요. (20자 이내)" maxlength="20">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 								</dl>
 							</div>
 							<input value ="${sessionScope.user_num}" type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
@@ -55,13 +51,8 @@
 						<nav>
 							<ul>
 								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
-<<<<<<< HEAD
 								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							
 							</ul>
-=======
-								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							</ul>
-							</ul>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 						</nav>
 					</div>
 					<nav>
@@ -78,8 +69,8 @@
 				<footer id="footer">
 	               	<span class="copyright"><a href="/join">Logout</a>.</span>
 	               	<!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               	<c:if test="${sessionScope.user_type == 0}">
-	               		<span class="copyright"><a href="admin.html">Admin</a>.</span>
+	               	<c:if test="${sessionScope.user_type == 1}">
+	               		<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 	               	</c:if>
 	            </footer>
 			</div>

@@ -175,11 +175,11 @@ public class userinfoCon {
 		return "result";
 	}
 	
-	@RequestMapping("/getname/{user_num}")
+	@RequestMapping("/getname")
 	public String usernameGet(@PathVariable("user_num") int user_num, Model model) {
 		String getname = um.usernameGet(user_num);
 		model.addAttribute("getname",getname);
-		return "view";
+		return getname;
 	}
 	
 	//내 히스토리 보기

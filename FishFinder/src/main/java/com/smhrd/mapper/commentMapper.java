@@ -13,7 +13,7 @@ public interface commentMapper {
 	// 댓글 수
 	public int commentCount(int article_seq);
 	// 댓글 삭제
-	public void commentDelete(int comment_seq);
+	public int commentDelete(int comment_seq);
 	// 댓글 수정
 	public void commentUpdate(Comment cvo);
 	
