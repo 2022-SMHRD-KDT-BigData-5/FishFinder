@@ -40,7 +40,7 @@
 								<a href='javascript:open(${list.article_seq})'>
 									<li class="board_list">
 										<div class="preview_img">
-											<img class="board_img" src="resources/assets/css/images/img_test.jpg" onerror="">
+											<img class="board_img" src="assets/css/images/img_test.jpg" onerror="">
 										</div>
 										<div class="board_tnd">
 											<div class="board_title"><c:out value="${list.article_title}"/></div>

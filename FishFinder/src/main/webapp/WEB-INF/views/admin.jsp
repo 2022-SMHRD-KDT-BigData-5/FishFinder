@@ -15,8 +15,8 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><img src="/FishFinder/assets/css/images/logo3.png"></span>
-                        <span class="title1"><img src="/FishFinder/assets/css/images/logo4.png"></span>
+                        <span class="icon"><img src="assets/css/images/logo3.png"></span>
+                        <span class="title1"><img src="assets/css/images/logo4.png"></span>
                     </a>
                 </li>
                 <li>
@@ -79,7 +79,7 @@
                 </div>
                 <!-- user -->
                 <div class="user">
-                    <img src="/arm/assets/css/images/user.jpg">
+                    <img src="assets/css/images/user.jpg">
                 </div>
             </div>
 
@@ -97,7 +97,7 @@
                 <div class="card">
                     <div>
                         <div class="numbers">80</div>
-                        <div class="cardName">검색량</div>
+                        <div class="cardName">분석 수</div>
                     </div>
                     <div class="iconBx">
                         <ion-icon name="search-outline"></ion-icon>
@@ -135,7 +135,7 @@
                 <!-- 여따 넣고싶다 -->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 		    	<canvas id="line-chart" width="250" height="200"></canvas>
-                <script src="/assets/js/Chart.min.js"></script>
+                <script src="assets/js/Chart.min.js"></script>
             </div>
             </div>
 
@@ -146,7 +146,7 @@
                 </div>
                 <table>
                     <tr>
-                        <td width="60px"><div class="imgBx"><img src="/assets/css/images/img_test.jpg"></div></td>
+                        <td width="60px"><div class="imgBx"><img src="assets/css/images/user.jpg"></div></td>
                         <td><h4>David<br><span>Italy</span></h4></td>
                     </tr>
                 </table>
@@ -181,6 +181,9 @@
         }
         list.forEach((item) =>
         item.addEventListener('mouseover',activeLink));
+        
+        
+        
         </script>
 </body>
 </html>

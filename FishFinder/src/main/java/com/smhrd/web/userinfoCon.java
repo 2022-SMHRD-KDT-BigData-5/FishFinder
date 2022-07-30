@@ -52,12 +52,7 @@ public class userinfoCon {
 
 		return "join";
 	}
-	@RequestMapping("/admin")
-	public String admin() {
-		
 
-		return "admin";
-	}
 	@RequestMapping("/board")
 	public String board() {
 		
@@ -102,6 +97,7 @@ public class userinfoCon {
 
 		return "writer";
 	}
+
 
 
 	

@@ -20,6 +20,8 @@ public interface questionMapper {
 	public int questionStatusUpdate(questionBoard qvo);
 	// 질문 삭제
 	public int questionDelete(int q_seq);
+	// 질문 수
+	public int questioncount();
 	
 	
 }
