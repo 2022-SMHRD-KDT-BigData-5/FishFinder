@@ -34,11 +34,11 @@
 								<dl class="title_flex">
 									<dt>제목 : </dt>
 									<input value ='${sessionScope.user_num}' type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
-									<input name="article_title" type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요.">
+									<input name="article_title" type="text" style="border: none; background: transparent;" size="43" placeholder="제목을 입력해주세요. (20자 이내)" maxlength="20">
 								</dl>
 							</div>
 							<div class="cont">
-								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요.(최대 100글자 )" maxlength="100"></textarea>
+								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요.(400자 이내 )" maxlength="400"></textarea>
 							</div>
 							<div class="upload_image">
 								<input type="file" name="images[]" id="inputImage" accept="image/*">

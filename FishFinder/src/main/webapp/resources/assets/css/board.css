@@ -77,6 +77,9 @@ input:-moz-placeholder{color:#a8a8a8;}
     color: #ffffff;
     font-family: 'twayair';
 }
+.board_date{
+	font-size
+}
 @media screen and (max-width: 736px){
     .board_box{
         width: 320px;
@@ -111,13 +114,24 @@ input:-moz-placeholder{color:#a8a8a8;}
     text-align: left;
     color: black;
     font-family: 'twayair';
-    transform: skew(-0.1deg);
 }
 .board_title{
     padding-top: 1%;
 }
 .board_wdv{
     padding-top: 10px;
+}
+.board_date{
+    font-size: smaller;
+}
+.board_writer{
+    font-size: smaller;
+}
+.board_views{
+    font-size: smaller;
+}
+.views_count{
+    font-size: smaller;
 }
 .comments_box{
     padding: 2%;

@@ -32,7 +32,7 @@
 							<a href="#">전체</a>
 							<a href="#">주로 묻는 질문</a>
 							<a href="#">나의 질문</a>
-							<a href="/qna_write">질문하기</a>
+							<a href="/fish/qna_write">질문하기</a>
 						</div>
 						<div class="qna_scroll">
 							<ul id="list">

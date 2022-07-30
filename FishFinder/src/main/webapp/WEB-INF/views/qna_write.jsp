@@ -35,7 +35,7 @@
 								</dl>
 							</div>
 							<div class="cont">
-								<textarea class="qna_content" placeholder="내용을 입력해주세요."></textarea>
+								<textarea class="qna_content" placeholder="내용을 입력해주세요. (60자 이내)" maxlength="60"></textarea>
 							</div>
 						</div>
 						<nav>

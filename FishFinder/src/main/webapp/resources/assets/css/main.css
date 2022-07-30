@@ -213,7 +213,7 @@ input, select, textarea {
 /* 업로드 이미지 미리보기 */
 .preview_container{
     /* border: 1px solid #fff; */
-    width: 765px;
+    width: 736px;
     height: 500px;
 	line-height:500px;
     margin: auto;
@@ -238,7 +238,7 @@ input, select, textarea {
 /* 반응형 */
 @media screen and (max-width: 736px) {
 	.preview_container{
-		width: 360px;
+		width: 280px;
 		height: 360px;
 		line-height: 360px;
 	}
