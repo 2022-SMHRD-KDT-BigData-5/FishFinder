@@ -19,14 +19,9 @@
 .history_box::-webkit-scrollbar {
     display: none;
 }
-@media screen and (max-width: 736px){
-    .history_box{
-        width: 320px;
-        height: 500px;
-    }
-}
 .history_list{
     display: flex;
+    height: 82px;
     margin-bottom: 1%;
     border: 1px solid rgb(100, 100, 100);
     background-color: rgb(255, 255, 255, 0.9);
@@ -52,9 +47,20 @@
 }
 .history_date{
     text-align: right;
-    padding-top: 2%;
     margin-right: 3%;
     transform: skew(-0.1deg);
+}
+@media screen and (max-width: 736px){
+    .history_box{
+        width: 320px;
+        height: 500px;
+    }
+    .history_list{
+		height: 65px;    
+    }
+    .history_date{
+		padding-top: 4%;    
+    }
 }
 .history_tnd{
     color: black;

@@ -53,7 +53,7 @@ input:-moz-placeholder{color:#a8a8a8;}
     width: 200px;
     border: 1px solid rgba(0,172,238,1);
     background: #ffffff;
-    margin-top: 0.1px;
+    margin-top: 2.5%;
     vertical-align: middle;
 }
 .search_input{
@@ -82,15 +82,6 @@ input:-moz-placeholder{color:#a8a8a8;}
         width: 320px;
         height: 500px;
     }
-    .board_title{
-        font-size: 0.5em;
-    }
-    .board_wdv{
-        font-size: 0.7em;
-    }
-    .board_comments{
-        font-size: 0.8em;
-    }
     .comments_box{
         size: 0.7em;
     }
@@ -108,10 +99,10 @@ input:-moz-placeholder{color:#a8a8a8;}
     .search_box{
         width: 50%;
         height: 7%;
+        margin-top: 2px;
     }
     
 }
-
 
 .board_tnd{
     margin-left: 5%;
@@ -123,8 +114,7 @@ input:-moz-placeholder{color:#a8a8a8;}
     transform: skew(-0.1deg);
 }
 .board_title{
-    padding-top: 2%;
-    font-size: larger;
+    padding-top: 1%;
 }
 .board_wdv{
     padding-top: 10px;

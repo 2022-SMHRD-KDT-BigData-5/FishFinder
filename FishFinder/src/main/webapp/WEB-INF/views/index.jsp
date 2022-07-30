@@ -22,10 +22,10 @@
          <div id="overlay"></div>
          <div id="main">
             <!-- Header -->
-            <img src="resources/assets/css/images/wsmallLogo.png" class="smallLogo">
+            <img src="assets/css/images/wsmallLogo.png" class="smallLogo">
             <header id="header">
                <!-- <a href="kakaolink://launch">카카오톡앱</a> -->
-               <img src="resources/assets/css/images/logo2.png" alt="" class="mainLogo">
+               <img src="assets/css/images/logo2.png" alt="" class="mainLogo">
                <!-- <h1 class="mainTitle"></h1> -->
                <div class="preview_container" id="imagePreview">
                   <img class="img_thumbnail" id="show-picture" src="">
@@ -61,12 +61,8 @@
 	                 	</li>
                      </form>
                   </ul>
-<<<<<<< HEAD
                   <br>
 
-=======
-                  <br>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
                   <ul>
                      <li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
                      <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
