@@ -17,7 +17,7 @@
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<!--main js-->
-		<script src="resources/assets/js/main.js"></script>
+		<script src="assets/js/main.js"></script>
 		
 	</head>
 	<body class="is-preload">
@@ -28,9 +28,9 @@
 				<!-- Header -->
 				<header id="header">
 					<!-- <a href="kakaolink://launch">카카오톡앱</a> -->
-					<img src="resources/assets/css/images/logo2.png" alt="">
+					<img src="assets/css/images/logo2.png" alt="">
 					<div class="joinbox">
-						<a href="https://kauth.kakao.com/oauth/authorize?client_id=594ae1b3ed146deb6d74549625ebeb66&redirect_uri=http://localhost:8083/fish/login&response_type=code" class="kakaoLogin"><img src="resources/assets/css/images/kakaoLogin.png"></a>
+						<a href="https://kauth.kakao.com/oauth/authorize?client_id=594ae1b3ed146deb6d74549625ebeb66&redirect_uri=http://localhost:8083/fish/login&response_type=code" class="kakaoLogin"><img src="assets/css/images/kakaoLogin.png"></a>
 					</div>
 				</header>
 				<!-- Footer -->
