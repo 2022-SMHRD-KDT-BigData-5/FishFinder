@@ -31,7 +31,7 @@ function open(article_seq){
 				$('#count'+article_seq).html( count + 1 );
 			},
 			error : function(e){
-				alert('view error')
+				//alert('view error')
 			}
 		});
 		

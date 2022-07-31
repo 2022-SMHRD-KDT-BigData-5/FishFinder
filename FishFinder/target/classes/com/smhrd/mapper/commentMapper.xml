@@ -24,8 +24,13 @@
     </select>
     
     <!-- 댓글 삭제 -->
-    <delete id="commentDelete" parameterType="com.smhrd.domain.Comment">
+    <delete id="commentDelete" parameterType="int">
         delete from comment where comment_seq=#{comment_seq}
+    </delete>
+    
+    <!-- 특정 글 댓글  모두 삭제 -->
+    <delete id="commentComDelete" parameterType="com.smhrd.domain.Comment">
+        delete from comment where article_seq=#{article_seq}
     </delete>
     
     <!-- 댓글 수정 -->
