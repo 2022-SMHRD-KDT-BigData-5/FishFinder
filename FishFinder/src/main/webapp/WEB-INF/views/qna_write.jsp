@@ -40,7 +40,14 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="/qna" class="icon solid fa-check"><span class="label">Check</span></a></li>
+								<li>
+									<a href="#" class="icon solid fa-check">
+										<label for="submitBtn">
+											<input type="submit" id="submitBtn" style="display:none">
+											<span class="label">Check</span>
+										</label>
+									</a>
+								</li>
 								<li><a href="/qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
 						</nav>
