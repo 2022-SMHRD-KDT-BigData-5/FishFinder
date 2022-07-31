@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
    Aerial by HTML5 UP
@@ -22,11 +24,7 @@
          <div id="overlay"></div>
          <div id="main">
             <!-- Header -->
-<<<<<<< HEAD
-            <img src="./assets/css/images/smallLogo.png" class="smallLogo">
-=======
             <img src="assets/css/images/wsmallLogo.png" class="smallLogo">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
             <header id="header">
                <!-- <a href="kakaolink://launch">카카오톡앱</a> -->
                <img src="assets/css/images/logo2.png" alt="" class="mainLogo">
@@ -79,13 +77,15 @@
             <footer id="footer">
                <span class="copyright"><a href="/logout">Logout</a>.</span>
                <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+				<c:if test="${sessionScope.user_type == 1}">
+	               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+	            </c:if>
             </footer>
          </div>
       </div>
    </body>
    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="resources/assets/js/main.js"></script>
-   <script src="resources/assets/js/upload.js"></script>
+   <script src="js/main.js"></script>
+   <script src="js/upload.js"></script>
 </html>

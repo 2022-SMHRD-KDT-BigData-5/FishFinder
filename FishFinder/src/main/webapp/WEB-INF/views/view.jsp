@@ -112,7 +112,7 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-	<script type="text/javascript" src="resources/js/view.js"></script>
+	<script type="text/javascript" src="js/view.js"></script>
 	
 </head>
 </html>

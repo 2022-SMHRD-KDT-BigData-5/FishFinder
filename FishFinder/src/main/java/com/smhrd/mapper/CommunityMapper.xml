@@ -58,6 +58,7 @@
         	        AND article_content like CONCAT('%', #{keyword}, '%')
         	    </if>
         	</trim>
+        ORDER BY article_date DESC
     </select>
            
     <!-- 검색 결과 수 -->

@@ -18,7 +18,7 @@
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<!--main js-->
-		<script src="resources/js/main.js"></script>
+		<script src="js/main.js"></script>
 		
 	</head>
 	<body class="is-preload">

@@ -122,7 +122,6 @@
 			</div>
 		</div>
 	</body>
-	<c:url var="getBoardListURL" value="/board/getBoardList"/>
 	<script>
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
@@ -131,12 +130,12 @@
 		// 검색창
 		$(document).on('click', '#btnSearch', function(e){		
 			e.preventDefault();		
-			var url = "${getBoardList}";    // <c:url>로 선언한 url을 사용		
+			var url = "/fish/getBoardList"; 
 			url = url + "?searchType=" + $('#searchType').val();		
 			url = url + "&keyword=" + $('#keyword').val();		
-			location.href = url;		
+			location.href = encodeURI(url);		
 			console.log(url);	
 		});
 	</script>
-	<script type="text/javascript" src="resources/js/board.js"></script>
+	<script type="text/javascript" src="js/board.js"></script>
 </html>
