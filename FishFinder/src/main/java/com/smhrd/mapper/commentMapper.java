@@ -13,8 +13,9 @@ public interface commentMapper {
 	// 댓글 수
 	public int commentCount(int article_seq);
 	// 댓글 삭제
-	public void commentDelete(int comment_seq);
+	public int commentDelete(int comment_seq);
 	// 댓글 수정
 	public void commentUpdate(Comment cvo);
-	
+	// 댓글이 작성된 게시글 삭제
+	public int commentComDelete(int article_seq);
 }

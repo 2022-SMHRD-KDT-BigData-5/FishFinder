@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE HTML>
 <!--
 	Aerial by HTML5 UP
@@ -34,9 +36,10 @@
 								<dl class="title_flex">
 									<dt>제목 : </dt>
 									<input value ='${sessionScope.user_num}' type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
-									<input name="article_title" type="text" style="border: none; background: transparent;" size="43" placeholder="제목을 입력해주세요. ()" maxlength="20">
+									<input name="article_title" type="text" style="border: none; background: transparent;" size="43" placeholder="제목을 입력해주세요. (20자 이내)" maxlength="20">
 								</dl>
 							</div>
+							<input value ="${sessionScope.user_num}" type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
 							<div class="cont">
 								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요.(400자 이내 )" maxlength="400"></textarea>
 							</div>
@@ -47,8 +50,8 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a href="#" class="icon solid fa-check"><span class="label">작성 완료</span></a></li>
-								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							</ul>
+								<li><a href="/view" class="icon solid fa-check"><span class="label">Check</span></a></li>
+								<li><a href="/history" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
 						</nav>
 					</div>
@@ -64,9 +67,11 @@
 				</form>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="/join">Logout</a>.</span>
+	               <span class="copyright"><a href="/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="/admin">Admin</a>.</span>
+					<c:if test="${sessionScope.user_type == 1}">
+		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+		            </c:if>
 	            </footer>
 			</div>
 		</div>

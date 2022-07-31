@@ -36,6 +36,10 @@
 		delete from user_history where his_seq=#{his_seq}
 	</delete>
 
-
+	<!-- 모든 기록 수 -->
+	<select id="userhistorycount"
+		resultType="integer">
+		select COUNT(*) from user_history 
+	</select>
 
 </mapper>

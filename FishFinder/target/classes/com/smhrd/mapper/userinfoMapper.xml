@@ -32,7 +32,10 @@
     <select id="usernameGet" resultType="com.smhrd.domain.userinfo" parameterType="String">
 		select kakao_name from user_info where user_num=#{user_num}    
     </select>
-
+<!-- 모든 회원정보 가져오기 -->
+    <select id="usercount" resultType="integer">
+        select COUNT(*) from user_info 
+    </select>
     
     
     

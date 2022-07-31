@@ -17,5 +17,6 @@ public interface userhistoryMapper {
 	
 	public int historyDel(int his_seq);
 	
+	public int userhistorycount();
 	
 }
