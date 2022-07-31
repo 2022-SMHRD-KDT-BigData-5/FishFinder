@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>암행漁사</title>
+    <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="assets/css/admin.css" />
 </head>
 <body>
@@ -32,7 +37,7 @@
                     </a>
                 </li> -->
                 <li>
-                    <a href="#">
+                    <a href="#/fish/adminCommunity">
                         <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>
                         <span class="title">게시판</span>
                     </a>
@@ -87,7 +92,7 @@
             <div class="cardBox">
                 <div class="card">
                     <div>
-                        <div class="numbers">1,504</div>
+                        <div class="numbers">${count[0] }</div>
                         <div class="cardName">회원</div>
                     </div>
                     <div class="iconBx">
@@ -96,7 +101,7 @@
                 </div>
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
+                        <div class="numbers">${count[1] }</div>
                         <div class="cardName">분석 수</div>
                     </div>
                     <div class="iconBx">
@@ -105,7 +110,7 @@
                 </div>
                 <div class="card">
                     <div>
-                        <div class="numbers">284</div>
+                        <div class="numbers">${count[2] }</div>
                         <div class="cardName">게시글</div>
                     </div>
                     <div class="iconBx">
@@ -114,7 +119,7 @@
                 </div>
                 <div class="card">
                     <div>
-                        <div class="numbers">42</div>
+                        <div class="numbers">${count[3] }</div>
                         <div class="cardName">질문</div>
                     </div>
                     <div class="iconBx">
@@ -142,14 +147,83 @@
             <!-- New Customer -->
             <div class="recentCustomers">
                 <div class="cardHeader">
-                    <h2>최근 질문</h2>
+                     <div><h2>미응답 질문</h2><div> 
+                    <!-- --------------------------- -->
+                    
+            <div class="panel panel-default">
+			<div class="panel-body">
+
+
+
+				<!-- list 가져와서 출력 -->
+				<table class="table table-borderd table-hover">
+					<tr>
+						<td>글 번호</td>
+						<td>제목</td>
+						<td>작성자</td>
+						<td>작성일</td>
+						<td>조회수</td>
+					</tr>
+				<c:forEach var="qlist" items="${qlist}" varStatus="status">
+					
+						<tr onclick="location.href='/fish/questionInsert.do'">
+							<td>${qlist.q_seq }</td>
+							<td>${qlist.q_content }</a></td>
+							<td>${qlist.user_num }</td>
+							<td>${qlist.q_date }</td>
+							<td>${qlist.q_cnt }</td>
+						</tr>
+					
+				</c:forEach>
+					
+				</table>
+				
+
+
+			</div>
+			
+		</div>
+                    <!-- ---------------------------- -->
                 </div>
-                <table>
-                    <tr>
-                        <td width="60px"><div class="imgBx"><img src="assets/css/images/user.jpg"></div></td>
-                        <td><h4>David<br><span>Italy</span></h4></td>
-                    </tr>
-                </table>
+					<!-- ----------------------------- -->
+					<div><h2>신고된 게시글</h2><div> 
+                    <!-- --------------------------- -->
+                    
+            <div class="panel panel-default">
+			<div class="panel-body">
+
+
+
+				<!-- list 가져와서 출력 -->
+				<table class="table table-borderd table-hover">
+					<tr>
+						<td>글 번호</td>
+						<td>제목</td>
+						<td>작성자</td>
+						<td>작성일</td>
+						<td>조회수</td>
+						<td></td>
+					</tr>
+				<c:forEach var="rlist" items="${rlist}" varStatus="status">
+						<tr onclick="open(${list.article_seq})">
+						
+							<td>${rlist.article_seq }</td>
+							<td>${rlist.article_title }</td>
+							<td>${rlist.user_num }</td>
+							<td>${rlist.q_date }</td>
+							<td>${rlist.q_cnt }</td>
+							<td><button onclick='javascript:goDeleteAdmin(${community.article_seq})' class="btn btn-sm btn-success">삭제</button></td>
+						</tr>
+				</c:forEach>
+					
+			</table>
+
+
+
+			</div>
+			
+		</div>
+					<!-- ---------------------------- -->
             </div>
         </div>
 
@@ -160,7 +234,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+	<script src="assets/js/admin.js"></script>
     <script>
         // MenuToggle
         let toggle = document.querySelector('.toggle');

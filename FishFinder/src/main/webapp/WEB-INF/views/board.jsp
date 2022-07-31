@@ -35,6 +35,7 @@
 						</div>
 						<div class="board_scroll">
 							<ul class="board_selectAll">
+
 								<!-- a태그가 기록 하나 -->
 								<c:forEach var="list" items="${list}">
 								<a href='javascript:open(${list.article_seq})'>
@@ -101,7 +102,7 @@
 	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
-					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+
 				</footer>
 			</div>
 		</div>

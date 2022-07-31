@@ -38,7 +38,7 @@
 
 	<!-- 모든 기록 수 -->
 	<select id="userhistorycount"
-		resultType="com.smhrd.domain.userhistory">
+		resultType="integer">
 		select COUNT(*) from user_history 
 	</select>
 

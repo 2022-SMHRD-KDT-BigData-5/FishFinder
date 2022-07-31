@@ -22,6 +22,8 @@ public interface questionMapper {
 	public int questionDelete(int q_seq);
 	// 질문 수
 	public int questioncount();
+	// 미응답 질문 리스트
+	public List<questionBoard> questionNoAnswer();
 	
 	
 }

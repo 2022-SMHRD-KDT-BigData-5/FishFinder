@@ -50,5 +50,10 @@
 			SELECT COUNT(*) FROM question_board 
     </select>
     
+    <!-- 미 응답 문의 글 가져오기 -->
+    <select id="questionNoAnswer" resultType="com.smhrd.domain.questionBoard">
+        select * from question_board where q_status = 0
+    </select>
+    
   
 </mapper>

@@ -47,5 +47,10 @@
         delete from community_info where article_seq=#{article_seq}
     </delete>
     
+    <!-- 신고받은 커뮤니티 글 가져오기 -->
+    <select id="communityReport" resultType="com.smhrd.domain.Community">
+        select * from community_info where article_report > 0
+    </select>
+    
   
 </mapper>
