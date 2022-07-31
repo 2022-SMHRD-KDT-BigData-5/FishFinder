@@ -63,7 +63,9 @@
 .write_content::-webkit-scrollbar{
 	display: none;
 }
-
+.title_type{
+	width: 500px;
+}
 @media screen and (max-width: 736px){
     .content{
         width: 320px;
@@ -78,6 +80,9 @@
 	}
 	.write_content{
 		height: 270px;
+	}
+	.title_type{
+		width: 240px;
 	}
 }
 .board_write {
@@ -149,4 +154,8 @@ dt{
 
 .input-file-button2:hover{
 border-color: transparent;
+}
+.write_nav1{
+	margin-top: 10%;
+	margin-bottom: 10%;
 }

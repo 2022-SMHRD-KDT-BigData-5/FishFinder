@@ -36,7 +36,7 @@
 								<dl class="title_flex">
 									<dt>제목 : </dt>
 									<input value ='${sessionScope.user_num}' type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
-									<input name="article_title" type="text" style="border: none; background: transparent;" size="43" placeholder="제목을 입력해주세요. (20자 이내)" maxlength="20">
+									<input class="title_type" name="article_title" type="text" style="border: none; background: transparent;" size="" placeholder="제목을 입력해주세요. (20자 이내)" maxlength="20">		
 								</dl>
 							</div>
 							<input value ="${sessionScope.user_num}" type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
