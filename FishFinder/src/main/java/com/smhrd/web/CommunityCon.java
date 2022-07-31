@@ -40,6 +40,7 @@ public class CommunityCon {
 		return "board"; // board라는 jsp로 이동
 	}
 	
+	
 	// 내가 쓴 게시판 보기
 	@RequestMapping("/viewMy")
 	public String communityMyList(Community vo, Model model) {

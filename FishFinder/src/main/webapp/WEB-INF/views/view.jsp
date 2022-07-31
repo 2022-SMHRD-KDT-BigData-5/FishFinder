@@ -13,10 +13,10 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/resources/assets/css/main.css" />
-		<link rel="stylesheet" href="/resources/assets/css/qna.css" />
-		<link rel="stylesheet" href="/resources/assets/css/view.css" />
-		<noscript><link rel="stylesheet" href="/resources/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/fish/assets/css/main.css" />
+		<link rel="stylesheet" href="/fish/assets/css/qna.css" />
+		<link rel="stylesheet" href="/fish/assets/css/view.css" />
+		<noscript><link rel="stylesheet" href="/fish/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -98,7 +98,7 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="/logout">Logout</a>.</span>
+	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 					<c:if test="${sessionScope.user_type == 1}">
 		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
@@ -112,7 +112,7 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-	<script type="text/javascript" src="js/view.js"></script>
+	<script type="text/javascript" src="/fish/js/view.js"></script>
 	
 </head>
 </html>
