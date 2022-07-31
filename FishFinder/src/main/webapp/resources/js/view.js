@@ -1,28 +1,14 @@
+// 삭제하기
 function commDel(comment_seq){
-  if(!confirm("삭제하시겠습니까?")){
+	console.log(comment_seq);
+	if(!confirm("삭제하시겠습니까?")){
     alert("취소");
-  }else{
-    alert("삭제");
-    
-    $.ajax({
-			type : "post",
-			url : "commDel",
-			dataType : "json",
-			data : {
-				"comment_seq" : comment_seq
-			},
-			success : function(res){
-				alert('삭제 성공');
-				window.location.href = data.redirect;
-				init;
-			},
-			error : function(e){
-				console.log(comment_seq);
-				alert('삭제 실패');
-			}
-		});
-  }
+ 	}else{
+	location.href = "/fish/commDel/comment_seq=" + comment_seq;
+	alert("삭제");
+	}
 }
+
 
 function commUp(comment_seq, article_seq){
   if(!confirm("수정하시겠습니까?")){

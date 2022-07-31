@@ -80,8 +80,8 @@
 								</div>
 								<c:if test="${clist.user_num == sessionScope.user_num}">
 								<div class="comments_md">
-									<a href="javascript:commUp('${clist.comment_seq}')" class="comments_modify" >[수정]</a>
-									<a href="javascript:commDel('${clist.comment_seq}')" class="comments_delete" >[삭제]</a>
+									<a href="javascript:commUp(${clist.comment_seq})" class="comments_modify" >[수정]</a>
+									<a href="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
 								</div>
 								</c:if>
 							</div>
