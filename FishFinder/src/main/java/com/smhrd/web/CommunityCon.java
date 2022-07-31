@@ -20,6 +20,7 @@ import com.smhrd.domain.Paging;
 import com.smhrd.domain.Search;
 import com.smhrd.mapper.CommunityMapper;
 import com.smhrd.mapper.commentMapper;
+import com.smhrd.mapper.reportMapper;
 
 @Controller
 public class CommunityCon {
@@ -31,7 +32,7 @@ public class CommunityCon {
 	commentMapper cmapper;
 	
 	//@Autowired
-	//reportMapper rmapper;
+	reportMapper rmapper;
 		
 	// 게시판 보기
 	@RequestMapping("/view")
