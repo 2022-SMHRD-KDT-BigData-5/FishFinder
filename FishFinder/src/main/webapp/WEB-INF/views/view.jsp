@@ -13,11 +13,12 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="/resources/assets/css/main.css" />
-		<link rel="stylesheet" href="/resources/assets/css/qna.css" />
-		<link rel="stylesheet" href="/resources/assets/css/view.css" />
-		<noscript><link rel="stylesheet" href="/resources/assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/fish/assets/css/main.css" />
+		<link rel="stylesheet" href="/fish/assets/css/qna.css" />
+		<link rel="stylesheet" href="/fish/assets/css/view.css" />
+		<noscript><link rel="stylesheet" href="/fish/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
+    	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script type="text/javascript" src="/fish/js/view.js"></script>
@@ -36,8 +37,8 @@
 							<div id="getname${community.user_num}" href='javascript:getname(${community.user_num})' class="view_writer">${getname}</div>
 							<div class="view_dvc">
 								<span class="view_date">${ fn:split(community.article_date, " ")[0] }</span>
-								<span class="view_views">${ community.article_cnt }</span>
-								<span class="view_comments" id="commentCnt"></span>
+								<span class="view_views">조회수 : ${ community.article_cnt }</span>
+								<span class="view_comments" id="commentCnt">${comm.size}</span>
 							</div>
 							<div class="view_content">
 								<div class="view_image">
@@ -69,8 +70,9 @@
 							</form>
 							<!-- 댓글작성 끝 -->
 							<!-- 댓글목록 -->
-							<c:forEach items="${comment}" var="clist">
 							<div class="comments_box">
+							<c:forEach items="${comment}" var="clist">
+							<div id="replyModal">
 								<div class="comments_writer" value="${clist.user_num}">${clist.user_num}</div>
 								<div class="comments_content">
 									${fn:replace(clist.comment_content, newLine, "<br>")}
@@ -80,12 +82,13 @@
 								</div>
 								<c:if test="${clist.user_num == sessionScope.user_num}">
 								<div class="comments_md">
-									<a href="javascript:commUp(${clist.comment_seq})" class="comments_modify" >[수정]</a>
+									<a href='${clist.comment_seq}' id="commUpdate" class="comments_modify" >[수정]</a>
 									<a href="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
 								</div>
 								</c:if>
 							</div>
 							</c:forEach>
+							</div>
 							<!-- 댓글목록  끝-->
 						</div>
 					</div>
@@ -110,6 +113,30 @@
 			</div>
 		</div>
 	</body>
+	<!-- 모달 ( 제이쿼리 modal("show") ) -->
+	<div id="replyModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button id="close" type="button" class="btn btn-default pull-right" data-dismiss="modal">닫기</button>
+					<h4 class="modal-title">댓글수정</h4>
+				</div>
+				<div class="modal-body">
+					<!-- 수정폼 id값을 확인하세요-->
+					<div class="reply-content">
+					<textarea class="form-control" rows="4" id="modalReply" placeholder="${comm.comment_content}"></textarea>
+					<div class="reply-group">
+						<div class="reply-input">
+						    <input type="hidden" id="modalRno">
+						</div>
+						<button class="right btn btn-info" id="modalModBtn">수정</button>
+					</div>
+					</div>
+					<!-- 수정폼끝 -->
+				</div>
+			</div>
+		</div>
+	</div>
 	<script>
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
