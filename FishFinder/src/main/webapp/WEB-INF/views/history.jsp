@@ -17,7 +17,7 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
-		<script src="assets/js/history.js"></script>
+		<script src="js/history.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">

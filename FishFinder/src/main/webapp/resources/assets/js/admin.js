@@ -1,25 +1,8 @@
 //====================================================================================
-// 내용 보기 + 조회수 카운트
+// 내용 보기
 function open(article_seq){	
 		
-		location.href='/fish/viewContent/' + article_seq;
-		let count = Number($('#count' + article_seq).html());
-		
-		$.ajax({
-			type : "post",
-			url : "viewCntUp",
-			dataType : "json",
-			data : {
-				"article_seq" : article_seq,
-				"article_cnt" : count + 1
-			},
-			success : function(res){
-				$('#count'+article_seq).html( count + 1 );
-			},
-			error : function(e){
-				alert('view error')
-			}
-		});
+		location.href='/fish/viewContentAdmin/' + article_seq;
 		
 }
 //====================================================================================
@@ -84,14 +67,26 @@ function deleteCmt(comment_seq){
 }
 //====================================================================================
 //목록가기
-function goList(){
-	location.href = '/fish/view';
+function goAdminList(){
+	location.href = '/fish/adminCommunity';
 }
 		
 // 관리자 페이지에서 삭제하기
 function goDeleteAdmin(article_seq){
 	console.log(article_seq);
-	location.href = '/fish/viewDelAdmin?article_seq=' + article_seq;
+	location.href = '/fish/viewDelAdmin/'+ article_seq;
+}
+
+// 관리자 페이지에서 삭제하기
+function goDeleteAdminCom(article_seq){
+	var msg = confirm("삭제하겠습니까?");
+	
+	if(msg == true){
+		location.href = '/fish/viewDelAdminCom/'+ article_seq;
+	}else{
+		return false;
+	}
+	
 }
 		
 // 수정하기

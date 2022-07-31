@@ -173,7 +173,7 @@ public class userinfoCon {
 	public String usernameGet(@PathVariable("user_num") int user_num, Model model) {
 		String getname = um.usernameGet(user_num);
 		model.addAttribute("getname",getname);
-		return "nameget";
+		return getname;
 	}
 	
 	//내 히스토리 보기

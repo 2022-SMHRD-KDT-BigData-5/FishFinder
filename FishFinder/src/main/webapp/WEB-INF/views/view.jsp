@@ -13,13 +13,12 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/qna.css" />
-		<link rel="stylesheet" href="assets/css/view.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/resources/assets/css/main.css" />
+		<link rel="stylesheet" href="/resources/assets/css/qna.css" />
+		<link rel="stylesheet" href="/resources/assets/css/view.css" />
+		<noscript><link rel="stylesheet" href="/resources/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
-		<script src="assets/js/view.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -32,7 +31,7 @@
 					<div class="qna_box">
 						<div class="view_scroll">
 							<div class="view_title">${ requestScope.community.article_title }</div>
-							<div href='/fish/getname' class="view_writer">${getname}</div>
+							<div id="getname${community.user_num}" href='javascript:getname(${community.user_num})' class="view_writer">${getname}</div>
 							<div class="view_dvc">
 								<span class="view_date">${ fn:split(community.article_date, " ")[0] }</span>
 								<span class="view_views">${ community.article_cnt }</span>
@@ -50,18 +49,20 @@
 							<div class="comments_menu">
 								<!-- 수정 삭제는 내 글에서만 -->
 								<div class="view_md">
+								<c:if test="${community.user_num == sessionScope.user_num}">
 									<a href='javascript:goUpdate(${community.article_seq})' class="view_modify" value="${community.article_seq}">수정</a>
 									<a href='javascript:goDelete(${community.article_seq})' class="view_delete" value="${community.article_seq}">삭제</a>
+								</c:if>
 									<a href='javascript:goList()'>목록</a>
 								</div>
 							</div>
 							<!-- 댓글작성 -->
-							<form action="/fish/commIn" method="get">
+							<form action="/fish/commIn" method="post">
 							<div class="comm_write_box">
 								<a name="here"><textarea id="comment_content" class="comm_text" name="comment_content"></textarea></a>
 								<input id="article_seq" name="article_seq" type="hidden" value="${community.article_seq}">
 								<input id="user_num" name="user_num" type="hidden" value="${sessionScope.user_num}">
-								<input type="submit" class="custom-btn btn-3"/ value="등록">
+								<button type="submit" class="custom-btn btn-3">등록</button>
 							</div>
 							</form>
 							<!-- 댓글작성 끝 -->
@@ -75,10 +76,10 @@
 								<div class="comments_dmd">
 									<div class="comments_date">${fn:split(clist.comment_date, " ")[0]}</div>
 								</div>
-								<c:if test="${comment.user_num == sessionScope.user_num}">
+								<c:if test="${clist.user_num == sessionScope.user_num}">
 								<div class="comments_md">
-									<a href="#" onclick="javascript:commUp(${comment.comment_seq})" class="comments_modify" >[수정]</a>
-									<a href="#" onclick="javascript:commDel(${comment.comment_seq})" class="comments_delete" >[삭제]</a>
+									<a href="javascript:commUp(${clist.comment_seq})" class="comments_modify" >[수정]</a>
+									<a href="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
 								</div>
 								</c:if>
 							</div>
@@ -99,7 +100,9 @@
 				<footer id="footer">
 	               <span class="copyright"><a href="join.html">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="admin.html">Admin</a>.</span>
+	               <c:if test="${sessionScope.user_type == 1}">
+	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+	               </c:if>
 	            </footer>
 			</div>
 		</div>
@@ -109,6 +112,7 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-<script type="text/javascript" src="js/community2.js"/>
+	<script type="text/javascript" src="js/view.js"></script>
+	
 </head>
 </html>

@@ -37,7 +37,7 @@
                     </a>
                 </li> -->
                 <li>
-                    <a href="#/fish/adminCommunity">
+                    <a href="/fish/adminCommunity">
                         <span class="icon"><ion-icon name="receipt-outline"></ion-icon></span>
                         <span class="title">게시판</span>
                     </a>
@@ -205,7 +205,7 @@
 						<td></td>
 					</tr>
 				<c:forEach var="rlist" items="${rlist}" varStatus="status">
-						<tr onclick="open(${list.article_seq})">
+						<tr onclick="location.href='/fish/viewContentAdmin/${list.article_seq }'">
 						
 							<td>${rlist.article_seq }</td>
 							<td>${rlist.article_title }</td>

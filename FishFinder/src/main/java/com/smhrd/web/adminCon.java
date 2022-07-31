@@ -18,6 +18,7 @@ import com.smhrd.domain.userhistory;
 import com.smhrd.domain.userinfo;
 import com.smhrd.mapper.CommunityMapper;
 import com.smhrd.mapper.questionMapper;
+import com.smhrd.mapper.reportMapper;
 @Controller
 public class adminCon {
 
@@ -31,6 +32,8 @@ public class adminCon {
 	questionMapper questionMapper;
 	@Autowired
 	commentMapper commentMapper;
+	@Autowired
+	reportMapper reportMapper;
 	
 	
 	@RequestMapping("/admin")
@@ -61,7 +64,7 @@ public class adminCon {
 	}
 	
 	// community 관리자 페이지에서 삭제
-	@RequestMapping("/viewDelAdmin")
+	@RequestMapping("/viewDelAdmin/{article_seq}")
 	public String communityDeleteAdmin( @PathVariable("article_seq") int article_seq) {
 		CommunityMapper.communityDelete(article_seq);		
 		return "redirect:/admin";
@@ -77,9 +80,9 @@ public class adminCon {
 	}
 	
 	// 관리자 게시판 선택한 community로 이동 
-	@RequestMapping("/viewContent/{article_seq}")
-	public String communityContent(Model model,
-			@PathVariable("article_seq") int article_seq) {
+	@RequestMapping("/viewContentAdmin/{article_seq}")
+	public String communityContentAdmin(Model model,
+		@PathVariable("article_seq") int article_seq) {
 		
 		Community vo = CommunityMapper.communityContent(article_seq);	
 		model.addAttribute("community", vo);	
@@ -87,7 +90,17 @@ public class adminCon {
 		// 댓글 조회
 		List<Comment> comment = commentMapper.commentList(article_seq);
 		model.addAttribute("comment", comment);
-		return "view";
+		return "adminView";
 	}
+	// community 관리자 페이지에서 삭제
+	@RequestMapping("/viewDelAdminCom/{article_seq}")
+	public String communityDeleteAdminCom( @PathVariable("article_seq") int article_seq) {
+		commentMapper.commentComDelete(article_seq);
+		reportMapper.reportComDelete(article_seq);
+		CommunityMapper.communityDelete(article_seq);		
+		return "redirect:/adminCommunity";
+	}
+	
+	
 	
 }

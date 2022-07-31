@@ -29,14 +29,13 @@
 					<h1>Board</h1>
 					<div class="board_box">
 						<div class="board_menu">
-							<a href="/fish/view" class="boardAll" onclick="showAll()">전체</a>
-							<a class="boardMy" onclick="showMy(${sessionScope.user_num})">내가 쓴 글</a>
+							<a href="/fish/view" class="boardAll" onclick="showAll()">전체</a>							
+							<a href="/fish/viewMy"class="boardMy" onclick="showMy()">내가 쓴 글</a>
 							<a href="/fish/viewIn" class="">글 작성</a>
 						</div>
 						<div class="board_scroll">
 							<ul class="board_selectAll">
-
-								<!-- a태그가 기록 하나 -->
+							<!-- a태그가 기록 하나 -->
 								<c:forEach var="list" items="${list}">
 								<a href='javascript:open(${list.article_seq})'>
 									<li class="board_list">
@@ -59,23 +58,23 @@
 								</c:forEach>
 							</ul>
 							<ul class="board_selectMy">
-								<c:forEach var="list" items="${mlist}">
+								<c:forEach var="list" items="${clist}">
 								<c:when test="${mlist.user_num == sessionScope.user_num}">
-								<a href='javascript:open(${list.article_seq})'>
+								<a href='javascript:open(${mlist.article_seq})'>
 									<li class="board_list">
 										<div class="preview_img">
-											<img class="board_img" src="/assets/css/images/img_test.jpg" onerror="">
+											<img class="board_img" src="/fish/resources/assets/css/images/img_test.jpg" onerror="">
 										</div>
 										<div class="board_tnd">
 											<div class="board_title">><c:out value="${mlist.article_title}"/></div>
 											<div class="board_wdv">
-												<span class="board_writer"><c:out value="${mlist.user_num}"/></span>
-												<span class="board_date" id='date${mlist.article_date}'>${ fn:split(mlist.article_date, " ")[0]}</span>
+												<span class="board_writer"><c:out value="${clist.user_num}"/></span>
+												<span class="board_date" id='date${clist.article_date}'>${ fn:split(mlist.article_date, " ")[0]}</span>
 												<span class="board_views">조회수 <span class="views_cnt"><c:out value="${mlist.article_cnt}"/></span></span>
 											</div>
 										</div>
 										<div class="comments_box">
-											<div href="javascript:commCnt(${list.article_seq})" class="board_comments">댓글<br><c:out value="${ctotal}"/></div>
+											<div href="javascript:commCnt(${mlist.article_seq})" class="board_comments">댓글<br><c:out value="${ctotal}"/></div>
 										</div>
 									</li>
 								</a>
@@ -84,8 +83,22 @@
 							</ul>
 						</div>
 						<div class="search_box">
-							<input type="text" class="search_input" placeholder="검색어 입력">
-							<button class="search_button">검색</button>
+							<!-- search{s} -->		
+							<div class="form-group row justify-content-center">			
+							<div class="w100" style="padding-right:10px">				
+								<select class="form-control form-control-sm" name="searchType" id="searchType">					
+									<option value="article_title">제목</option>					
+									<option value="article_content">본문</option>									
+								</select>			
+							</div>			
+							<div class="w300" style="padding-right:10px">				
+								<input type="text" class="form-control form-control-sm" name="keyword" id="keyword">			
+							</div>			
+							<div>				
+								<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>			
+							</div>		
+							</div>		
+							<!-- search{e} -->
 						</div>
 					</div>
 					<nav>
@@ -101,9 +114,11 @@
 				<footer id="footer">
 	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
-
-				</footer>
+	              	<c:if test="${sessionScope.user_type == 1}">
+	               		<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+	               	</c:if>
+					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
+            	</footer>
 			</div>
 		</div>
 	</body>
@@ -111,6 +126,16 @@
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
+		
+		// 검색창
+		$(document).on('click', '#btnSearch', function(e){		
+			e.preventDefault();		
+			var url = "/fish/getBoardList"; 
+			url = url + "?searchType=" + $('#searchType').val();		
+			url = url + "&keyword=" + $('#keyword').val();		
+			location.href = encodeURI(url);		
+			console.log(url);	
+		});
 	</script>
-	<script src="assets/js/board.js"></script>
+	<script type="text/javascript" src="js/board.js"></script>
 </html>

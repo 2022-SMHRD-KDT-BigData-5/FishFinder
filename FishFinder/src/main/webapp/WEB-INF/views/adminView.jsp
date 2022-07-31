@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +13,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="assets/css/admin.css" />
+    <link rel="stylesheet" href="/fish/assets/css/admin.css" />
 </head>
 <body>
     <div class="container">
@@ -20,8 +21,8 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><img src="assets/css/images/logo3.png"></span>
-                        <span class="title1"><img src="assets/css/images/logo4.png"></span>
+                        <span class="icon"><img src="/fish/assets/css/images/logo3.png"></span>
+                        <span class="title1"><img src="/fish/assets/css/images/logo4.png"></span>
                     </a>
                 </li>
                 <li>
@@ -73,48 +74,48 @@
         <div class="main">
         <div class="details">
             <!-- order details list -->
-          <div class="container">
-		<h2>물고기 게시판</h2>
-		<div class="panel panel-default">
-			<div class="panel-body">
-
-
-
-				<!-- list 가져와서 출력 -->
+			<div class="container">
+			  <h2>물고기 게시판</h2>
+			  <div class="panel panel-default">
+			    <div class="panel-body">
+			
 				<table class="table table-borderd table-hover">
 					<tr>
-						<td>글 번호</td>
-						<td>제목</td>
-						<td>작성자</td>
-						<td>작성일</td>
-						<td>조회수</td>
+						<td> 제목  </td>
+						<td>${community.article_title }</td>
 					</tr>
-					<c:forEach var="list" items="${list}" varStatus="status">
-						
-						<tr onclick="location.href='/fish/viewContentAdmin/${list.article_seq }'">
-						
-							<td>${list.article_seq }</td>
-							
-							<!-- 
-							1. 쿼리 스트링
-							url?name=val
-							2. path variable
-							url/val/val
-							 -->
-							<td>${list.article_title }</td>
-							<td>${list.user_num }</td>
-							<td>${list.article_date }</td>
-							<td>${list.article_cnt }</td>
-						</tr>
-						
-					</c:forEach>
+					<tr>
+						<td> 작성자  </td>
+						<td>${community.user_num }</td>
+					</tr>
+					<tr>
+						<td> 내용  </td>
+						<% pageContext.setAttribute("newLine", "\n"); %>
+						<td>${fn:replace( community.article_content, newLine, "<br>") }</td>
+						<!-- fn:replace(대상 문자열, 바꿀 문자열, 바꾼 뒤 문자열)  -->
+						<!-- '/' 는 문자열X  ==> scope에 문자열로 담았다 꺼내 써야함 -->
+					</tr>
+					<tr>
+						<td> 작성일  </td>
+						<td>${fn:split( community.article_date, " ")[0] }</td>
+						<!-- fn:split(대상 문자열, 구분자) -->
+					</tr>
+					<tr>
+						<td colspan="2" align="center">
+							<button onClick="goDeleteAdminCom(${community.article_seq})" class="btn btn-sm btn-warning">삭제</button>
+							<button onClick="goAdminList()" class="btn btn-sm btn-success">목록</button>
+						</td>
+					</tr>
+					<!-- let a = 15;
+					let str = `문자열 포맷팅 ${a} 결과`
+					console.log(str) -->
+			
 				</table>
-
-
+				</div>
+			    <div class="panel-footer">암행어사</div>
+			  </div>
 			</div>
-			<div class="panel-footer">암행어사</div>
-		</div>
-	</div>  
+
             
            
 
@@ -129,7 +130,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<script src="assets/js/admin.js"></script>
+	<script src="/fish/assets/js/admin.js"></script>
     <script>
         // MenuToggle
         let toggle = document.querySelector('.toggle');
