@@ -36,10 +36,11 @@ public class questionCon {
 	}
 	
 	// 질문 쓰기로 이동
-	@GetMapping("/questionInsert.do")
-	public String boardForm() {
-		return "qna_write";				
-	}
+//	@GetMapping("/questionInsert/{q_seq}")
+//	public String boardForm( @PathVariable("q_seq") int q_seq, Model model) {
+//		model.addAttribute("q_seq", q_seq);
+//		return "qna_write";				
+//	}
 	
 	// 질문 작성 후 DB에 넣기
 	@PostMapping("/questionInsert.do")

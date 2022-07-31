@@ -20,6 +20,7 @@ import com.smhrd.domain.Paging;
 import com.smhrd.domain.Search;
 import com.smhrd.mapper.CommunityMapper;
 import com.smhrd.mapper.commentMapper;
+import com.smhrd.mapper.reportMapper;
 
 @Controller
 public class CommunityCon {
@@ -29,6 +30,9 @@ public class CommunityCon {
 	
 	@Autowired
 	commentMapper cmapper;
+	
+	//@Autowired
+	reportMapper rmapper;
 		
 	// 게시판 보기
 	@RequestMapping("/view")
@@ -83,16 +87,18 @@ public class CommunityCon {
 	}
 	
 	// community 삭제
-	@RequestMapping("/viewDel")
+	@RequestMapping("/viewDel/{article_seq}")
 	public String communityDelete( @PathVariable("article_seq") int article_seq) {
 		System.out.println("번호 : " + article_seq);
-		mapper.communityDelete(article_seq);		
+		mapper.communityDelete(article_seq);
+	    cmapper.commentComDelete(article_seq);
+	    rmapper.reportComDelete(article_seq);
 		return "redirect:/view";
 	}
 	
 	
 	// community수정 페이지로 이동
-	@RequestMapping("/viewGoUp")
+	@RequestMapping("/viewGoUp/{article_seq}")
 	public String communityGoUpdate(Model model, int article_seq) {		
 		Community vo = mapper.communityContent(article_seq);
 		model.addAttribute("community", vo);

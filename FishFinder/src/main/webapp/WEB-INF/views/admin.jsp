@@ -163,6 +163,7 @@
 						<td>작성자</td>
 						<td>작성일</td>
 						<td>조회수</td>
+						<td></td>
 					</tr>
 				<c:forEach var="qlist" items="${qlist}" varStatus="status">
 					
@@ -172,6 +173,14 @@
 							<td>${qlist.user_num }</td>
 							<td>${qlist.q_date }</td>
 							<td>${qlist.q_cnt }</td>
+							<c:choose>
+						        <c:when test="${list.q_status == 0 }">
+						           <td><a href='fish/questionInsert.do'"><c:out value="답변 하기"/></a></td>
+						        </c:when>         
+						        <c:otherwise>
+						          <td><c:out value="답변 완료"/></td>
+						         </c:otherwise>
+						    </c:choose>
 						</tr>
 					
 				</c:forEach>

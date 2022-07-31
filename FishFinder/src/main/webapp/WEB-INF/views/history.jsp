@@ -61,9 +61,15 @@
 				<footer id="footer">
 	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
+<<<<<<< HEAD
+	                <c:if test="${sessionScope.user_type == 1}">
+	               		<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+	               	</c:if>
+=======
 	               				<c:if test="${sessionScope.user_type == 1}">
 	               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 	            </c:if>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
             	</footer>
 			</div>
 		</div>

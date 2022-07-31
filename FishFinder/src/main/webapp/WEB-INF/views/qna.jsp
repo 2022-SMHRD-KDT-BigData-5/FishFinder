@@ -112,7 +112,7 @@
                 		
                         if(data[i].q_status ==0){
                         	table +=  '</div>'
-                       		table +=  '<a href="/fish/questionInsert.do" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>'
+                       		table +=  '<a href="/fish/answerwrite/'+data[i].q_seq + '" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>'
                         	table +=  '</li>'
 
                         }else{

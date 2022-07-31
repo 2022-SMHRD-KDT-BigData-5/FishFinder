@@ -18,6 +18,8 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/board.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -84,19 +86,17 @@
 						</div>
 						<div class="search_box">
 							<!-- search{s} -->		
-							<div class="form-group row justify-content-center">			
-							<div class="w100" style="padding-right:10px">				
+							<div class="form-group row justify-content-center">														
 								<select class="form-control form-control-sm" name="searchType" id="searchType">					
 									<option value="article_title">제목</option>					
 									<option value="article_content">본문</option>									
 								</select>			
-							</div>			
-							<div class="w300" style="padding-right:10px">				
-								<input type="text" class="form-control form-control-sm" name="keyword" id="keyword">			
+								<div class="w300" style="padding-right:10px">				
+									<input type="text" class="search_input" name="keyword" id="keyword" placeholder="검색어 입력">			
+								</div>			
 							</div>			
 							<div>				
-								<button class="btn btn-sm btn-primary" name="btnSearch" id="btnSearch">검색</button>			
-							</div>		
+								<button class="search_button" name="btnSearch" id="btnSearch">검색</button>			
 							</div>		
 							<!-- search{e} -->
 						</div>
@@ -136,6 +136,12 @@
 			location.href = encodeURI(url);		
 			console.log(url);	
 		});
+		
+		document.addEventListener("touchstart", function(e) {
+		    console.log(e.defaultPrevented);  // will be false
+		    e.preventDefault();   // does nothing since the listener is passive
+		    console.log(e.defaultPrevented);  // still false
+		}, Modernizr.passiveeventlisteners ? {passive: true} : false);
 	</script>
-	<script type="text/javascript" src="js/board.js"></script>
+	
 </html>

@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.AsyncRestTemplate;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -78,7 +79,7 @@ public class imageSendService {
 		String url = "http://localhost:9000/fish/Flask";
 		
 		// 비동기 전달
-        AsyncRestTemplate restTemplate = new AsyncRestTemplate(); // 비동기 전달
+        RestTemplate restTemplate = new RestTemplate(); // 비동기 전달
         // 통신 UTF-8 인코딩
         restTemplate.getMessageConverters().add(0, new StringHttpMessageConverter(Charset.forName("UTF-8")));
         // httpHeaders

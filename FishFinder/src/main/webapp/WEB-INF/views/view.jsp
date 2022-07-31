@@ -19,6 +19,8 @@
 		<noscript><link rel="stylesheet" href="/fish/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script type="text/javascript" src="/fish/js/view.js"></script>
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -79,7 +81,7 @@
 								<c:if test="${clist.user_num == sessionScope.user_num}">
 								<div class="comments_md">
 									<a href="javascript:commUp(${clist.comment_seq})" class="comments_modify" >[수정]</a>
-									<a href="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
+									<a href="javascript:commDel(${clist.comment_seq},${clist.article_seq})" class="comments_delete" >[삭제]</a>
 								</div>
 								</c:if>
 							</div>
@@ -97,6 +99,7 @@
 					</nav>
 				</header>
 				<!-- Footer -->
+
 				<footer id="footer">
 	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
@@ -112,7 +115,6 @@
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
 	</script>
-	<script type="text/javascript" src="/fish/js/view.js"></script>
 	
 </head>
 </html>

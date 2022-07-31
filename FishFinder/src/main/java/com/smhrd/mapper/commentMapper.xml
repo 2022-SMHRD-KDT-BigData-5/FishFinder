@@ -16,6 +16,11 @@
     <select id="commentList" resultType="com.smhrd.domain.Comment">
         select * from comment where article_seq = #{article_seq} order by comment_date desc
     </select>
+    
+    <!-- 게시글 번호 가져오기 -->
+    <select id="commentComSeq" parameterType="Integer" resultType="Integer">
+        select article_seq from comment where comment_seq = #{comment_seq}
+    </select>
 	
     <!-- 댓글 수 -->
     <select id="commentCount" resultType="com.smhrd.domain.Comment">
@@ -24,8 +29,13 @@
     </select>
     
     <!-- 댓글 삭제 -->
-    <delete id="commentDelete" parameterType="com.smhrd.domain.Comment">
+    <delete id="commentDelete" parameterType="Integer">
         delete from comment where comment_seq=#{comment_seq}
+    </delete>
+    
+    <!-- 특정 글 댓글  모두 삭제 -->
+    <delete id="commentComDelete" parameterType="Integer">
+        delete from comment where article_seq=#{article_seq}
     </delete>
     
     <!-- 댓글 수정 -->
@@ -33,10 +43,5 @@
         update comment set comment_content=#{comment_content}, comment_date=now() 
         where comment_seq=#{comment_seq}
     </update>
-    
-    <!-- 작성된 게시글 삭제 -->
-    <delete id="commentComDelete">
-        delete from comment where article_seq=#{article_seq}
-    </delete>
 
 </mapper>
