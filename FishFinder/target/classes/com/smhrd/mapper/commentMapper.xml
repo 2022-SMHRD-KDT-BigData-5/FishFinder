@@ -38,5 +38,10 @@
         update comment set comment_content=#{comment_content}, comment_date=now() 
         where comment_seq=#{comment_seq}
     </update>
+    
+    <!-- 작성된 게시글 삭제 -->
+    <delete id="commentComDelete">
+        delete from comment where article_seq=#{article_seq}
+    </delete>
 
 </mapper>

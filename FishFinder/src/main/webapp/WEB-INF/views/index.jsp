@@ -24,6 +24,7 @@
          <div id="overlay"></div>
          <div id="main">
             <!-- Header -->
+
             <img src="assets/css/images/wsmallLogo.png" class="smallLogo">
             <header id="header">
                <!-- <a href="kakaolink://launch">카카오톡앱</a> -->

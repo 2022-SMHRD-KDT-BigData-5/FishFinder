@@ -94,6 +94,7 @@ public class CommunityCon {
 		return "redirect:/view";
 	}
 	
+	
 	// community수정 페이지로 이동
 	@RequestMapping("/viewGoUp/{article_seq}")
 	public String communityGoUpdate(Model model, int article_seq) {		

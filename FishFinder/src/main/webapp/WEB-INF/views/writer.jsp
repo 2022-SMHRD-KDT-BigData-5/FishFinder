@@ -50,9 +50,11 @@
 						</div>
 						<nav>
 							<ul>
-								<li><button type="submit" class="icon solid fa-check"><span class="label">작성 완료</span></button></li>
-								<li><a href="javascript:history.back()" class="icon solid fa-sign-out"><span class="label">목록</span></a></li>							
+						</ul>
+								<li><a href="/view" class="icon solid fa-check"><span class="label">Check</span></a></li>
+								<li><a href="/history" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
+
 						</nav>
 					</div>
 					<nav>
@@ -67,11 +69,11 @@
 				</form>
 				<!-- Footer -->
 				<footer id="footer">
-	               	<span class="copyright"><a href="/join">Logout</a>.</span>
-	               	<!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               	<c:if test="${sessionScope.user_type == 1}">
-	               		<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
-	               	</c:if>
+	               <span class="copyright"><a href="/logout">Logout</a>.</span>
+	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
+					<c:if test="${sessionScope.user_type == 1}">
+		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+		            </c:if>
 	            </footer>
 			</div>
 		</div>
