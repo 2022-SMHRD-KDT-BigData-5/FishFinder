@@ -19,13 +19,13 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="/fish/admin">
                         <span class="icon"><img src="assets/css/images/logo3.png"></span>
                         <span class="title1"><img src="assets/css/images/logo4.png"></span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/fish/admin">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                         <span class="title">홈</span>
                     </a>
@@ -43,7 +43,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/fish/adminQna">
                         <span class="icon"><ion-icon name="help-outline"></ion-icon></ion-icon></span>
                         <span class="title">질문</span>
                     </a>
@@ -61,7 +61,7 @@
                     </a>
                 </li> -->
                 <li>
-                    <a href="#">
+                    <a href="/fish">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
                         <span class="title">로그아웃</span>
                     </a>
@@ -168,7 +168,7 @@
 					
 						<tr onclick="location.href='/fish/questionInsert.do'">
 							<td>${qlist.q_seq }</td>
-							<td>${qlist.q_content }</a></td>
+							<td>${qlist.q_content }</td>
 							<td>${qlist.user_num }</td>
 							<td>${qlist.q_date }</td>
 							<td>${qlist.q_cnt }</td>

@@ -63,14 +63,14 @@ public class adminCon {
 		return "admin";
 	}
 	
-	// community 관리자 페이지에서 삭제
+	// 관리자 페이지에서 게시글 삭제
 	@RequestMapping("/viewDelAdmin/{article_seq}")
 	public String communityDeleteAdmin( @PathVariable("article_seq") int article_seq) {
 		CommunityMapper.communityDelete(article_seq);		
 		return "redirect:/admin";
 	}
 	
-	// community 관리자 페이지에서 리스트
+	// 게시판 리스트
 	@RequestMapping("/adminCommunity")
 	public String adminCommunity(Community vo, Model model) {
 		List<Community> list = CommunityMapper.communityList(vo);
@@ -99,6 +99,15 @@ public class adminCon {
 		reportMapper.reportComDelete(article_seq);
 		CommunityMapper.communityDelete(article_seq);		
 		return "redirect:/adminCommunity";
+	}
+	
+	// QnA 게시판
+	@RequestMapping("/adminQna")
+	public String adminQna(Model model) {
+		List<questionBoard> list = questionMapper.questionList();
+		model.addAttribute("list", list);
+		
+		return "adminQnAList";
 	}
 	
 	
