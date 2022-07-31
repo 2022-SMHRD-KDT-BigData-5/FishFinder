@@ -39,11 +39,11 @@
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
                     	<span>감성돔과 X % 일치합니다.</span>
 					</div> -->
-					<div class="progress-bar" style="--width:${his_vo.accuracy }" data-label="${his_vo.accuracy }%..."></div>
+					div class="progress-bar" style="--width:${his_vo.accuracy }" data-label="${his_vo.accuracy }%..."></div>
 					<br>
 					<!-- 결과 안내 창 -->
 					<div class = "card">
-						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>				
+						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>			
 
 						${fish_vo.fish_kind }
 						${fish_vo.fish_spec }

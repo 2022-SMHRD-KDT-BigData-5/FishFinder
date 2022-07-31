@@ -102,6 +102,12 @@ public class userinfoCon {
 
 		return "writer";
 	}
+	@RequestMapping("/result")
+	public String result() {
+		
+
+		return "result";
+	}
 
 
 
