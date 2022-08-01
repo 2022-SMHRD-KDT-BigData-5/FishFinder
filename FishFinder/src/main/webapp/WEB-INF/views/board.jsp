@@ -85,8 +85,8 @@
 							</ul>
 						</div>
 						<select name="" class="selecto">
-							<option value="">제목</option>
-							<option value="">본문</option>
+							<option value="" style="height:30px">제목</option>
+							<option value="">내용</option>
 						</select>
 						<div class="search_box">
 							<input type="text" class="search_input" placeholder="검색어 입력">
@@ -109,7 +109,6 @@
 	              	<c:if test="${sessionScope.user_type == 1}">
 	               		<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 	               	</c:if>
-					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
             	</footer>
 			</div>
 		</div>
