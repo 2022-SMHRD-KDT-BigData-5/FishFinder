@@ -1,13 +1,14 @@
 // 댓글 삭제하기
-function commDel(comment_seq){
+function commDel(comment_seq, article_seq){
 	console.log(comment_seq);
 	if(!confirm("삭제하시겠습니까?")){
     alert("취소");
  	}else{
-	location.href = "/fish/commDel/" + comment_seq;
-	alert("삭제");
+	location.href = "/fish/commDel/" + comment_seq + "/" + article_seq;
+	alert("삭제 성공");
 	}
 }
+
 //==================================================================================
 //목록가기
 function goList(){

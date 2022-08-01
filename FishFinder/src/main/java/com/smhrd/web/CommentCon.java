@@ -58,19 +58,20 @@ public class CommentCon {
 	}
 	
 	// Comment 삭제
-	@RequestMapping("/commDel/{comment_seq}")
-	public String commentDelete(@PathVariable("comment_seq") int comment_seq, Comment cvo) {
+	@RequestMapping("/commDel/{comment_seq}/{article_seq}")
+	public String commentDelete(@PathVariable("comment_seq") int comment_seq, 
+			@PathVariable("article_seq") int article_seq, Comment cvo) {
 		System.out.println("번호 : " + comment_seq);
 		cmapper.commentDelete(comment_seq);
-		int article_seq = cvo.getArticle_seq();
 		return "redirect:/viewContent/"+article_seq;
 	}	
 
 	// Comment 수정 후 DB에 업데이트
-	@PostMapping("/commUp")
-	public String commentUpdate(Comment cvo) {		
+	@RequestMapping("viewContent/commUp/{comment_seq}/{article_seq}")
+	public String commentUpdate(Comment cvo, @PathVariable("article_seq") int article_seq,
+			@PathVariable("comment_seq") int comment_seq) {		
 		cmapper.commentUpdate(cvo);
-		return "redirect:/viewContent/"+ cvo.getArticle_seq();
+		return "redirect:/viewContent/"+ article_seq;
 	}
 	
 }

@@ -80,13 +80,12 @@
 								<div class="comments_dmd">
 									<div class="comments_date">${fn:split(clist.comment_date, " ")[0]}</div>
 								</div>
+								<form action="commUp/${clist.comment_seq}/${clist.article_seq}" method="post">
 								<c:if test="${clist.user_num == sessionScope.user_num}">
 								<div class="comments_md">
-									<a href="javascript:commUp(${clist.comment_seq})" value="${clist.comment_seq}" class="comments_modify" >[수정]</a>
 									<!-- 모달창 -->
-										<form action="commUp" method="post">
 										<input type="checkbox" id ="popup">
-										<label for ="popup">수정</label>
+										<label for ="popup"><a class="comments_modify">[수정]</a></label>
 										<div>
 											<input type="hidden" name="comment_seq" value="${clist.comment_seq}">
 											<input type="hidden" name="article_seq" value="${clist.article_seq}">
@@ -97,11 +96,11 @@
 											</div>
 											<label for="popup"></label>
 										</div>
-										</form>
 									<!-- 모달창끝 -->						
-									<a href="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
+									<a href="javascript:commDel(${clist.comment_seq},${clist.article_seq})" class="comments_delete" >[삭제]</a>
 								</div>
 								</c:if>
+								</form>
 							</div>
 							</c:forEach>
 							</div>
