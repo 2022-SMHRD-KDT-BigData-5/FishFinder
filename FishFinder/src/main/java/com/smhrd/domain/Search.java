@@ -1,5 +1,8 @@
 package com.smhrd.domain;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,5 +14,6 @@ public class Search {
 
 	private String searchType;
 	private String keyword;
+	
 	
 }
