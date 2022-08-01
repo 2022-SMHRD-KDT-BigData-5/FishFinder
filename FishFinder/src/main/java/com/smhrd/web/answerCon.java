@@ -2,6 +2,8 @@ package com.smhrd.web;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,12 +16,17 @@ import org.springframework.web.multipart.MultipartFile;
 import com.smhrd.domain.answerInfo;
 import com.smhrd.domain.questionBoard;
 import com.smhrd.mapper.answerMapper;
+import com.smhrd.mapper.questionMapper;
 
 @Controller
 public class answerCon {
 
 	@Autowired
 	answerMapper amapper;
+	@Autowired
+	questionMapper qmapper;
+	@Autowired
+	HttpSession session;
 	
 	// 답변 리스트
 	@RequestMapping("/answerview") 
@@ -47,15 +54,18 @@ public class answerCon {
 	
 	// 답변 작성 후 DB에 넣기
 	@RequestMapping("/answerInsert")
-	public String answerInsert(String a_content, int q_seq, int answer_num) {
-		
-		answerInfo a_vo = new answerInfo();
-		a_vo.setA_content(a_content);
-		a_vo.setQ_seq(q_seq);
-		a_vo.setAnswer_num(answer_num);
-		
+	public String answerInsert(answerInfo a_vo) {
+		qmapper.questionStatus(a_vo.getQ_seq());
 		amapper.answerInsert(a_vo);
-		return "redirect:/qna";
+		
+		int user_type = (int) session.getAttribute("user_type");
+		
+		if(user_type ==0) {
+			return "redirect:/qna";
+		}else {
+			return "redirect:/admin";
+		}
+		
 	}
 	
 	// 답변 삭제

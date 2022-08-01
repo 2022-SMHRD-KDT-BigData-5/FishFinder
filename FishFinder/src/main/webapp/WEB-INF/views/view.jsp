@@ -16,7 +16,11 @@
 		<link rel="stylesheet" href="/fish/assets/css/main.css" />
 		<link rel="stylesheet" href="/fish/assets/css/qna.css" />
 		<link rel="stylesheet" href="/fish/assets/css/view.css" />
+<<<<<<< HEAD
 		<noscript><link rel="stylesheet" href="/fish/assets/css/noscript.css" /></noscript>
+=======
+		<noscript><link rel="stylesheet" href="/resources/assets/css/noscript.css" /></noscript>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

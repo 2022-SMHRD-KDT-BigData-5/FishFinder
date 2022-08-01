@@ -27,7 +27,7 @@
 				<header id="header">
 					<h1>Question</h1>
 					<div class="question_box">
-						<form id="form" action="answerInsert">
+						<form id="form" action="/fish/answerInsert" method="post">
 						<div class="board_write">
 							<div class="title">
 								<dl class="title_flex">
@@ -44,8 +44,15 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a onclick="answerInsert()" class="icon solid fa-check"><span class="label">Check</span></a></li>
-								<li><a href="qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
+								<li>
+									<a href="javascript:click()" class="icon solid fa-check">
+										<label for="submitBtn">
+											<input type="submit" id="submitBtn" style="display:none">
+											<span class="label">Check</span>
+										</label>
+									</a>
+								</li>
+								<li><a href="/qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
 						</nav>
 						</form>
@@ -91,11 +98,11 @@
 
 		items.forEach(item => item.addEventListener('click', openCloseAnswer));
 		
-		function answerInsert(){
+		
+		function click() {
 			
-			document.getElementById('form').submit();
+			document.getElementById("submitBtn").click();
+			
 		}
-		
-		
 	</script>
 </html>

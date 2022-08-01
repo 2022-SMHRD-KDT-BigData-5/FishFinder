@@ -167,20 +167,15 @@
 					</tr>
 				<c:forEach var="qlist" items="${qlist}" varStatus="status">
 					
-						<tr onclick="location.href='/fish/questionInsert.do'">
+						<tr>
 							<td>${qlist.q_seq }</td>
 							<td>${qlist.q_content }</td>
 							<td>${qlist.user_num }</td>
 							<td>${qlist.q_date }</td>
 							<td>${qlist.q_cnt }</td>
-							<c:choose>
-						        <c:when test="${list.q_status == 0 }">
-						           <td><a href='fish/questionInsert.do'"><c:out value="답변 하기"/></a></td>
-						        </c:when>         
-						        <c:otherwise>
-						          <td><c:out value="답변 완료"/></td>
-						         </c:otherwise>
-						    </c:choose>
+							<td><a href="/fish/answerwrite/${qlist.q_seq }"><c:out value="답변 하기"/></a></td>
+
+						    
 						</tr>
 					
 				</c:forEach>

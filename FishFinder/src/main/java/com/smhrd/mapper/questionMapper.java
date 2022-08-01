@@ -24,6 +24,7 @@ public interface questionMapper {
 	public int questioncount();
 	// 미응답 질문 리스트
 	public List<questionBoard> questionNoAnswer();
-	
+	// 답변 상태 답변함으로 수정
+	public int questionStatus(int q_seq);
 	
 }
