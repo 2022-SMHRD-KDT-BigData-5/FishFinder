@@ -33,7 +33,7 @@
 
             $.ajax({
 
-                url : 'http://121.147.52.236:9000/fish/Flask',
+                url : 'http://211.48.213.144:9000/fish/Flask',
                 type : 'post',
                 data : {
                     'Fish_img' : fileName,

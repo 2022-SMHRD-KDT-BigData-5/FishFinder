@@ -16,11 +16,7 @@
 		<link rel="stylesheet" href="/fish/assets/css/main.css" />
 		<link rel="stylesheet" href="/fish/assets/css/qna.css" />
 		<link rel="stylesheet" href="/fish/assets/css/view.css" />
-<<<<<<< HEAD
 		<noscript><link rel="stylesheet" href="/fish/assets/css/noscript.css" /></noscript>
-=======
-		<noscript><link rel="stylesheet" href="/resources/assets/css/noscript.css" /></noscript>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -85,7 +81,21 @@
 								<c:if test="${clist.user_num == sessionScope.user_num}">
 								<div class="comments_md">
 									<a href="javascript:commUp(${clist.comment_seq})" class="comments_modify" >[수정]</a>
-									<a href="javascript:commDel(${clist.comment_seq},${clist.article_seq})" class="comments_delete" >[삭제]</a>
+									<!-- 모달창 -->
+										<form action="/commup">
+										<input type="checkbox" id ="popup">
+										<label for ="popup">모달모달</label>
+										<div>
+											<textarea class="write_content" name="comment_content">${clist.comment_content}</textarea>
+											<button type="submit "class="custom-btn btn-3"><span>등록</span></button>
+											<div>
+												<label for="popup"></label>
+											</div>
+											<label for="popup"></label>
+										</div>
+										</form>
+									<!-- 모달창끝 -->						
+									<a href="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
 								</div>
 								</c:if>
 							</div>

@@ -13,11 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/fish/assets/css/main.css" />
 		<link rel="stylesheet" href="/fish/assets/css/result.css" />
-<<<<<<< HEAD
 		<noscript><link rel="stylesheet" href="/fish/assets/css/noscript.css" /></noscript>
-=======
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<!--main js-->
@@ -43,10 +39,11 @@
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
                     	<span>감성돔과 X % 일치합니다.</span>
 					</div> -->
+
 					<div class="progress-bar" style="--width:${his_vo.accuracy }" data-label="${his_vo.accuracy }%..."></div>
 					<!-- 결과 안내 창 -->
 					<div class = "card">
-						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>				
+						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>			
 
 						${fish_vo.fish_kind }
 						${fish_vo.fish_spec }
