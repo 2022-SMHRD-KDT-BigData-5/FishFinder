@@ -29,7 +29,7 @@ public interface CommunityMapper {
 	// 신고 글 가져오기
 	public List<Community> communityReport();	
 	// 검색 결과
-	public List<Community> getBoardList(Search search);
+	public List<Community> searchList(Search search);
 	// 검색 결과 수
 	public int getBoardListCnt(Search search);
 }

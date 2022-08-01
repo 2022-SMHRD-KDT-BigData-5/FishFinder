@@ -10,6 +10,8 @@ public interface commentMapper {
 	public void commentInsert(Comment cvo);
 	// 해당 게시물의 댓글 보기 -> CommunitCon에 같이 씀
 	public List<Comment> commentList(int article_seq);
+	// 선택한 댓글 보기
+	public Comment CommentContent(int comment_seq);
 	// 댓글 수
 	public int commentCount(int article_seq);
 	// 댓글 삭제
@@ -17,6 +19,6 @@ public interface commentMapper {
 	// 특정 글 댓글  모두 삭제
 	public int commentComDelete(int article_seq);
 	// 댓글 수정
-	public void commentUpdate(Comment cvo);
+	public int commentUpdate(Comment cvo);
 
 }

@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.smhrd.domain.Comment;
 import com.smhrd.domain.Community;
-import com.smhrd.domain.Paging;
 import com.smhrd.domain.Search;
 import com.smhrd.mapper.CommunityMapper;
 import com.smhrd.mapper.commentMapper;
@@ -112,19 +111,20 @@ public class CommunityCon {
 	}
 	
 	// 검색
-	@GetMapping("/getBoardList")
-	public String getBoardList(Model model					
-			, @RequestParam(required = false, defaultValue = "title") String searchType			
-			, @RequestParam(required = false) String keyword) {
-			
-		Search search = new Search();		
-		search.setSearchType(searchType);		
-		search.setKeyword(keyword);				
+	@RequestMapping("/searchList")
+	public String searchList(Model model, @RequestParam("searchType") String searchType, 
+			@RequestParam("keyword") String keyword) {
+		
+		Search search = new Search();
+		mapper.searchList(search);
+		search.setKeyword(keyword);
+		search.setSearchType(searchType);
 		//전체 게시글 수		
 		int listCnt = mapper.getBoardListCnt(search);
+		
 		model.addAttribute("listCnt",listCnt);
 		model.addAttribute("search", search);		
-		model.addAttribute("boardList", mapper.getBoardList(search));		
+		model.addAttribute("boardList", mapper.searchList(search));		
 		return "board";
 
 	}

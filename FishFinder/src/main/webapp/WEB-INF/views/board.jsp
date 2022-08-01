@@ -85,7 +85,7 @@
 							</ul>
 						</div>
 						<select name="" class="selecto">
-							<option value="" style="height:30px">제목</option>
+							<option value="">제목</option>
 							<option value="">내용</option>
 						</select>
 						<div class="search_box">

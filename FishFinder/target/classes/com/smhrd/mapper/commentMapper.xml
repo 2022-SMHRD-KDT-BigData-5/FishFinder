@@ -16,6 +16,11 @@
     <select id="commentList" resultType="com.smhrd.domain.Comment">
         select * from comment where article_seq = #{article_seq} order by comment_date desc
     </select>
+    
+    <!-- 특정 댓글 내용 가져오기 -->
+    <select id="CommentContent" resultType="com.smhrd.domain.Comment">
+        select * from comment where comment_seq = #{comment_seq}
+    </select>
 	
     <!-- 댓글 수 -->
     <select id="commentCount" resultType="com.smhrd.domain.Comment">

@@ -9,9 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>암행漁사</title>
     <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-	<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script
+   src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="assets/css/admin.css" />
 </head>
 <body>
@@ -139,7 +139,7 @@
             <div>
                 <!-- 여따 넣고싶다 -->
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-		    	<canvas id="line-chart" width="250" height="200"></canvas>
+             <canvas id="line-chart" width="250" height="200"></canvas>
                 <script src="assets/js/Chart.min.js"></script>
             </div>
             </div>
@@ -151,79 +151,79 @@
                     <!-- --------------------------- -->
                     
             <div class="panel panel-default">
-			<div class="panel-body">
+         <div class="panel-body">
 
 
 
-				<!-- list 가져와서 출력 -->
-				<table class="table table-borderd table-hover">
-					<tr>
-						<td>글 번호</td>
-						<td>제목</td>
-						<td>작성자</td>
-						<td>작성일</td>
-						<td>조회수</td>
-					</tr>
-				<c:forEach var="qlist" items="${qlist}" varStatus="status">
-					
-						<tr onclick="location.href='/fish/questionInsert.do'">
-							<td>${qlist.q_seq }</td>
-							<td>${qlist.q_content }</td>
-							<td>${qlist.user_num }</td>
-							<td>${qlist.q_date }</td>
-							<td>${qlist.q_cnt }</td>
-						</tr>
-					
-				</c:forEach>
-					
-				</table>
-				
+            <!-- list 가져와서 출력 -->
+            <table class="table table-borderd table-hover">
+               <tr>
+                  <td>글 번호</td>
+                  <td>제목</td>
+                  <td>작성자</td>
+                  <td>작성일</td>
+                  <td>조회수</td>
+               </tr>
+            <c:forEach var="qlist" items="${qlist}" varStatus="status">
+               
+                  <tr onclick="location.href='/fish/questionInsert.do'">
+                     <td>${qlist.q_seq }</td>
+                     <td>${qlist.q_content }</td>
+                     <td>${qlist.user_num }</td>
+                     <td>${qlist.q_date }</td>
+                     <td>${qlist.q_cnt }</td>
+                  </tr>
+               
+            </c:forEach>
+               
+            </table>
+            
 
 
-			</div>
-			
-		</div>
+         </div>
+         
+      </div>
                     <!-- ---------------------------- -->
                 </div>
-					<!-- ----------------------------- -->
-					<div><h2>신고된 게시글</h2><div> 
+               <!-- ----------------------------- -->
+               <div><h2>신고된 게시글</h2><div> 
                     <!-- --------------------------- -->
                     
             <div class="panel panel-default">
-			<div class="panel-body">
+         <div class="panel-body">
 
 
 
-				<!-- list 가져와서 출력 -->
-				<table class="table table-borderd table-hover">
-					<tr>
-						<td>글 번호</td>
-						<td>제목</td>
-						<td>작성자</td>
-						<td>작성일</td>
-						<td>조회수</td>
-						<td></td>
-					</tr>
-				<c:forEach var="rlist" items="${rlist}" varStatus="status">
-						<tr onclick="location.href='/fish/viewContentAdmin/${list.article_seq }'">
-						
-							<td>${rlist.article_seq }</td>
-							<td>${rlist.article_title }</td>
-							<td>${rlist.user_num }</td>
-							<td>${rlist.q_date }</td>
-							<td>${rlist.q_cnt }</td>
-							<td><button onclick='javascript:goDeleteAdmin(${community.article_seq})' class="btn btn-sm btn-success">삭제</button></td>
-						</tr>
-				</c:forEach>
-					
-			</table>
+            <!-- list 가져와서 출력 -->
+            <table class="table table-borderd table-hover">
+               <tr>
+                  <td>글 번호</td>
+                  <td>제목</td>
+                  <td>작성자</td>
+                  <td>작성일</td>
+                  <td>조회수</td>
+                  <td></td>
+               </tr>
+            <c:forEach var="rlist" items="${rlist}" varStatus="status">
+                  <tr onclick="location.href='/fish/viewContentAdmin/${list.article_seq }'">
+                  
+                     <td>${rlist.article_seq }</td>
+                     <td>${rlist.article_title }</td>
+                     <td>${rlist.user_num }</td>
+                     <td>${rlist.q_date }</td>
+                     <td>${rlist.q_cnt }</td>
+                     <td><button onclick='javascript:goDeleteAdmin(${community.article_seq})' class="btn btn-sm btn-success">삭제</button></td>
+                  </tr>
+            </c:forEach>
+               
+         </table>
 
 
 
-			</div>
-			
-		</div>
-					<!-- ---------------------------- -->
+         </div>
+         
+      </div>
+               <!-- ---------------------------- -->
             </div>
         </div>
 
@@ -234,7 +234,7 @@
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-	<script src="assets/js/admin.js"></script>
+   <script src="assets/js/admin.js"></script>
     <script>
         // MenuToggle
         let toggle = document.querySelector('.toggle');
