@@ -20,6 +20,7 @@ import com.smhrd.domain.Search;
 import com.smhrd.mapper.CommunityMapper;
 import com.smhrd.mapper.commentMapper;
 import com.smhrd.mapper.reportMapper;
+import com.smhrd.mapper.userhistoryMapper;
 
 @Controller
 public class CommunityCon {
@@ -32,7 +33,9 @@ public class CommunityCon {
 	
 	@Autowired
 	reportMapper rmapper;
-		
+	
+	@Autowired
+	userhistoryMapper hmapper;
 	// 게시판 보기
 	@RequestMapping("/view")
 	public String communityList(Community vo, Model model) {
@@ -60,11 +63,12 @@ public class CommunityCon {
 	}
 	
 	// community 작성 후 DB에 넣기
-	@PostMapping("/viewIn")
+	@PostMapping("/viewInsert")
 	public String communityInsert(Community vo, MultipartFile file) {		
 		mapper.communityInsert(vo);
+		int article_seq = hmapper.last_insert_id();
 		// 댓글수
-		mapper.commCntUp(vo.getArticle_seq());
+		mapper.commCntUp(article_seq);
 		return "redirect:/view";  // url주소가 /view인 곳이로 이동
 	}
 	

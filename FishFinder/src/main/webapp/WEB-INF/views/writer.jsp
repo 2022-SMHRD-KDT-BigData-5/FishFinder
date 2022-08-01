@@ -32,7 +32,7 @@
 		<div id="main">
 			<!-- Header -->
 			<header id="header">
-				<form action="viewIn" method="post" enctype="multipart/form-data">
+				<form action="viewInsert" method="post" enctype="multipart/form-data">
 					<h1>Write</h1>
 					<div class="question_box">
 						<div class="board_write">
@@ -66,7 +66,7 @@
 						</div>
 						<nav>
 							<ul>
-								<li><a class="icon solid fa-check"> <label
+								<li><a href="javascript:click()" class="icon solid fa-check"> <label
 										for="submitBtn"> <input type="submit" id="submitBtn"
 											style="display: none"> <span class="label">Check</span>
 									</label>
@@ -121,5 +121,10 @@
 			let selectFile = document.querySelector("#inputImage").files[0];
 			console.log(selectFile);
 		})
+				function click() {
+			
+			document.getElementById("submitBtn").click();
+			
+		}
 	</script>
 </html>
