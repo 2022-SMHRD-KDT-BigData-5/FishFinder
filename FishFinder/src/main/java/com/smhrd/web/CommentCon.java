@@ -68,8 +68,9 @@ public class CommentCon {
 
 	// Comment 수정 후 DB에 업데이트
 	@PostMapping("/commUp")
-	public int commentUpdate(@RequestBody Comment cvo) {		
-		return cmapper.commentUpdate(cvo);
+	public String commentUpdate(Comment cvo) {		
+		cmapper.commentUpdate(cvo);
+		return "redirect:/viewContent/"+ cvo.getArticle_seq();
 	}
 	
 }

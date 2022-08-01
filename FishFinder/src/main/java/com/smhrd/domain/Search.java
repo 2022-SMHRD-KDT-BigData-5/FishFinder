@@ -15,15 +15,5 @@ public class Search {
 	private String searchType="";
 	private String keyword="";
 	
-	private String encoding(String keyword) {
-		if(keyword == null || keyword.trim().length() == 0) {
-			return "";
-		}
-		try {
-			return URLEncoder.encode(keyword, "UTF-8");
-		} catch(UnsupportedEncodingException e) {
-			return "";
-		}
-	}
 	
 }

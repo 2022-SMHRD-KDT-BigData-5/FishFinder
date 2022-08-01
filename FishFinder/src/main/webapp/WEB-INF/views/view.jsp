@@ -84,12 +84,13 @@
 								<div class="comments_md">
 									<a href="javascript:commUp(${clist.comment_seq})" value="${clist.comment_seq}" class="comments_modify" >[수정]</a>
 									<!-- 모달창 -->
-									<form action="commUp" method="post">
+										<form action="commUp" method="post">
 										<input type="checkbox" id ="popup">
-										<label for ="popup">수정창</label>
+										<label for ="popup">수정</label>
 										<div>
-											<input type="hidden" value="${clist.comment_seq}">
-											<textarea class="write_content" placeholder="${comment.comment_content}"></textarea>
+											<input type="hidden" name="comment_seq" value="${clist.comment_seq}">
+											<input type="hidden" name="article_seq" value="${clist.article_seq}">
+											<textarea class="write_content" name="comment_content">${clist.comment_content}</textarea>
 											<button type="submit" class="custom-btn btn-3"><span>수정하기</span></button>	
 											<div>
 												<label for="popup"></label>
