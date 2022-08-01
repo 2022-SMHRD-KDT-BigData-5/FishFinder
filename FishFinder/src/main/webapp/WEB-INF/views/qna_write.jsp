@@ -40,6 +40,10 @@
 						</div>
 						<nav>
 							<ul>
+<<<<<<< HEAD
+								<li><a href="fish/qna" class="icon solid fa-check"><span class="label">Check</span></a></li>
+								<li><a href="fish/qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
+=======
 								<li>
 									<a href="#" class="icon solid fa-check">
 										<label for="submitBtn">
@@ -49,6 +53,7 @@
 									</a>
 								</li>
 								<li><a href="/qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 							</ul>
 						</nav>
 					</div>
@@ -63,11 +68,19 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
+<<<<<<< HEAD
+	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
+=======
 	               <span class="copyright"><a href="/logout">Logout</a>.</span>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
+<<<<<<< HEAD
+	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+=======
 					<c:if test="${sessionScope.user_type == 1}">
 		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 		            </c:if>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 	            </footer>
 			</div>
 		</div>

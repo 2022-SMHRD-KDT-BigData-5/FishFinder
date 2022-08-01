@@ -82,7 +82,22 @@
 								</div>
 								<c:if test="${clist.user_num == sessionScope.user_num}">
 								<div class="comments_md">
-									<a href='${clist.comment_seq}' id="commUpdate" class="comments_modify" >[수정]</a>
+									<a href="javascript:commUp(${clist.comment_seq})" value="${clist.comment_seq}" class="comments_modify" >[수정]</a>
+									<!-- 모달창 -->
+									<form action="commUp" method="post">
+										<input type="checkbox" id ="popup">
+										<label for ="popup">수정창</label>
+										<div>
+											<input type="hidden" value="${clist.comment_seq}">
+											<textarea class="write_content" placeholder="${comment.comment_content}"></textarea>
+											<button type="submit" class="custom-btn btn-3"><span>수정하기</span></button>	
+											<div>
+												<label for="popup"></label>
+											</div>
+											<label for="popup"></label>
+										</div>
+										</form>
+									<!-- 모달창끝 -->						
 									<a href="javascript:commDel(${clist.comment_seq})" class="comments_delete" >[삭제]</a>
 								</div>
 								</c:if>

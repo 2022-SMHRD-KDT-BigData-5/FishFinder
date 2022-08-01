@@ -9,51 +9,6 @@ function commDel(comment_seq){
 	}
 }
 //==================================================================================
-//모달창
-$(document).on("click", "a", "#commUpdate", function() {
-	event.preventDefault(); // 고유 이벤트 중지
-            	
-	// 클릭한 대상의 번호를 모달창에 저장.
-	var comment_seq = $(this).attr("href");
-	$("#modalRno").val(comment_seq);
-            	
-	// replyModify라면 수정창
-	if( $(this).hasClass("comments_modify") ){ // 수정창          		
-		$(".modal-title").html("댓글수정");
-		$("#modalModBtn").css("display", "inline"); // 수정버튼은 보여지도록 처리
-		$("#modalReply").css("display", "inline"); // 수정창 보여지도록	
-	}          	
-	$("#replyModal").modal("show"); // 부트스트랩 모달 함수            	
-});
-
-// end on
-// 수정 함수
-$("#modalModBtn").click(function() {
-
-  var comment_seq = $("#modalRno").val();
-  var comment_content = $("#modalReply").val();
-
-  $.ajax({
-    type : "post",
-    url : "commUp",
-    contentType : "json",
-    data : JSON.stringify({"comment_seq": comment_seq, 
-    					"comment_content": comment_content}),
-    success : function(data) {
-
-    if(data == 1){ // 업데이트 성공
-      $("#modalReply").val(""); // 내용비우기
-      $("#modalRno").val("");
-
-      $("#replyModal").modal("hide"); // 모달창 내리기
-      }							
-     },
-    error : function(status, error) {
-    	alert("수정 실패");
-    }
-  });
-
-});
 
 
 //====================================================================================
