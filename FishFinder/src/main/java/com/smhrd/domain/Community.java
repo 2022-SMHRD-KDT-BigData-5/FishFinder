@@ -14,7 +14,7 @@ public class Community{
 	
 	Search search = new Search();
 	
-	private int article_seq;	
+	private Integer article_seq;	
 	@NonNull
 	private String article_title;
 	@NonNull

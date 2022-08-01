@@ -30,7 +30,7 @@ public class CommunityCon {
 	@Autowired
 	commentMapper cmapper;
 	
-	//@Autowired
+	@Autowired
 	reportMapper rmapper;
 		
 	// 게시판 보기

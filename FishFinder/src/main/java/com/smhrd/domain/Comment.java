@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 public class Comment {
 	
 	private int comment_seq;
-	private int article_seq;
+	private Integer article_seq;
 	private int user_num;
 	@NonNull
 	private String comment_content;
