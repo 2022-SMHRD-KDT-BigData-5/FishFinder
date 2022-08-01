@@ -128,30 +128,6 @@
 			</div>
 		</div>
 	</body>
-	<!-- 모달 ( 제이쿼리 modal("show") ) -->
-	<div id="replyModal" class="modal fade" role="dialog">
-		<div class="modal-dialog modal-md">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button id="close" type="button" class="btn btn-default pull-right" data-dismiss="modal">닫기</button>
-					<h4 class="modal-title">댓글수정</h4>
-				</div>
-				<div class="modal-body">
-					<!-- 수정폼 id값을 확인하세요-->
-					<div class="reply-content">
-					<textarea class="form-control" rows="4" id="modalReply" placeholder="${comm.comment_content}"></textarea>
-					<div class="reply-group">
-						<div class="reply-input">
-						    <input type="hidden" id="modalRno">
-						</div>
-						<button class="right btn btn-info" id="modalModBtn">수정</button>
-					</div>
-					</div>
-					<!-- 수정폼끝 -->
-				</div>
-			</div>
-		</div>
-	</div>
 	<script>
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }

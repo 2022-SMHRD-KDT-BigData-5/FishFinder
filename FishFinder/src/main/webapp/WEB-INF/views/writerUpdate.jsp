@@ -36,15 +36,16 @@
 								<dl class="title_flex">
 									<dt>제목 : </dt>
 									<input value ='${sessionScope.user_num}' type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
-									<input class="title_type" name="article_title" type="text" style="border: none; background: transparent;" size="" placeholder="제목을 입력해주세요. (20자 이내)" maxlength="20" value="${community.community_title}">		
+									<input class="title_type" name="article_title" type="text" style="border: none; background: transparent;" size="" maxlength="20" value="${community.article_title}">		
 								</dl>
 							</div>
 							<input value ="${sessionScope.user_num}" type="hidden" class="form-control" id="user_num" placeholder="Enter writer" name="user_num">
+							<input value ="${community.article_seq}" type="hidden" class="form-control" id="article_seq" placeholder="Enter writer" name="article_seq">
 							<div class="cont">
-								<textarea name="article_content" class="write_content" placeholder="내용을 입력해주세요.(400자 이내 )" maxlength="400"></textarea>
+								<textarea name="article_content" class="write_content" value="${community.article_content}" maxlength="400"></textarea>
 							</div>
 							<div class="upload_image">
-								<input type="file" name="images[]" id="inputImage" accept="image/*">
+								<input type="file" name="images[]" id="inputImage" accept="image/*" value="${community.article_file}">
 								<!-- <button id="sendButton">보내기</button> -->
 							</div>
 						</div>
@@ -58,7 +59,7 @@
 										</label>
 									</a>
 								</li>
-								<li><a href="/fish/view" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
+								<li><a href="/history" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
 							</ul>
 						</nav>
 					</div>

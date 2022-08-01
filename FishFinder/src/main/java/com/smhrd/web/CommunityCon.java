@@ -88,9 +88,9 @@ public class CommunityCon {
 	@RequestMapping("/viewDel/{article_seq}")
 	public String communityDelete( @PathVariable("article_seq") int article_seq) {
 		System.out.println("번호 : " + article_seq);
+		rmapper.reportComDelete(article_seq);
+		cmapper.commentComDelete(article_seq);
 		mapper.communityDelete(article_seq);
-	    cmapper.commentComDelete(article_seq);
-	    rmapper.reportComDelete(article_seq);
 		return "redirect:/view";
 	}
 	
@@ -100,7 +100,7 @@ public class CommunityCon {
 	public String communityGoUpdate(Model model, int article_seq) {		
 		Community vo = mapper.communityContent(article_seq);
 		model.addAttribute("community", vo);
-		return "viewUp";
+		return "writerUpdate";
 	}
 	
 	// community 수정 후 DB에 업데이트

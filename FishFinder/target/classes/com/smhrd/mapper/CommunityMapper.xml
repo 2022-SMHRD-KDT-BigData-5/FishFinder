@@ -23,8 +23,8 @@
 		
     <!-- 커뮤니티 글 작성 -->
     <insert id="communityInsert" parameterType="com.smhrd.domain.Community">
-        insert into community_info(article_title,article_content,article_date,user_num) 
-        values(#{article_title},#{article_content},now(),#{user_num})
+        insert into community_info(article_title,article_content,article_date,user_num,article_file) 
+        values(#{article_title},#{article_content},now(),#{user_num},#{article_file})
     </insert>
     
     <!-- 특정 커뮤니티 글 가져오기 -->

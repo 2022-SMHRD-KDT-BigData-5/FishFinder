@@ -18,12 +18,12 @@ function goList(){
 // 게시글 삭제하기
 function goDelete(article_seq){
 	console.log(article_seq);
-	location.href = '/fish/viewDel/article_seq=' + article_seq;
+	location.href = '/fish/viewDel/' + article_seq;
 }
 		
 // 게시글 수정하기
 function goUpdate(article_seq){		
-	location.href = '/fish/viewGoUp/article_seq=' + article_seq;
+	location.href = '/fish/viewGoUp/' + article_seq;
 }
 //====================================================================================
 // 댓글수
@@ -44,4 +44,25 @@ function commCnt(article_seq){
 			}
 		});
 		
+}
+
+// 유저 넘버에서 이름 가져오기
+function getname(user_num){
+	
+	let getname = $('#getname' + user_num).html();
+	
+	$.ajax({
+		type : "post",
+		url : "getname",
+		data : {
+			"user_num" : user_num
+			},
+			success : function(res){
+				$('#getname'+article_seq).html( getname );
+			},
+			error : function(e){
+				alert('view error')
+			}
+			
+		});
 }
