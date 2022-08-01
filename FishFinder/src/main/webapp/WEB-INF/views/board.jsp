@@ -84,21 +84,13 @@
 								</c:forEach>
 							</ul>
 						</div>
+						<select name="" class="selecto">
+							<option value="">제목</option>
+							<option value="">본문</option>
+						</select>
 						<div class="search_box">
-							<!-- search{s} -->		
-							<div class="form-group row justify-content-center">														
-								<select class="form-control form-control-sm" name="searchType" id="searchType">					
-									<option value="article_title">제목</option>					
-									<option value="article_content">본문</option>									
-								</select>			
-								<div class="w300" style="padding-right:10px">				
-									<input type="text" class="search_input" name="keyword" id="keyword" placeholder="검색어 입력">			
-								</div>			
-							</div>			
-							<div>				
-								<button class="search_button" name="btnSearch" id="btnSearch">검색</button>			
-							</div>		
-							<!-- search{e} -->
+							<input type="text" class="search_input" placeholder="검색어 입력">
+							<button class="search_button"><i class="fa-solid fa-search"></i></button>
 						</div>
 					</div>
 					<nav>
