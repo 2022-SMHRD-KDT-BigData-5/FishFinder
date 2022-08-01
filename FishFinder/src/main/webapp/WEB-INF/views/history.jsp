@@ -64,6 +64,7 @@
 	                <c:if test="${sessionScope.user_type == 1}">
 	               		<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 	               	</c:if>
+
             	</footer>
 			</div>
 		</div>
