@@ -12,7 +12,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class Community{
 	
-	//Paging paging = new Paging();
+	Search search = new Search();
 	
 	private int article_seq;	
 	@NonNull
@@ -26,6 +26,7 @@ public class Community{
 	private String article_file2;	
 	private int article_cnt;
 	private int article_report;
-	//private int start = paging.getStart();
-	//private int end = paging.getEnd();
+	
+	private String searchType = search.getSearchType();
+	private String keyword = search.getKeyword();
 }

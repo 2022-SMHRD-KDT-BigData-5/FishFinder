@@ -1,5 +1,8 @@
 package com.smhrd.domain;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +12,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // 기본 생성자
 public class Search {
 
-	private String searchType;
-	private String keyword;
+	private String searchType="";
+	private String keyword="";
+	
+	private String encoding(String keyword) {
+		if(keyword == null || keyword.trim().length() == 0) {
+			return "";
+		}
+		try {
+			return URLEncoder.encode(keyword, "UTF-8");
+		} catch(UnsupportedEncodingException e) {
+			return "";
+		}
+	}
 	
 }

@@ -54,32 +54,29 @@
     
            
     <!-- 검색 결과 -->
-    <select  id="getBoardList" resultType="com.smhrd.domain.Community">
+    <select  id="searchList" resultType="com.smhrd.domain.Community">
+        <![CDATA[
         select * from community_info
-        	<trim prefix="WHERE" prefixOverrides="AND|OR">
-        	    <if test="searchType=='article_title' and keyword != null and keyword != '' ">
-        	        AND article_title like CONCAT('%', #{keyword}, '%')
-        	    </if>
-        	    <if test="searchType=='article_content' and keyword != null and keyword != '' ">
-        	        AND article_content like CONCAT('%', #{keyword}, '%')
-        	    </if>
-        	</trim>
+        	where
+        ]]>
+        	<if test="searchType=='article_title'">article_title like CONCAT(‘%',#{keyword, jdbcType=VARCHAR},'%')</if>
+        	<if test="searchType=='article_content'">article_content like CONCAT('%',#{keyword, jdbcType=VARCHAR},'%')</if>
+        	<if test="searchType=='article_title'">article_title like CONCAT('%',#{keyword, jdbcType=VARCHAR},'%')
+        	    	or article_content like CONCAT('%',#{keyword, jdbcType=VARCHAR},'%')</if>
+        	<if test="searchType==null or searchType==''">1=1</if>
+        <![CDATA[
         ORDER BY article_date DESC
+        ]]>
     </select>
            
     <!-- 검색 결과 수 -->
     <select  id="getBoardListCnt" resultType="int">
-        select count(*) as listCnt from community_info
-        	<trim prefix="WHERE" prefixOverrides="AND|OR">
-        	    <if test="keyword != null and keyword != '' ">
-        	        <if test="searchType=='article_title'">
-        	            AND article_title like CONCAT('%', #{keyword}, '%')
-        	        </if>
-        	        <if test="searchType=='article_content'">
-        	            AND article_content like CONCAT('%', #{keyword}, '%')
-        	        </if>
-				</if>
-			</trim>
+        select count(*) as listCnt from community_info where
+        	<if test="searchType=='article_title'">article_title like CONCAT('%',#{keyword, jdbcType=VARCHAR},'%')</if>
+        	<if test="searchType=='article_content'">article_content like CONCAT('%',#{keyword, jdbcType=VARCHAR},'%')</if>
+        	<if test="searchType=='article_title'">article_title like CONCAT('%',#{keyword, jdbcType=VARCHAR},'%')
+        	    	or article_content like CONCAT('%',#{keyword, jdbcType=VARCHAR},'%')</if>
+        	<if test="searchType==null or searchType==''">1=1</if>
     </select>  
 
 </mapper>
