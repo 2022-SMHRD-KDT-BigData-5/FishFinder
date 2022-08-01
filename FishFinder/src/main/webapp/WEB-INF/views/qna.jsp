@@ -42,18 +42,20 @@
 					</div>
 					<nav>
 						<ul>
-		                     <li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
-		                     <li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
-		                     <li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
-		                     <li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
-		                 </ul>
+							<li><a href="/fish/index" class="icon solid fa-home"><span class="label">Home</span></a></li>
+							<li><a href="/fish/history" class="icon solid fa-history"><span class="label">History</span></a></li>
+							<li><a href="/fish/view" class="icon solid fa-list"><span class="label">Board</span></a></li>
+							<li><a href="/fish/qna" class="icon solid fa-question"><span class="label">Q&A</span></a></li>
+						</ul>
 					</nav>
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="/join">Logout</a>.</span>
+	               <span class="copyright"><a href="/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-	               <span class="copyright"><a href="/admin">Admin</a>.</span>
+					<c:if test="${sessionScope.user_type == 1}">
+		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
+		            </c:if>
 	            </footer>
 			</div>
 		</div>

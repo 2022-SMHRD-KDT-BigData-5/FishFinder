@@ -93,6 +93,11 @@ function goDelete(article_seq){
 	console.log(article_seq);
 	location.href = '/fish/viewDel?article_seq=' + article_seq;
 }
+// 관리자 페이지에서 삭제하기
+function goDeleteAdmin(article_seq){
+	console.log(article_seq);
+	location.href = '/fish/viewDelAdmin?article_seq=' + article_seq;
+}
 		
 // 수정하기
 function goUpdate(article_seq){		

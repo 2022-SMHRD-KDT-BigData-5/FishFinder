@@ -47,13 +47,13 @@
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
+		<url-pattern>*.js</url-pattern>
 	</servlet-mapping>
-	
-	<!-- 방문자 카운트 -->
- 	 <listener>
-    	<listener-class>com.smhrd.web.SessionUserCounter</listener-class>
-  	</listener>
 
+	<!-- 방문자 카운트 -->
+	<listener>
+		<listener-class>com.smhrd.web.SessionUserCounter</listener-class>
+	</listener>
 
 
 </web-app>

@@ -52,12 +52,7 @@ public class userinfoCon {
 
 		return "join";
 	}
-	@RequestMapping("/admin")
-	public String admin() {
-		
 
-		return "admin";
-	}
 	@RequestMapping("/board")
 	public String board() {
 		
@@ -133,11 +128,10 @@ public class userinfoCon {
 		System.out.println("###email#### : " + userInfo.getKakao_email());
 		
 		// session객체에 담긴 정보를 초기화
-		session.invalidate();
+		//session.invalidate();
 		// 닉네임과 이메일, 토큰 session객체
 		session.setAttribute("user_num", userInfo.getUser_num());
 		session.setAttribute("kakaoN", userInfo.getKakao_name());
-		session.setAttribute("kakaoE", userInfo.getKakao_email());
 		session.setAttribute("user_type", userInfo.getUser_type());
 		session.setAttribute("access_Token", access_Token);
 		}
@@ -185,7 +179,7 @@ public class userinfoCon {
 	public String usernameGet(@PathVariable("user_num") int user_num, Model model) {
 		String getname = um.usernameGet(user_num);
 		model.addAttribute("getname",getname);
-		return "nameget";
+		return getname;
 	}
 	
 	//내 히스토리 보기

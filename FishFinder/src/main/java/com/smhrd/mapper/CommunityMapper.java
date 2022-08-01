@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.smhrd.domain.Community;
 import com.smhrd.domain.Paging;
+import com.smhrd.domain.Search;
 
 public interface CommunityMapper {
 
@@ -25,4 +26,10 @@ public interface CommunityMapper {
 	public int countBoard();
 //	// 페이징 처리 게시글 조회
 //	public List<Community> pagingList(Paging pvo);
+	// 신고 글 가져오기
+	public List<Community> communityReport();	
+	// 검색 결과
+	public List<Community> getBoardList(Search search);
+	// 검색 결과 수
+	public int getBoardListCnt(Search search);
 }

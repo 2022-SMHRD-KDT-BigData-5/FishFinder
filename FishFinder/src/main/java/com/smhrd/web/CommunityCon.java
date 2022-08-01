@@ -2,6 +2,8 @@ package com.smhrd.web;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.smhrd.domain.Comment;
 import com.smhrd.domain.Community;
 import com.smhrd.domain.Paging;
+import com.smhrd.domain.Search;
 import com.smhrd.mapper.CommunityMapper;
 import com.smhrd.mapper.commentMapper;
 
@@ -61,8 +64,7 @@ public class CommunityCon {
 	// 선택한 community로 이동 
 	@RequestMapping("/viewContent/{article_seq}")
 	public String communityContent(Model model,
-			@PathVariable("article_seq") int article_seq) {
-		
+			@PathVariable("article_seq") int article_seq) {		
 		Community vo = mapper.communityContent(article_seq);	
 		model.addAttribute("community", vo);	
 		
@@ -87,6 +89,7 @@ public class CommunityCon {
 		return "redirect:/view";
 	}
 	
+	
 	// community수정 페이지로 이동
 	@RequestMapping("/viewGoUp")
 	public String communityGoUpdate(Model model, int article_seq) {		
@@ -102,5 +105,21 @@ public class CommunityCon {
 		return "redirect:/view";
 	}
 	
-		
-}
+	// 검색
+	@GetMapping("/getBoardList")
+	public String getBoardList(Model model					
+			, @RequestParam(required = false, defaultValue = "title") String searchType			
+			, @RequestParam(required = false) String keyword) {
+			
+		Search search = new Search();		
+		search.setSearchType(searchType);		
+		search.setKeyword(keyword);				
+		//전체 게시글 수		
+		int listCnt = mapper.getBoardListCnt(search);
+		model.addAttribute("listCnt",listCnt);
+		model.addAttribute("search", search);		
+		model.addAttribute("boardList", mapper.getBoardList(search));		
+		return "board";
+
+	}
+}	
