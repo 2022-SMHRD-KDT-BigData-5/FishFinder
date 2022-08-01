@@ -11,10 +11,10 @@
 		<title>Aerial by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/qna_write.css" />
-		<link rel="stylesheet" href="assets/css/writer.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="/fish/assets/css/main.css" />
+		<link rel="stylesheet" href="/fish/assets/css/qna_write.css" />
+		<link rel="stylesheet" href="/fish/assets/css/writer.css" />
+		<noscript><link rel="stylesheet" href="/fish/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 	</head>
@@ -27,6 +27,7 @@
 				<header id="header">
 					<h1>Question</h1>
 					<div class="question_box">
+						<form id="form" action="/fish/answerInsert" method="post">
 						<div class="board_write">
 							<div class="title">
 								<dl class="title_flex">
@@ -34,18 +35,17 @@
 									<input type="text" style="border: none; background: transparent;" size="30" placeholder="제목을 입력해주세요."> -->
 								</dl>
 							</div>
+							
 							<div class="cont">
-								<textarea class="qna_content" placeholder="내용을 입력해주세요. (60자 이내)" maxlength="60"></textarea>
+								<textarea class="qna_content" name="a_content" placeholder="내용을 입력해주세요. (60자 이내)" maxlength="60"></textarea>
+								<input value ='${q_seq}' type="hidden" class="form-control" name="q_seq">
+								<input value ='${sessionScope.user_num}' type="hidden" class="form-control" name="answer_num">
 							</div>
 						</div>
 						<nav>
 							<ul>
-<<<<<<< HEAD
-								<li><a href="fish/qna" class="icon solid fa-check"><span class="label">Check</span></a></li>
-								<li><a href="fish/qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
-=======
 								<li>
-									<a href="#" class="icon solid fa-check">
+									<a href="javascript:click()" class="icon solid fa-check">
 										<label for="submitBtn">
 											<input type="submit" id="submitBtn" style="display:none">
 											<span class="label">Check</span>
@@ -53,9 +53,9 @@
 									</a>
 								</li>
 								<li><a href="/qna" class="icon solid fa-sign-out"><span class="label">Exit</span></a></li>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 							</ul>
 						</nav>
+						</form>
 					</div>
 					<nav>
 						<ul>
@@ -69,9 +69,13 @@
 				<!-- Footer -->
 				<footer id="footer">
 <<<<<<< HEAD
+	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
+=======
+<<<<<<< HEAD
 	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
 =======
 	               <span class="copyright"><a href="/logout">Logout</a>.</span>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 >>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 <<<<<<< HEAD
@@ -105,5 +109,12 @@
 		}
 
 		items.forEach(item => item.addEventListener('click', openCloseAnswer));
+		
+		
+		function click() {
+			
+			document.getElementById("submitBtn").click();
+			
+		}
 	</script>
 </html>

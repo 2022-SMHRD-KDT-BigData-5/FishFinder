@@ -55,5 +55,11 @@
         select * from question_board where q_status = 0
     </select>
     
+    <!-- 답변 상태 답변함으로 수정-->
+    <update id="questionStatus" parameterType="integer">
+        update question_board set q_status = 1 where q_seq=#{q_seq}
+    </update>
+    
+    
   
 </mapper>

@@ -43,6 +43,7 @@ public class CommunityCon {
 		return "board"; // board라는 jsp로 이동
 	}
 	
+	
 	// 내가 쓴 게시판 보기
 	@RequestMapping("/viewMy")
 	public String communityMyList(Community vo, Model model) {
@@ -116,15 +117,16 @@ public class CommunityCon {
 			@RequestParam("keyword") String keyword) {
 		
 		Search search = new Search();
-		mapper.searchList(search);
 		search.setKeyword(keyword);
 		search.setSearchType(searchType);
+		System.out.println(search.getSearchType());
+		List<Community> searchList = mapper.searchList(search);
 		//전체 게시글 수		
 		int listCnt = mapper.getBoardListCnt(search);
 		
 		model.addAttribute("listCnt",listCnt);
 		model.addAttribute("search", search);		
-		model.addAttribute("boardList", mapper.searchList(search));		
+		model.addAttribute("boardList", searchList);		
 		return "board";
 
 	}

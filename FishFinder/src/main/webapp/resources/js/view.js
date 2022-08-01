@@ -2,11 +2,11 @@
 function commDel(comment_seq, article_seq){
 	console.log(comment_seq);
 	if(!confirm("삭제하시겠습니까?")){
-    alert("취소");
+    	alert("취소");
  	}else{
-	location.href = "/fish/commDel/" + comment_seq + "/" + article_seq;
-	alert("삭제 성공");
-	}
+		location.href = "/fish/commDel/" + comment_seq + "/" + article_seq;
+		alert("삭제 성공");
+ 	}
 }
 
 //==================================================================================

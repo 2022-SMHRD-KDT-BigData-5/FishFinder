@@ -51,7 +51,7 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="/logout">Logout</a>.</span>
+	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 					<c:if test="${sessionScope.user_type == 1}">
 		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
@@ -112,7 +112,7 @@
                 		
                         if(data[i].q_status ==0){
                         	table +=  '</div>'
-                       		table +=  '<a href="/fish/questionInsert.do" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>'
+                       		table +=  '<a href="/fish/answerwrite/'+data[i].q_seq + '" class="go_answer"><i class="fa fa-arrow-up" aria-hidden="true"></i> 답변하기</a>'
                         	table +=  '</li>'
 
                         }else{

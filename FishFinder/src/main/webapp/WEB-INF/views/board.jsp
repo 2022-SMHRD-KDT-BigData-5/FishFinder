@@ -84,21 +84,14 @@
 								</c:forEach>
 							</ul>
 						</div>
-						<!-- search{s} -->		
-						<form action="searchList" method="post">
-						<div class="search_box search-wa">
-								<button type="submit" class="search_button" name="btnSearch" id="btnSearch">검색</button>			
-								<select class="form-control form-control-sm" name="searchType" id="searchType">					
-									<option value="article_title" ${boardList.searchType eq 'article_title' ? 'selected' : ''}>제목</option>					
-									<option value="article_content" ${boardList.searchType eq 'article_content' ? 'selected' : ''}>내용</option>		
-									<option value="title_content"  ${boardList.searchType eq 'title_content' ? 'selected' : ''}>제목+내용</option>							
-								</select>			
-								<input type="text" class="search_input" name="keyword" value="${boardList.keyword}" placeholder="검색어 입력">					
-							<div>				
-							</div>		
+						<select name="" class="selecto">
+							<option value="">제목</option>
+							<option value="">내용</option>
+						</select>
+						<div class="search_box">
+							<input type="text" class="search_input" placeholder="검색어 입력">
+							<button class="search_button"><i class="fa-solid fa-search"></i></button>
 						</div>
-						</form>
-						<!-- search{e} -->
 					</div>
 					<nav>
 						<ul>
@@ -109,14 +102,14 @@
 						</ul>
 					</nav>
 				</header>
+
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
+	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 	              	<c:if test="${sessionScope.user_type == 1}">
 	               		<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 	               	</c:if>
-					<span class="copyright">&copy; Untitled. Design: <a href="http://html5up.net">HTML5 UP</a>.</span>
             	</footer>
 			</div>
 		</div>
@@ -125,6 +118,22 @@
 		window.onload = function() { document.body.classList.remove('is-preload'); }
 		window.ontouchmove = function() { return false; }
 		window.onorientationchange = function() { document.body.scrollTop = 0; }
+		
+		// 검색창
+		$(document).on('click', '#btnSearch', function(e){		
+			e.preventDefault();		
+			var url = "/fish/getBoardList"; 
+			url = url + "?searchType=" + $('#searchType').val();		
+			url = url + "&keyword=" + $('#keyword').val();		
+			location.href = encodeURI(url);		
+			console.log(url);	
+		});
+		
+		document.addEventListener("touchstart", function(e) {
+		    console.log(e.defaultPrevented);  // will be false
+		    e.preventDefault();   // does nothing since the listener is passive
+		    console.log(e.defaultPrevented);  // still false
+		}, Modernizr.passiveeventlisteners ? {passive: true} : false);
 	</script>
 	
 </html>

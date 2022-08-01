@@ -125,7 +125,6 @@ public class userinfoCon {
 		userinfo userInfo = ks.getUserInfo(access_Token);
 		System.out.println("###access_Token#### : " + access_Token);
 		System.out.println("###nickname#### : " + userInfo.getKakao_name());
-		System.out.println("###email#### : " + userInfo.getKakao_email());
 		
 		// session객체에 담긴 정보를 초기화
 		//session.invalidate();

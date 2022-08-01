@@ -17,6 +17,11 @@
         select * from comment where article_seq = #{article_seq} order by comment_date desc
     </select>
     
+    <!-- 게시글 번호 가져오기 -->
+    <select id="commentComSeq" parameterType="Integer" resultType="Integer">
+        select article_seq from comment where comment_seq = #{comment_seq}
+    </select>   
+     
     <!-- 특정 댓글 내용 가져오기 -->
     <select id="CommentContent" resultType="com.smhrd.domain.Comment">
         select * from comment where comment_seq = #{comment_seq}

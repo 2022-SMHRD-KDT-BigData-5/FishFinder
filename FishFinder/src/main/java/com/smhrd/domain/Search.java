@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // 기본 생성자
 public class Search {
 
-	private String searchType="";
-	private String keyword="";
+	private String searchType;
+	private String keyword;
 	
 	
 }

@@ -14,8 +14,8 @@
  	
     <!-- 답 글 작성 -->
     <insert id="answerInsert" parameterType="com.smhrd.domain.answerInfo">
-        insert into answer_info(a_content,a_date,answer_num,q_seq) 
-        values(#{a_content},now(),#{answer_num},#{q_seq})
+        insert into answer_info(q_seq, a_content,a_date,answer_num) 
+        values(#{q_seq},#{a_content},now(),#{answer_num})
     </insert>
     
     <!-- 특정 답 글 가져오기 -->

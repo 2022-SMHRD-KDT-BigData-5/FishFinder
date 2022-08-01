@@ -74,7 +74,7 @@
 				</form>
 				<!-- Footer -->
 				<footer id="footer">
-	               <span class="copyright"><a href="/logout">Logout</a>.</span>
+	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 					<c:if test="${sessionScope.user_type == 1}">
 		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>

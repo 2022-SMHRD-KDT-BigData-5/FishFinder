@@ -108,7 +108,7 @@
 							<td>${list.q_cnt }</td>
 							<c:choose>
 						        <c:when test="${list.q_status == 0 }">
-						            <td><a href='fish/questionInsert.do'"><c:out value="답변 하기"/></a></td>
+						            <td><a href="/fish/answerwrite/${list.q_seq }"><c:out value="답변 하기"/></a></td>
 						        </c:when>         
 						        <c:otherwise>
 						          <td><c:out value="답변 완료"/></td>

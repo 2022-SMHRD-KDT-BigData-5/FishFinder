@@ -155,29 +155,33 @@
 
 
 
-            <!-- list 가져와서 출력 -->
-            <table class="table table-borderd table-hover">
-               <tr>
-                  <td>글 번호</td>
-                  <td>제목</td>
-                  <td>작성자</td>
-                  <td>작성일</td>
-                  <td>조회수</td>
-               </tr>
-            <c:forEach var="qlist" items="${qlist}" varStatus="status">
-               
-                  <tr onclick="location.href='/fish/questionInsert.do'">
-                     <td>${qlist.q_seq }</td>
-                     <td>${qlist.q_content }</td>
-                     <td>${qlist.user_num }</td>
-                     <td>${qlist.q_date }</td>
-                     <td>${qlist.q_cnt }</td>
-                  </tr>
-               
-            </c:forEach>
-               
-            </table>
-            
+				<!-- list 가져와서 출력 -->
+				<table class="table table-borderd table-hover">
+					<tr>
+						<td>글 번호</td>
+						<td>제목</td>
+						<td>작성자</td>
+						<td>작성일</td>
+						<td>조회수</td>
+						<td></td>
+					</tr>
+				<c:forEach var="qlist" items="${qlist}" varStatus="status">
+					
+						<tr>
+							<td>${qlist.q_seq }</td>
+							<td>${qlist.q_content }</td>
+							<td>${qlist.user_num }</td>
+							<td>${qlist.q_date }</td>
+							<td>${qlist.q_cnt }</td>
+							<td><a href="/fish/answerwrite/${qlist.q_seq }"><c:out value="답변 하기"/></a></td>
+
+						    
+						</tr>
+					
+				</c:forEach>
+					
+				</table>
+				
 
 
          </div>

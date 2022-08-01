@@ -13,11 +13,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/fish/assets/css/main.css" />
 		<link rel="stylesheet" href="/fish/assets/css/result.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<noscript><link rel="stylesheet" href="/fish/assets/css/noscript.css" /></noscript>
 		<!-- fontawesome token -->
 		<script src="https://kit.fontawesome.com/e340e95114.js" crossorigin="anonymous"></script>
 		<!--main js-->
-		<script src="assets/js/main.js"></script>
+		<script src="/fish/assets/js/main.js"></script>
 		<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 		
 
@@ -39,12 +39,8 @@
                     	<meter class="meter" value="0.8" low="0.31" optimum="0.61" high="0.81"></meter><br>
                     	<span>감성돔과 X % 일치합니다.</span>
 					</div> -->
-<<<<<<< HEAD
-					div class="progress-bar" style="--width:${his_vo.accuracy }" data-label="${his_vo.accuracy }%..."></div>
-					<br>
-=======
+
 					<div class="progress-bar" style="--width:${his_vo.accuracy }" data-label="${his_vo.accuracy }%..."></div>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 					<!-- 결과 안내 창 -->
 					<div class = "card">
 						<div class="result_font"> ${his_vo.accuracy }%, ${his_vo.result }입니다.</div>			
@@ -54,7 +50,7 @@
 					</div>
 					<nav>
 						<ul>
-							<li><a href="#" class="fa-solid fa-link" onclick="sendLinkDefault()" style="color: #fff;"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="fa-solid fa-link" onclick="sendLinkDefault()" style="color: #fff;"><span class="label">Kakao</span></a></li>
 							<li><a href="#" class="fa-solid fa-floppy-disk" style="color: #fff;"><span class="label">Facebook</span></a></li>
 
 						</ul>
@@ -72,7 +68,7 @@
 					</nav>
 				</header>
 				<footer id="footer">
-	               <span class="copyright"><a href="/logout">Logout</a>.</span>
+	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
 					<c:if test="${sessionScope.user_type == 1}">
 		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
@@ -104,62 +100,15 @@
 		  Kakao.Share.sendDefault({
 			  objectType: 'feed',
 			  content: {
-			    title: '오늘의 디저트',
-			    description: '아메리카노, 빵, 케익',
+			    title: ${his_vo.accuracy } + '%'+ ${his_vo.result } + '입니다.',
 			    imageUrl:
-			      'https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg',
-			    link: {
-			      mobileWebUrl: 'https://developers.kakao.com',
-			      androidExecutionParams: 'test',
-			    },
-			  },
-			  itemContent: {
-			    profileText: 'Kakao',
-			    profileImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-			    titleImageUrl: 'https://mud-kage.kakao.com/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png',
-			    titleImageText: 'Cheese cake',
-			    titleImageCategory: 'Cake',
-			    items: [
-			      {
-			        item: 'Cake1',
-			        itemOp: '1000원',
-			      },
-			      {
-			        item: 'Cake2',
-			        itemOp: '2000원',
-			      },
-			      {
-			        item: 'Cake3',
-			        itemOp: '3000원',
-			      },
-			      {
-			        item: 'Cake4',
-			        itemOp: '4000원',
-			      },
-			      {
-			        item: 'Cake5',
-			        itemOp: '5000원',
-			      },
-			    ],
-			    sum: '총 결제금액',
-			    sumOp: '15000원',
-			  },
-			  social: {
-			    likeCount: 10,
-			    commentCount: 20,
-			    sharedCount: 30,
+			    	"http://121.147.52.236:8083/fish/image/" + ${his_vo.fish_img },
 			  },
 			  buttons: [
 			    {
 			      title: '웹으로 이동',
 			      link: {
-			        mobileWebUrl: 'https://developers.kakao.com',
-			      },
-			    },
-			    {
-			      title: '앱으로 이동',
-			      link: {
-			        mobileWebUrl: 'https://developers.kakao.com',
+			        mobileWebUrl: 'http://121.147.52.236:8083/fish/result/' + ${his_vo.his_seq},
 			      },
 			    },
 			  ]

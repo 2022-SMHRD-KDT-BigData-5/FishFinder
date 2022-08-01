@@ -18,6 +18,8 @@ public interface commentMapper {
 	public int commentDelete(int comment_seq);
 	// 특정 글 댓글  모두 삭제
 	public int commentComDelete(int article_seq);
+	// 게시글 번호 가져오기
+	public int commentComSeq(int comment_seq);
 	// 댓글 수정
 	public int commentUpdate(Comment cvo);
 
