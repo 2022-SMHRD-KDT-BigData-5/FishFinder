@@ -41,9 +41,7 @@
 				<div class="qna_box">
 					<div class="view_scroll">
 						<div class="view_title">${ requestScope.community.article_title }</div>
-						<div id="getname${community.user_num}"
-							href='javascript:getname(${community.user_num})'
-							class="view_writer">${getname}</div>
+						<div href='javascript:getname(${community.user_num})'class="view_writer">${ community.user_nick }</div>
 						<div class="view_dvc">
 							<span class="view_date">${ fn:split(community.article_date, " ")[0] }</span>
 							<span class="view_views">조회수 : ${ community.article_cnt }</span>
@@ -66,8 +64,10 @@
 							<!-- 수정 삭제는 내 글에서만 -->
 							<div class="view_md">
 								<c:if test="${community.user_num == sessionScope.user_num}">
-									<a href='javascript:goUpdate(${community.article_seq})' class="view_modify">수정</a>
-									<a href='javascript:goDelete(${community.article_seq})' class="view_delete">삭제</a>
+									<a href='javascript:goUpdate(${community.article_seq})'
+										class="view_modify">수정</a>
+									<a href='javascript:goDelete(${community.article_seq})'
+										class="view_delete">삭제</a>
 								</c:if>
 								<a href='javascript:goList()'>목록</a>
 							</div>
@@ -78,33 +78,31 @@
 								<a name="here"><textarea id="comment_content"
 										class="comm_text" name="comment_content"></textarea></a> <input
 									id="article_seq" name="article_seq" type="hidden"
-									value="${community.article_seq}"> <input id="user_num"
-									name="user_num" type="hidden" value="${sessionScope.user_num}">
+									value="${community.article_seq}"> 
+									<input id="user_num" name="user_nick" type="hidden" value="${sessionScope.kakaoN}">
+									<input id="user_num" name="user_num" type="hidden" value="${sessionScope.user_num}">
 								<button type="submit" class="custom-btn btn-3">등록</button>
 							</div>
 						</form>
 						<!-- 댓글작성 끝 -->
 						<!-- 댓글목록 -->
-						<div class="comments_box">
-							<c:forEach items="${comment}" var="clist">
+						<c:forEach items="${comment}" var="clist">
+							<div class="comments_box">
 								<div id="replyModal">
-									<div class="comments_writer" value="${clist.user_num}">${clist.user_num}</div>
-									<div class="comments_content">
-										${fn:replace(clist.comment_content, newLine, "<br>")}</div>
+									<div class="comments_writer" value="${clist.user_num}">${clist.user_nick}</div>
+									<div class="comments_content">${fn:replace(clist.comment_content, newLine, "<br>")}</div>
 									<div class="comments_dmd">
 										<div class="comments_date">${fn:split(clist.comment_date, " ")[0]}</div>
 									</div>
-									<form action="commUp/${clist.comment_seq}/${clist.article_seq}"
-										method="post">
+									<form action="commUp/${clist.comment_seq}/${clist.article_seq}" method="post">
 										<c:if test="${clist.user_num == sessionScope.user_num}">
 											<div class="comments_md">
 												<!-- 모달창 -->
-												<input type="checkbox" id="popup"> <label
-													for="popup"><a class="comments_modify">[수정]</a></label>
+												<input type="checkbox" id="popup"> 
+													<label for="popup"><a class="comments_modify">[수정]</a></label>
 												<div>
-													<input type="hidden" name="comment_seq"
-														value="${clist.comment_seq}"> <input type="hidden"
-														name="article_seq" value="${clist.article_seq}">
+													<input type="hidden" name="comment_seq" value="${clist.comment_seq}"> 
+													<input type="hidden" name="article_seq" value="${clist.article_seq}">
 													<textarea class="write_content" name="comment_content">${clist.comment_content}</textarea>
 													<button type="submit" class="custom-btn btn-3">
 														<span>수정하기</span>
@@ -122,8 +120,8 @@
 										</c:if>
 									</form>
 								</div>
-							</c:forEach>
-						</div>
+							</div>
+						</c:forEach>
 						<!-- 댓글목록  끝-->
 					</div>
 				</div>

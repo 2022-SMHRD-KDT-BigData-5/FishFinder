@@ -40,6 +40,7 @@ public class CommunityCon {
 		int total = mapper.countBoard();
 		model.addAttribute("list", list);
 		model.addAttribute("total", total);
+		
 		return "board"; // board라는 jsp로 이동
 	}
 	
@@ -62,6 +63,8 @@ public class CommunityCon {
 	@PostMapping("/viewIn")
 	public String communityInsert(Community vo, MultipartFile file) {		
 		mapper.communityInsert(vo);
+		// 댓글수
+		mapper.commCntUp(vo.getArticle_seq());
 		return "redirect:/view";  // url주소가 /view인 곳이로 이동
 	}
 	
@@ -75,6 +78,7 @@ public class CommunityCon {
 		// 댓글 조회
 		List<Comment> comment = cmapper.commentList(article_seq);
 		model.addAttribute("comment", comment);
+				
 		return "view";
 	}
 	

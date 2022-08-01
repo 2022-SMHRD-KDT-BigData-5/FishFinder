@@ -22,10 +22,14 @@ public class Community{
 	@NonNull
 	private String article_date;
 	private int user_num;
+	@NonNull
+	private String user_nick;
 	private String article_file;
 	private String article_file2;	
 	private int article_cnt;
 	private int article_report;
+	private int commCnt;
+	
 	
 	private String searchType = search.getSearchType();
 	private String keyword = search.getKeyword();

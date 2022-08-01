@@ -13,6 +13,8 @@ public class userhistory {
 	
 	private int his_seq;
 	private int user_num;
+	@NonNull
+	private String user_nick;
 	private String fish_img;
 	private String result;
 	private int accuracy;

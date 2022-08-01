@@ -19,6 +19,8 @@ public class Comment {
 	private Integer article_seq;
 	private int user_num;
 	@NonNull
+	private String user_nick;
+	@NonNull
 	private String comment_content;
 	private Timestamp comment_date;
 	

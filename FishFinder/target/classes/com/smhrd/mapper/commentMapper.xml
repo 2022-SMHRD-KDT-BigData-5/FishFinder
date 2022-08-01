@@ -8,8 +8,8 @@
      
     <!-- 댓글 입력 -->
     <insert id="commentInsert" parameterType="com.smhrd.domain.Comment">
-        insert into comment(article_seq,user_num,comment_date,comment_content)
-        values(#{article_seq},#{user_num},now(),#{comment_content})
+        insert into comment(article_seq,user_num,comment_date,comment_content,user_nick)
+        values(#{article_seq},#{user_num},now(),#{comment_content},#{user_nick})
     </insert>
     
     <!-- 특정 게시물 댓글 가져오기 -->
@@ -28,9 +28,9 @@
     </select>
 	
     <!-- 댓글 수 -->
-    <select id="commentCount" resultType="com.smhrd.domain.Comment">
+    <select id="commentCount" resultType="Integer">
         SELECT COUNT(*) FROM comment 
-        where article_seq = article_seq=#{article_seq}
+        where article_seq=#{article_seq}
     </select>
     
     <!-- 댓글 삭제 -->

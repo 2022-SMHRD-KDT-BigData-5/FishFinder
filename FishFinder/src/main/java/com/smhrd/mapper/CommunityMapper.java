@@ -24,6 +24,8 @@ public interface CommunityMapper {
 	public int communityCntUpdate(Community vo);
 	// 게시물 총 갯수
 	public int countBoard();
+	// 댓글수
+	public int commCntUp(int article_seq);
 	// 신고 글 가져오기
 	public List<Community> communityReport();	
 	// 검색 결과

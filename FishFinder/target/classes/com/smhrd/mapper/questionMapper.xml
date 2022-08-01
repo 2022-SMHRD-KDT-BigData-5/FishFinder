@@ -16,8 +16,8 @@
  	
     <!-- 문의 글 작성 -->
     <insert id="questionInsert" parameterType="com.smhrd.domain.questionBoard">
-        insert into question_board(q_title,q_content,q_date,user_num) 
-        values(#{q_title},#{q_content},now(),#{user_num})
+        insert into question_board(q_title,q_content,q_date,user_num,user_nick) 
+        values(#{q_title},#{q_content},now(),#{user_num},#{user_nick})
     </insert>
     
     <!-- 특정 문의 글 가져오기 -->

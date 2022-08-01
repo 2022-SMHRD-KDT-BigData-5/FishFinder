@@ -3,6 +3,7 @@ package com.smhrd.mapper;
 import java.util.List;
 
 import com.smhrd.domain.Comment;
+import com.smhrd.domain.Community;
 
 public interface commentMapper {
 	
@@ -13,7 +14,7 @@ public interface commentMapper {
 	// 선택한 댓글 보기
 	public Comment CommentContent(int comment_seq);
 	// 댓글 수
-	public int commentCount(int article_seq);
+	public int commentCount(Community article_seq);
 	// 댓글 삭제
 	public int commentDelete(int comment_seq);
 	// 특정 글 댓글  모두 삭제

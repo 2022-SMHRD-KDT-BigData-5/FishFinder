@@ -40,6 +40,7 @@
 								<textarea class="qna_content" name="a_content" placeholder="내용을 입력해주세요. (60자 이내)" maxlength="60"></textarea>
 								<input value ='${q_seq}' type="hidden" class="form-control" name="q_seq">
 								<input value ='${sessionScope.user_num}' type="hidden" class="form-control" name="answer_num">
+								<input value ='${sessionScope.kakaoN}' type="hidden" class="form-control" name="user_nick">
 							</div>
 						</div>
 						<nav>
@@ -68,23 +69,12 @@
 				</header>
 				<!-- Footer -->
 				<footer id="footer">
-<<<<<<< HEAD
-	               <span class="copyright"><a href="/fish/logout">Logout</a>.</span>
-=======
-<<<<<<< HEAD
-	               <span class="copyright"><a href="/fish/join">Logout</a>.</span>
-=======
 	               <span class="copyright"><a href="/logout">Logout</a>.</span>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
 	               <!-- 관리자 로그인 시 이동 가능한 버튼 -->
-<<<<<<< HEAD
-	               <span class="copyright"><a href="/fish/admin">Admin</a>.</span>
-=======
 					<c:if test="${sessionScope.user_type == 1}">
 		               	<span class="copyright"><a href="/fish/admin">Admin</a>.</span>
 		            </c:if>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-5/FishFinder.git
+
 	            </footer>
 			</div>
 		</div>

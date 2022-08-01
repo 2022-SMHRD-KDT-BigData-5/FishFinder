@@ -40,6 +40,9 @@
 									<input value='${sessionScope.user_num}' type="hidden"
 										class="form-control" id="user_num" placeholder="Enter writer"
 										name="user_num">
+										<input value='${sessionScope.kakaoN}' type="hidden"
+										class="form-control" id="user_nick" placeholder="Enter writer"
+										name="user_nick">
 								<dl class="title_flex">
 									<dt>제목 :</dt>
 									<input class="title_type" name="article_title" type="text"

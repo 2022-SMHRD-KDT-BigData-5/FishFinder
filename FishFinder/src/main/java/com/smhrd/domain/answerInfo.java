@@ -23,4 +23,5 @@ public class answerInfo {
 	private String a_file;
 	private Date a_date;
 	private int answer_num;
+	private String user_nick;
 }

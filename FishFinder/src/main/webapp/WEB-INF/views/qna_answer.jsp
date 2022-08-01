@@ -34,9 +34,12 @@
 									여기에 qna 질문내용
 								</dl>
 							</div>
+							<form>
 							<div class="cont">
 								<textarea class="qna_content" placeholder="답변하기."></textarea>
+								<input type="hidden" name="user_nick" value="${sessionScope.kakaoN}">
 							</div>
+							</form>
 						</div>
 						<nav>
 							<ul>

@@ -47,3 +47,7 @@ VALUES(1, 2, '댓르르르르르르ㅡ르르르르르르르르르르르르르르
 
 
 insert into visit(v_date) values(NOW())
+
+	    update community_info as info 
+	    set info.comm_cnt = (select count(1) from comment
+	    where article_seq=1) where info.article_seq=1

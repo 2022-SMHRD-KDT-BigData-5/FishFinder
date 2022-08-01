@@ -17,6 +17,8 @@ public class questionBoard {
 	private int q_seq; // 질답 순번
 	private int user_num; // 질문한 회원
 	@NonNull
+	private String user_nick;
+	@NonNull
 	private String q_content; // 질문 내용
 	private Date q_date; // 질문 날짜
 	private int q_cnt; // 질문 조회수

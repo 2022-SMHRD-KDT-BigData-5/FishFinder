@@ -37,25 +37,4 @@ function open(article_seq){
 		
 }
 //====================================================================================
-// 유저 넘버에서 이름 가져오기
-function getname(user_num){
-	
-	let getname = $('#getname' + user_num).html();
-	
-	$.ajax({
-		type : "post",
-		url : "getname",
-		data : {
-			"user_num" : user_num
-			},
-			success : function(res){
-				$('#getname'+article_seq).html( getname );
-			},
-			error : function(e){
-				alert('view error')
-			}
-			
-		});
-}
-//======================================================================================
 

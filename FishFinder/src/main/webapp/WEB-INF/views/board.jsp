@@ -55,20 +55,13 @@
 												<c:out value="${list.article_title}" />
 											</div>
 											<div class="board_wdv">
-												<span class="board_writer"><c:out
-														value="${list.user_num}" /></span> <span class="board_date"
-													id='date${list.article_date}'>${ fn:split(list.article_date, " ")[0]}</span>
-												<span class="board_views">조회수 <span class="views_cnt"
-													id="count${list.article_seq}"><c:out
-															value="${list.article_cnt}" /></span></span>
+												<span class="board_writer"><c:out value="${list.user_nick}" /></span> 
+												<span class="board_date" id='date${list.article_date}'>${ fn:split(list.article_date, " ")[0]}</span>
+												<span class="board_views">조회수 <span class="views_cnt" id="count${list.article_seq}"><c:out value="${list.article_cnt}" /></span></span>
 											</div>
 										</div>
 										<div class="comments_box">
-											<div href="javascript:commCnt(${list.article_seq})"
-												class="board_comments">
-												댓글<br>
-												<c:out value="${ctotal}" />
-											</div>
+											<div class="board_comments">댓글<br>${list.commCnt}</div>
 										</div>
 								</li>
 								</a>
@@ -90,20 +83,16 @@
 													<c:out value="${mlist.article_title}" />
 												</div>
 												<div class="board_wdv">
-													<span class="board_writer"><c:out
-															value="${clist.user_num}" /></span> <span class="board_date"
-														id='date${clist.article_date}'>${ fn:split(mlist.article_date, " ")[0]}</span>
-													<span class="board_views">조회수 <span
-														class="views_cnt"><c:out
-																value="${mlist.article_cnt}" /></span></span>
+													<span class="board_writer"><c:out value="${clist.user_nick}" /></span> 
+													<span class="board_date" id='date${clist.article_date}'>${ fn:split(mlist.article_date, " ")[0]}</span>
+													<span class="board_views">조회수 
+														<span class="views_cnt"><c:out value="${mlist.article_cnt}" />
+														</span>
+													</span>
 												</div>
 											</div>
 											<div class="comments_box">
-												<div href="javascript:commCnt(${mlist.article_seq})"
-													class="board_comments">
-													댓글<br>
-													<c:out value="${ctotal}" />
-												</div>
+												<div href="javascript:commCnt(${mlist.article_seq})" class="board_comments">댓글<br><c:out value="${ctotal}" /></div>
 											</div>
 									</li>
 									</a>

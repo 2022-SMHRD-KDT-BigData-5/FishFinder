@@ -50,12 +50,11 @@ public class CommentCon {
 	}
 		
 	// 댓글 수 불러오기
-	@RequestMapping("/commCnt/{article_seq}")
-	public int commentCount(@PathVariable("article_seq") int article_seq, Model model) {
-		int ctotal = cmapper.commentCount(article_seq);
-		model.addAttribute("ctotal",ctotal);
-		return ctotal;
-	}
+//	public int commentCount(int article_seq, Model model) {
+//		int ctotal = cmapper.commentCount(article_seq);
+//		model.addAttribute("ctotal",ctotal);
+//		return ctotal;
+//	}
 	
 	// Comment 삭제
 	@RequestMapping("/commDel/{comment_seq}/{article_seq}")
